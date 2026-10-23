@@ -1,0 +1,15 @@
+# Secretos: NUNCA al repositorio
+.streamlit/secrets.toml
+.env
+*.pem
+.aws/
+
+# Datos completos: solo se sube la muestra de data/sample/
+data/raw/
+data/clean/
+
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.DS_Store

@@ -1,0 +1,501 @@
+pedido_id,fecha,hora,producto,categoria,unidades,precio_unitario,total,canal,entrega,metodo_pago
+20502,2026-08-07,23:45,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Recoger,Efectivo
+13359,2026-01-16,14:16,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Recoger,Transferencia
+11904,2025-12-04,14:08,Galleta con chispas,Galletas y brownies,6,35.0,210,WhatsApp,Domicilio,Transferencia
+18724,2026-06-21,18:43,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Recoger,Efectivo
+9635,2025-09-13,13:27,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+15985,2026-04-06,16:01,Brownie,Galletas y brownies,2,45.0,90,Instagram,Domicilio,Efectivo
+14453,2026-02-18,16:54,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Efectivo
+20740,2026-08-14,21:16,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Efectivo
+12964,2026-01-01,18:33,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+5399,2025-04-18,21:29,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Recoger,Efectivo
+17934,2026-05-30,17:03,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+18749,2026-06-22,15:27,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,Instagram,Domicilio,Transferencia
+9152,2025-08-29,22:37,Brownie,Galletas y brownies,3,45.0,135,Instagram,Domicilio,Transferencia
+21358,2026-08-31,10:58,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Recoger,Transferencia
+18943,2026-06-27,23:19,Brownie,Galletas y brownies,2,45.0,90,Instagram,Recoger,Transferencia
+9240,2025-08-31,14:53,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Recoger,Transferencia
+21284,2026-08-29,21:19,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Efectivo
+14254,2026-02-13,14:29,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Recoger,Transferencia
+7009,2025-06-14,19:03,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Domicilio,Efectivo
+20743,2026-08-14,22:11,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Domicilio,Transferencia
+13830,2026-02-01,21:13,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+20293,2026-08-01,15:21,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Efectivo
+21967,2026-09-19,13:32,Galleta con chispas,Galletas y brownies,4,35.0,140,WhatsApp,Domicilio,Transferencia
+6829,2025-06-07,23:30,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Transferencia
+6181,2025-05-15,20:06,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Recoger,Efectivo
+11758,2025-11-29,10:41,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+11035,2025-11-03,22:12,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Recoger,Transferencia
+14429,2026-02-16,19:51,Galleta con chispas,Galletas y brownies,6,35.0,210,WhatsApp,Domicilio,Transferencia
+10098,2025-10-01,22:55,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Efectivo
+15928,2026-04-04,20:47,Galleta con chispas,Galletas y brownies,2,35.0,70,WhatsApp,Recoger,Transferencia
+7030,2025-06-14,21:00,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Domicilio,Efectivo
+9250,2025-08-31,13:05,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Domicilio,Efectivo
+14313,2026-02-14,14:18,Galleta con chispas,Galletas y brownies,3,35.0,105,Instagram,Recoger,Transferencia
+18890,2026-06-26,12:59,Brownie,Galletas y brownies,1,45.0,45,Instagram,Domicilio,Transferencia
+17167,2026-05-09,13:09,Brownie,Galletas y brownies,4,45.0,180,Instagram,Domicilio,Transferencia
+7114,2025-06-17,09:22,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,Instagram,Domicilio,Efectivo
+8623,2025-08-08,21:24,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Domicilio,Efectivo
+16851,2026-05-03,16:19,Brownie,Galletas y brownies,1,45.0,45,Instagram,Domicilio,Transferencia
+12118,2025-12-12,20:25,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Transferencia
+11098,2025-11-06,21:18,Brownie,Galletas y brownies,3,45.0,135,Instagram,Domicilio,Efectivo
+7645,2025-07-04,13:29,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Efectivo
+19815,2026-07-20,20:45,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Recoger,Efectivo
+21381,2026-09-01,18:58,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+17106,2026-05-08,10:03,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Efectivo
+15198,2026-03-14,21:54,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Efectivo
+19785,2026-07-19,18:42,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Transferencia
+13260,2026-01-12,12:06,Brownie,Galletas y brownies,1,45.0,45,WhatsApp,Domicilio,Transferencia
+6091,2025-05-11,13:22,Galleta con chispas,Galletas y brownies,2,35.0,70,Instagram,Recoger,Transferencia
+12156,2025-12-13,22:38,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Recoger,Transferencia
+11248,2025-11-11,21:11,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Efectivo
+7946,2025-07-14,13:18,Brownie,Galletas y brownies,1,45.0,45,Instagram,Domicilio,Transferencia
+11409,2025-11-17,20:56,Brownie,Galletas y brownies,2,45.0,90,Instagram,Recoger,Transferencia
+20191,2026-07-30,09:41,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Transferencia
+14711,2026-02-26,21:50,Brownie,Galletas y brownies,3,45.0,135,Instagram,Domicilio,Transferencia
+17354,2026-05-11,20:58,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Domicilio,Efectivo
+11920,2025-12-05,22:56,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,WhatsApp,Recoger,Efectivo
+13999,2026-02-06,12:28,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Recoger,Efectivo
+16143,2026-04-11,20:04,Galleta con chispas,Galletas y brownies,4,35.0,140,Instagram,Domicilio,Transferencia
+21676,2026-09-11,21:35,Galleta con chispas,Galletas y brownies,5,35.0,175,WhatsApp,Domicilio,Transferencia
+13995,2026-02-06,21:06,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,Instagram,Domicilio,Transferencia
+7723,2025-07-07,22:14,Cheesecake clásico (rebanada),Rebanadas,5,75.0,375,Instagram,Recoger,Transferencia
+19826,2026-07-20,20:55,Galleta con chispas,Galletas y brownies,2,35.0,70,WhatsApp,Domicilio,Transferencia
+10420,2025-10-13,13:53,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+9147,2025-08-29,19:02,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,Instagram,Domicilio,Transferencia
+20110,2026-07-28,11:05,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Efectivo
+12259,2025-12-16,22:30,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Recoger,Transferencia
+15418,2026-03-20,13:53,Cheesecake clásico (rebanada),Rebanadas,5,75.0,375,Instagram,Domicilio,Efectivo
+20478,2026-08-06,17:51,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Transferencia
+14613,2026-02-22,18:27,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+21310,2026-08-30,14:34,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,WhatsApp,Domicilio,Transferencia
+11711,2025-11-28,23:17,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Transferencia
+17896,2026-05-30,20:03,Galleta con chispas,Galletas y brownies,2,35.0,70,Instagram,Domicilio,Transferencia
+16987,2026-05-07,19:14,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Transferencia
+19894,2026-07-23,18:39,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Efectivo
+5855,2025-05-08,21:27,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,Instagram,Domicilio,Transferencia
+15212,2026-03-14,19:58,Brownie,Galletas y brownies,1,45.0,45,WhatsApp,Domicilio,Transferencia
+7752,2025-07-08,18:34,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Domicilio,Transferencia
+18046,2026-06-03,21:19,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+12164,2025-12-13,20:03,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Transferencia
+5884,2025-05-08,09:01,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Transferencia
+14792,2026-02-28,21:27,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Recoger,Transferencia
+12439,2025-12-20,13:04,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Efectivo
+15744,2026-03-30,19:45,Galleta con chispas,Galletas y brownies,4,35.0,140,WhatsApp,Domicilio,Transferencia
+14641,2026-02-23,15:29,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+7960,2025-07-15,19:16,Galleta con chispas,Galletas y brownies,4,35.0,140,Instagram,Domicilio,Transferencia
+15492,2026-03-22,12:10,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Recoger,Transferencia
+8033,2025-07-18,21:25,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Efectivo
+18629,2026-06-19,17:57,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+19716,2026-07-18,11:51,Cheesecake clásico (rebanada),Rebanadas,6,75.0,450,Instagram,Domicilio,Transferencia
+13774,2026-01-31,13:38,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+21695,2026-09-11,19:59,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+13371,2026-01-16,20:01,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Domicilio,Efectivo
+12602,2025-12-24,18:47,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+8263,2025-07-26,22:21,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,Instagram,Recoger,Transferencia
+6476,2025-05-25,20:42,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+6758,2025-06-04,12:34,Galleta con chispas,Galletas y brownies,7,35.0,245,Instagram,Recoger,Transferencia
+13307,2026-01-14,19:37,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Domicilio,Transferencia
+20072,2026-07-26,13:09,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Recoger,Transferencia
+22106,2026-09-23,22:50,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Domicilio,Efectivo
+20127,2026-07-28,12:27,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+8593,2025-08-08,20:41,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,Instagram,Domicilio,Transferencia
+19599,2026-07-15,22:53,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Transferencia
+15089,2026-03-10,21:49,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Transferencia
+16944,2026-05-06,13:21,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,Instagram,Domicilio,Transferencia
+19703,2026-07-17,21:08,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Transferencia
+10823,2025-10-27,20:20,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Transferencia
+18771,2026-06-23,16:47,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Domicilio,Transferencia
+19362,2026-07-09,18:15,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Transferencia
+17969,2026-05-31,17:15,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,Instagram,Domicilio,Transferencia
+19142,2026-07-03,20:53,Galleta con chispas,Galletas y brownies,6,35.0,210,Instagram,Domicilio,Efectivo
+15670,2026-03-28,12:16,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Recoger,Transferencia
+14826,2026-03-01,21:54,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Domicilio,Efectivo
+13388,2026-01-17,19:35,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,Instagram,Domicilio,Efectivo
+15501,2026-03-22,18:06,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Transferencia
+18675,2026-06-20,23:18,Brownie,Galletas y brownies,1,45.0,45,WhatsApp,Recoger,Transferencia
+9911,2025-09-24,21:15,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,Instagram,Recoger,Transferencia
+14027,2026-02-07,20:05,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Transferencia
+15236,2026-03-15,15:28,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+22052,2026-09-21,11:45,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Domicilio,Efectivo
+15705,2026-03-29,22:05,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+6010,2025-05-10,21:26,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Efectivo
+9655,2025-09-14,16:58,Galleta con chispas,Galletas y brownies,1,35.0,35,WhatsApp,Domicilio,Efectivo
+15412,2026-03-20,21:17,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,Instagram,Domicilio,Transferencia
+16535,2026-04-23,11:14,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Domicilio,Efectivo
+18142,2026-06-05,20:08,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Efectivo
+6648,2025-05-31,21:51,Galleta con chispas,Galletas y brownies,3,35.0,105,Instagram,Domicilio,Transferencia
+22104,2026-09-23,14:55,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+9342,2025-09-03,20:49,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Domicilio,Transferencia
+15821,2026-04-02,18:59,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+16738,2026-04-30,20:03,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Recoger,Efectivo
+16632,2026-04-26,23:25,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Transferencia
+10642,2025-10-21,19:50,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Efectivo
+15104,2026-03-10,21:47,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Domicilio,Transferencia
+8888,2025-08-18,17:45,Galleta con chispas,Galletas y brownies,8,35.0,280,WhatsApp,Domicilio,Transferencia
+8991,2025-08-22,12:24,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+8657,2025-08-09,12:42,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Recoger,Efectivo
+16174,2026-04-12,13:37,Galleta con chispas,Galletas y brownies,3,35.0,105,Instagram,Recoger,Transferencia
+6142,2025-05-14,22:34,Galleta con chispas,Galletas y brownies,5,35.0,175,WhatsApp,Domicilio,Transferencia
+22236,2026-09-27,19:55,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Recoger,Efectivo
+20970,2026-08-20,20:28,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Transferencia
+10401,2025-10-12,14:55,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+18922,2026-06-27,20:58,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+12856,2025-12-29,21:01,Brownie,Galletas y brownies,3,45.0,135,Instagram,Domicilio,Transferencia
+5332,2025-04-15,14:55,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Domicilio,Transferencia
+8632,2025-08-09,18:05,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+14410,2026-02-15,16:27,Brownie,Galletas y brownies,3,45.0,135,Instagram,Recoger,Transferencia
+15627,2026-03-27,11:50,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+12351,2025-12-18,20:45,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+6337,2025-05-21,14:55,Galleta con chispas,Galletas y brownies,5,35.0,175,Instagram,Recoger,Efectivo
+14456,2026-02-18,23:15,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Efectivo
+18951,2026-06-27,13:23,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Domicilio,Efectivo
+21622,2026-09-09,23:24,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+17791,2026-05-26,13:23,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Domicilio,Efectivo
+16548,2026-04-24,22:28,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Recoger,Transferencia
+15340,2026-03-18,17:11,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Domicilio,Efectivo
+8112,2025-07-20,21:26,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Recoger,Transferencia
+17168,2026-05-09,21:23,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Efectivo
+12601,2025-12-24,22:21,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+17513,2026-05-16,14:19,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,WhatsApp,Domicilio,Transferencia
+5577,2025-04-26,21:31,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Recoger,Efectivo
+19855,2026-07-21,12:37,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Domicilio,Transferencia
+17377,2026-05-12,12:22,Pastel de temporada,Pasteles enteros,,550.0,550,WhatsApp,Domicilio,Transferencia
+7130,2025-06-18,20:46,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+20968,2026-08-20,18:31,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Recoger,Transferencia
+19419,2026-07-10,17:26,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Domicilio,Efectivo
+14243,2026-02-13,11:54,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,Instagram,Domicilio,Transferencia
+18961,2026-06-28,18:11,Pastel de tres leches (rebanada),Rebanadas,5,65.0,325,Instagram,Domicilio,Transferencia
+6752,2025-06-04,15:46,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Transferencia
+17512,2026-05-16,22:39,Galleta con chispas,Galletas y brownies,5,35.0,175,WhatsApp,Domicilio,Transferencia
+14405,2026-02-15,19:53,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,Instagram,Domicilio,Transferencia
+12254,2025-12-15,22:07,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Efectivo
+14171,2026-02-12,23:22,Galleta con chispas,Galletas y brownies,4,35.0,140,WhatsApp,Recoger,Efectivo
+21244,2026-08-29,12:08,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Transferencia
+11108,2025-11-07,20:33,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Transferencia
+7857,2025-07-12,20:55,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Recoger,Transferencia
+8407,2025-07-31,20:57,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Recoger,Efectivo
+7377,2025-06-27,15:58,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Efectivo
+13988,2026-02-06,21:31,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+8714,2025-08-11,23:27,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Domicilio,Transferencia
+8439,2025-08-01,15:09,Pastel de tres leches (rebanada),Rebanadas,6,65.0,390,Instagram,Domicilio,Efectivo
+13462,2026-01-18,21:45,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+18954,2026-06-27,22:54,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Recoger,Efectivo
+14952,2026-03-05,13:59,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Domicilio,Efectivo
+20664,2026-08-12,22:42,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Efectivo
+20546,2026-08-08,22:58,Cheesecake clásico (rebanada),Rebanadas,5,75.0,375,WhatsApp,Domicilio,Transferencia
+10033,2025-09-29,16:46,Galleta con chispas,Galletas y brownies,4,35.0,140,Instagram,Domicilio,Transferencia
+21785,2026-09-13,21:56,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Domicilio,Transferencia
+5668,2025-04-30,23:25,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,WhatsApp,Domicilio,Transferencia
+12478,2025-12-21,18:56,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Transferencia
+18671,2026-06-20,19:57,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Efectivo
+14544,2026-02-20,11:45,Pastel de tres leches (rebanada)  ,Rebanadas,3,65.0,195,WhatsApp,Recoger,Transferencia
+19997,2026-07-25,13:35,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+12292,2025-12-17,18:28,Galleta con chispas,Galletas y brownies,2,35.0,70,WhatsApp,Domicilio,Transferencia
+21860,2026-09-16,14:52,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Transferencia
+7510,2025-06-30,16:57,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Domicilio,Transferencia
+5990,2025-05-10,21:24,Brownie,Galletas y brownies,3,45.0,135,Instagram,Domicilio,Transferencia
+17180,2026-05-09,10:20,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Domicilio,Efectivo
+22315,2026-09-29,22:14,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Domicilio,Transferencia
+19516,2026-07-12,14:57,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Efectivo
+9746,2025-09-18,12:30,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+5980,2025-05-09,21:50,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Efectivo
+7529,2025-06-30,22:43,Galleta con chispas,Galletas y brownies,2,35.0,70,WhatsApp,Recoger,Efectivo
+15257,2026-03-15,18:31,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Transferencia
+20409,2026-08-04,20:04,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Recoger,Efectivo
+13081,2026-01-04,16:18,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Recoger,Transferencia
+6724,2025-06-03,19:54,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Transferencia
+12574,2025-12-23,15:46,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Efectivo
+15134,2026-03-12,13:52,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+13485,2026-01-19,21:37,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Transferencia
+17415,2026-05-14,22:45,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Recoger,Efectivo
+5772,2025-05-04,21:08,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Recoger,Efectivo
+15336,2026-03-18,16:07,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Domicilio,Efectivo
+21674,2026-09-11,11:07,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Recoger,Transferencia
+17378,2026-05-12,22:57,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Recoger,Transferencia
+12256,2025-12-15,18:32,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Recoger,Efectivo
+11944,2025-12-05,20:59,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+6795,2025-06-06,21:40,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Recoger,Transferencia
+17026,2026-05-08,14:09,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Transferencia
+7601,2025-07-03,13:38,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Efectivo
+13970,2026-02-05,18:13,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Recoger,Transferencia
+20989,2026-08-21,20:37,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,Instagram,Domicilio,Transferencia
+18950,2026-06-27,11:57,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Recoger,Transferencia
+17230,2026-05-09,21:35,Galleta con chispas,Galletas y brownies,4,35.0,140,Instagram,Domicilio,Transferencia
+9101,2025-08-27,22:35,Brownie,Galletas y brownies,1,45.0,45,WhatsApp,Domicilio,Transferencia
+14604,2026-02-22,21:21,Pastel de tres leches (rebanada),Rebanadas,7,65.0,455,WhatsApp,Domicilio,Transferencia
+12826,2025-12-28,22:35,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+17157,2026-05-09,11:07,Brownie,Galletas y brownies,1,45.0,45,Instagram,Recoger,Transferencia
+6182,2025-05-15,12:16,Galleta con chispas,Galletas y brownies,4,35.0,140,Instagram,Domicilio,Transferencia
+14957,2026-03-06,23:52,Cheesecake clásico (rebanada),Rebanadas,6,75.0,450,Instagram,Domicilio,Transferencia
+6893,2025-06-09,13:12,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Domicilio,Transferencia
+18972,2026-06-28,21:14,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+17412,2026-05-14,18:09,Galleta con chispas,Galletas y brownies,5,35.0,175,Instagram,Recoger,Transferencia
+7768,2025-07-09,19:29,Galleta con chispas,Galletas y brownies,8,35.0,280,WhatsApp,Domicilio,Efectivo
+13060,2026-01-04,19:47,Galleta con chispas,Galletas y brownies,5,35.0,175,Instagram,Recoger,Efectivo
+13013,2026-01-02,22:28,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,WhatsApp,Recoger,Transferencia
+18770,2026-06-23,23:29,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,Instagram,Domicilio,Transferencia
+19713,2026-07-18,21:38,Brownie,Galletas y brownies,3,45.0,135,Instagram,Domicilio,Transferencia
+10579,2025-10-18,22:21,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Domicilio,Transferencia
+17608,2026-05-19,14:29,Galleta con chispas,Galletas y brownies,6,35.0,210,WhatsApp,Domicilio,Transferencia
+21375,2026-09-01,19:47,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,Instagram,Recoger,Transferencia
+5863,2025-05-08,11:09,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+14189,2026-02-12,11:11,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Recoger,Transferencia
+8546,2025-08-05,19:30,Brownie,Galletas y brownies,2,45.0,90,Instagram,Recoger,Transferencia
+21454,2026-09-03,17:19,Brownie,Galletas y brownies,3,45.0,135,Instagram,Recoger,Efectivo
+14290,2026-02-13,19:56,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Recoger,Efectivo
+11214,2025-11-10,13:14,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Recoger,Transferencia
+16865,2026-05-03,16:42,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Domicilio,Transferencia
+10669,2025-10-22,22:17,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Transferencia
+8684,2025-08-10,21:51,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+18322,2026-06-11,16:37,Cheesecake clásico (rebanada),Rebanadas,5,75.0,375,WhatsApp,Domicilio,Transferencia
+18329,2026-06-11,22:53,Brownie,Galletas y brownies,2,45.0,90,Instagram,Domicilio,Transferencia
+14076,2026-02-08,15:54,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Efectivo
+14317,2026-02-14,11:00,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+16316,2026-04-16,22:48,Galleta con chispas,Galletas y brownies,2,35.0,70,WhatsApp,Recoger,Transferencia
+10804,2025-10-26,12:51,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Efectivo
+18425,2026-06-13,23:52,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+6713,2025-06-03,22:57,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,Instagram,Recoger,Transferencia
+18551,2026-06-17,21:36,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Efectivo
+12191,2025-12-14,18:13,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+14255,2026-02-13,21:32,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+17521,2026-05-16,12:54,Galleta con chispas,Galletas y brownies,4,35.0,140,WhatsApp,Recoger,Transferencia
+21247,2026-08-29,21:22,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Domicilio,Transferencia
+12372,2025-12-19,13:02,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Efectivo
+14165,2026-02-11,16:06,Brownie,Galletas y brownies,2,45.0,90,Instagram,Domicilio,Transferencia
+15120,2026-03-11,18:45,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Domicilio,Transferencia
+18110,2026-06-04,17:04,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,WhatsApp,Domicilio,Efectivo
+10332,2025-10-10,22:50,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+20746,2026-08-14,12:30,Galleta con chispas,Galletas y brownies,3,35.0,105,Instagram,Domicilio,Transferencia
+16276,2026-04-15,14:23,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Transferencia
+20248,2026-07-31,22:55,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Recoger,Transferencia
+7953,2025-07-15,19:22,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Domicilio,Transferencia
+5974,2025-05-09,12:27,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Recoger,Transferencia
+11756,2025-11-29,10:23,Brownie,Galletas y brownies,3,45.0,135,Instagram,Domicilio,Transferencia
+20822,2026-08-16,20:02,Galleta con chispas,Galletas y brownies,5,35.0,175,Instagram,Domicilio,Efectivo
+8405,2025-07-31,13:31,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+18146,2026-06-05,22:02,Brownie,Galletas y brownies,3,45.0,135,Instagram,Recoger,Transferencia
+18711,2026-06-21,11:21,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Recoger,Transferencia
+10517,2025-10-16,21:16,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Domicilio,Efectivo
+20819,2026-08-16,22:39,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Efectivo
+5135,2025-04-06,20:19,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+6491,2025-05-26,17:54,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,Instagram,Recoger,Transferencia
+22225,2026-09-26,14:25,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Domicilio,Transferencia
+18373,2026-06-12,21:25,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Domicilio,Transferencia
+7362,2025-06-26,14:49,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+19027,2026-06-30,21:56,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Transferencia
+8038,2025-07-18,13:30,Brownie,Galletas y brownies,1,45.0,45,WhatsApp,Domicilio,Transferencia
+7117,2025-06-17,20:44,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Efectivo
+12162,2025-12-13,17:25,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Transferencia
+5349,2025-04-16,21:22,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Recoger,Transferencia
+6370,2025-05-22,19:04,Brownie,Galletas y brownies,5,45.0,225,Instagram,Recoger,Transferencia
+21145,2026-08-25,10:51,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Efectivo
+11051,2025-11-04,12:32,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+18168,2026-06-06,14:17,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Transferencia
+13704,2026-01-28,21:38,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+12865,2025-12-29,20:18,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,Instagram,Domicilio,Transferencia
+11600,2025-11-23,13:35,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Transferencia
+6067,2025-05-10,23:45,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+15758,2026-03-31,22:37,Brownie,Galletas y brownies,4,45.0,180,WhatsApp,Recoger,Efectivo
+6338,2025-05-21,13:01,Brownie,Galletas y brownies,1,45.0,45,WhatsApp,Domicilio,Transferencia
+8911,2025-08-19,22:39,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+12658,2025-12-25,18:06,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Domicilio,Transferencia
+13733,2026-01-30,18:26,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Recoger,Efectivo
+16908,2026-05-04,21:30,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Efectivo
+20306,2026-08-01,14:52,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Recoger,Transferencia
+10854,2025-10-29,23:11,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Recoger,Efectivo
+17280,2026-05-10,13:57,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+7811,2025-07-10,19:13,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Transferencia
+8514,2025-08-03,19:10,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,Instagram,Recoger,Transferencia
+10205,2025-10-04,18:21,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Transferencia
+17253,2026-05-10,11:11,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Recoger,Efectivo
+21956,2026-09-19,13:01,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+18273,2026-06-09,16:04,Cheesecake clásico (rebanada),Rebanadas,8,75.0,600,Instagram,Recoger,Efectivo
+14127,2026-02-10,20:03,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Transferencia
+13997,2026-02-06,21:59,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Efectivo
+7877,2025-07-12,23:16,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+17003,2026-05-07,13:25,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Efectivo
+19498,2026-07-12,20:14,Galleta con chispas,Galletas y brownies,2,35.0,70,WhatsApp,Recoger,Transferencia
+19300,2026-07-07,20:31,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Recoger,Efectivo
+9399,2025-09-05,21:41,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Transferencia
+8258,2025-07-26,12:29,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Recoger,Transferencia
+22150,2026-09-25,16:17,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Domicilio,Transferencia
+7107,2025-06-17,22:10,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Recoger,Transferencia
+18199,2026-06-07,14:14,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+13616,2026-01-25,11:08,Galleta con chispas,Galletas y brownies,5,35.0,175,WhatsApp,Domicilio,Efectivo
+9126,2025-08-28,11:31,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Recoger,Transferencia
+18076,2026-06-04,15:40,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Domicilio,Transferencia
+17113,2026-05-08,10:27,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+8680,2025-08-10,19:29,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Recoger,Transferencia
+18360,2026-06-12,17:07,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Domicilio,Efectivo
+12601,2025-12-24,22:11,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Domicilio,Transferencia
+16769,2026-05-01,19:12,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Recoger,Transferencia
+13021,2026-01-02,15:37,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+14895,2026-03-03,15:00,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,Instagram,Domicilio,Transferencia
+9812,2025-09-20,18:12,Brownie,Galletas y brownies,1,45.0,45,WhatsApp,Domicilio,Efectivo
+16368,2026-04-17,12:30,Galleta con chispas,Galletas y brownies,6,35.0,210,WhatsApp,Recoger,Transferencia
+18414,2026-06-13,20:11,Brownie,Galletas y brownies,3,45.0,135,Instagram,Recoger,Efectivo
+18242,2026-06-08,22:49,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,Instagram,Domicilio,Transferencia
+8817,2025-08-16,19:11,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Recoger,Efectivo
+12067,2025-12-10,17:15,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+14008,2026-02-07,12:46,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,Instagram,Recoger,Transferencia
+21268,2026-08-29,13:10,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Recoger,Efectivo
+10860,2025-10-29,20:42,Galleta con chispas,Galletas y brownies,2,35.0,70,WhatsApp,Domicilio,Transferencia
+21003,2026-08-21,13:32,Cheesecake clásico (rebanada),Rebanadas,-2.0,75.0,150,WhatsApp,Recoger,Efectivo
+12802,2025-12-28,16:25,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,Instagram,Recoger,Efectivo
+14324,2026-02-14,18:51,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Domicilio,Transferencia
+19339,2026-07-08,22:31,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Recoger,Transferencia
+13874,2026-02-02,20:04,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Recoger,Transferencia
+11297,2025-11-14,11:26,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Efectivo
+21543,2026-09-06,21:27,Galleta con chispas,Galletas y brownies,3,35.0,105,Instagram,Recoger,Efectivo
+12828,2025-12-28,20:47,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,Instagram,Recoger,Transferencia
+13029,2026-01-03,18:46,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Domicilio,Efectivo
+17983,2026-05-31,22:39,Galleta con chispas,Galletas y brownies,2,35.0,70,Instagram,Domicilio,Transferencia
+10863,2025-10-29,21:21,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+9125,2025-08-28,09:03,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Domicilio,Transferencia
+16726,2026-04-29,21:22,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Efectivo
+16555,2026-04-24,16:35,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,Instagram,Domicilio,Efectivo
+5165,2025-04-08,23:10,Galleta con chispas,Galletas y brownies,7,35.0,245,WhatsApp,Domicilio,Efectivo
+16932,2026-05-05,18:02,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,Instagram,Domicilio,Efectivo
+11501,2025-11-21,20:16,Brownie,Galletas y brownies,3,45.0,135,Instagram,Domicilio,Efectivo
+14552,2026-02-21,20:47,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Efectivo
+18448,2026-06-14,20:36,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Domicilio,Transferencia
+8917,2025-08-19,18:19,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+21962,2026-09-19,12:21,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Transferencia
+6145,2025-05-14,17:34,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+16881,2026-05-03,23:07,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Domicilio,Transferencia
+12230,2025-12-15,14:16,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Transferencia
+10663,2025-10-22,18:23,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Domicilio,Transferencia
+5094,2025-04-05,13:31,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,Instagram,Recoger,Efectivo
+22159,2026-09-25,20:14,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+8108,2025-07-20,14:15,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,Instagram,Domicilio,Efectivo
+12900,2025-12-30,21:54,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Transferencia
+12263,2025-12-16,13:30,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Domicilio,Transferencia
+13690,2026-01-28,20:17,Cheesecake clásico (rebanada),Rebanadas,5,75.0,375,WhatsApp,Domicilio,Transferencia
+18031,2026-06-02,18:46,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Transferencia
+12755,2025-12-27,20:45,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Efectivo
+13375,2026-01-16,17:21,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Transferencia
+22144,2026-09-25,15:09,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,Instagram,Domicilio,Transferencia
+8307,2025-07-27,21:39,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Domicilio,Transferencia
+14171,2026-02-12,23:12,Brownie,Galletas y brownies,4,45.0,180,WhatsApp,Recoger,Efectivo
+6099,2025-05-11,21:32,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Efectivo
+12754,2025-12-27,23:15,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Domicilio,Transferencia
+7200,2025-06-20,10:37,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Recoger,Transferencia
+20625,2026-08-10,20:33,Brownie,Galletas y brownies,2,45.0,90,Instagram,Domicilio,Transferencia
+6465,2025-05-25,13:24,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Efectivo
+21987,2026-09-19,12:29,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Domicilio,Transferencia
+6204,2025-05-16,21:39,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Transferencia
+10001,2025-09-28,18:45,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Efectivo
+9032,2025-08-23,12:24,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Domicilio,Efectivo
+11443,2025-11-19,11:01,Brownie,Galletas y brownies,1,45.0,45,WhatsApp,Domicilio,Transferencia
+11211,2025-11-09,17:35,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+7252,2025-06-21,15:06,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Domicilio,Efectivo
+21357,2026-08-31,21:56,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,Instagram,Domicilio,Efectivo
+12363,2025-12-19,18:10,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Recoger,Transferencia
+7431,2025-06-28,18:58,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Recoger,Efectivo
+7989,2025-07-16,11:55,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Transferencia
+17397,2026-05-13,17:11,Galleta con chispas,Galletas y brownies,6,35.0,210,WhatsApp,Recoger,Transferencia
+9248,2025-08-31,16:54,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Transferencia
+10846,2025-10-29,16:41,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,Instagram,Domicilio,Transferencia
+5156,2025-04-07,20:25,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,Instagram,Domicilio,Efectivo
+14845,2026-03-01,22:36,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Efectivo
+21232,2026-08-28,20:33,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Efectivo
+19659,2026-07-16,13:24,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Recoger,Transferencia
+10886,2025-10-30,21:05,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+8530,2025-08-04,21:23,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Transferencia
+8061,2025-07-18,20:46,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+21655,2026-09-10,14:05,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Efectivo
+6140,2025-05-14,14:13,Cheesecake clásico (rebanada),Rebanadas,,75.0,225,WhatsApp,Recoger,Transferencia
+10903,2025-10-31,20:12,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Efectivo
+10052,2025-09-30,22:13,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Transferencia
+8402,2025-07-31,14:02,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Recoger,Transferencia
+9936,2025-09-25,22:50,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Recoger,Transferencia
+10947,2025-11-01,20:27,Pastel de tres leches (rebanada),Rebanadas,5,65.0,325,WhatsApp,Domicilio,Transferencia
+6689,2025-06-01,20:49,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+8216,2025-07-24,15:51,Galleta con chispas,Galletas y brownies,2,35.0,70,WhatsApp,Recoger,Transferencia
+21005,2026-08-21,15:29,Galleta con chispas,Galletas y brownies,6,35.0,210,Instagram,Domicilio,Transferencia
+12239,2025-12-15,09:24,Galleta con chispas,Galletas y brownies,4,35.0,140,WhatsApp,Recoger,Transferencia
+10453,2025-10-14,12:20,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Domicilio,Transferencia
+7422,2025-06-28,09:11,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Domicilio,Transferencia
+5032,2025-04-02,20:37,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+13067,2026-01-04,16:28,Galleta con chispas,Galletas y brownies,6,35.0,210,WhatsApp,Recoger,Efectivo
+16434,2026-04-19,20:30,Galleta con chispas,Galletas y brownies,1,35.0,35,WhatsApp,Domicilio,Transferencia
+11289,2025-11-13,21:06,Pastel de tres leches (rebanada),Rebanadas,3,65.0,195,WhatsApp,Domicilio,Efectivo
+9070,2025-08-25,16:48,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Domicilio,Transferencia
+21977,2026-09-19,17:32,Galleta con chispas,Galletas y brownies,3,35.0,105,WhatsApp,Domicilio,Transferencia
+20052,2026-07-26,10:11,Brownie,Galletas y brownies,5,45.0,225,WhatsApp,Recoger,Transferencia
+9691,2025-09-15,20:27,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,Instagram,Domicilio,Transferencia
+19563,2026-07-14,16:17,Galleta con chispas,Galletas y brownies,5,35.0,175,WhatsApp,Domicilio,Transferencia
+18261,2026-06-09,09:54,Brownie,Galletas y brownies,1,45.0,45,Instagram,Recoger,Transferencia
+12844,2025-12-29,20:12,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,WhatsApp,Recoger,Efectivo
+20545,2026-08-08,13:57,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Domicilio,Transferencia
+14723,2026-02-26,20:23,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+6128,2025-05-13,23:26,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Efectivo
+6772,2025-06-05,21:25,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Recoger,Transferencia
+10288,2025-10-08,09:49,Brownie,Galletas y brownies,4,45.0,180,Instagram,Recoger,Efectivo
+11096,2025-11-06,21:49,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,Instagram,Recoger,Transferencia
+13516,2026-01-21,16:49,Galleta con chispas,Galletas y brownies,7,35.0,245,Instagram,Domicilio,Efectivo
+12732,2025-12-27,20:22,Galleta con chispas,Galletas y brownies,2,35.0,70,Instagram,Domicilio,Efectivo
+9289,2025-09-01,21:48,Galleta con chispas,Galletas y brownies,3,35.0,105,Instagram,Recoger,Efectivo
+17691,2026-05-22,17:36,Galleta con chispas,Galletas y brownies,5,35.0,175,WhatsApp,Recoger,Efectivo
+18701,2026-06-20,16:08,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Transferencia
+13434,2026-01-17,21:40,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Transferencia
+7529,2025-06-30,22:43,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,WhatsApp,Recoger,Efectivo
+9761,2025-09-18,21:15,Galleta con chispas,Galletas y brownies,2,35.0,70,WhatsApp,Recoger,Transferencia
+9945,2025-09-26,17:55,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
+6354,2025-05-21,16:41,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Transferencia
+14501,2026-02-19,21:53,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Domicilio,Transferencia
+20249,2026-07-31,14:29,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Recoger,Efectivo
+17457,2026-05-15,21:11,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Recoger,Efectivo
+6878,2025-06-08,16:58,Brownie,Galletas y brownies,2,45.0,90,Instagram,Recoger,Efectivo
+7289,2025-06-22,13:09,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+7663,2025-07-05,17:45,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+17330,2026-05-11,11:56,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+22366,2026-09-30,19:58,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,Instagram,Domicilio,Transferencia
+12854,2025-12-29,21:01,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,WhatsApp,Domicilio,Transferencia
+11444,2025-11-19,17:08,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+16164,2026-04-12,21:41,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,WhatsApp,Domicilio,Transferencia
+14880,2026-03-03,23:40,Brownie,Galletas y brownies,2,45.0,90,WhatsApp,Domicilio,Efectivo
+10927,2025-10-31,22:21,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Recoger,Transferencia
+15955,2026-04-05,14:53,Brownie,Galletas y brownies,1,45.0,45,Instagram,Recoger,Efectivo
+12792,2025-12-28,14:36,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+8609,2025-08-08,15:01,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,WhatsApp,Recoger,Transferencia
+13135,2026-01-08,20:14,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Recoger,Transferencia
+8998,2025-08-23,19:14,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Domicilio,Efectivo
+6203,2025-05-16,19:30,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Recoger,Efectivo
+21693,2026-09-11,23:50,Cheesecake clásico (rebanada),Rebanadas,1,75.0,75,Instagram,Domicilio,Transferencia
+6364,2025-05-22,22:30,Galleta con chispas,Galletas y brownies,6,35.0,210,Instagram,Domicilio,Efectivo
+21867,2026-09-16,17:14,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,WhatsApp,Domicilio,Efectivo
+6178,2025-05-15,14:07,Galleta con chispas,Galletas y brownies,5,35.0,175,Instagram,Domicilio,Transferencia
+6948,2025-06-11,21:52,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,WhatsApp,Domicilio,Transferencia
+17405,2026-05-14,20:05,Cheesecake clásico (rebanada),Rebanadas,5,75.0,375,Instagram,Recoger,Transferencia
+13294,2026-01-14,12:05,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+17405,2026-05-14,20:30,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Recoger,Transferencia
+20920,2026-08-19,16:57,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Efectivo
+17324,2026-05-10,21:34,Cheesecake entero,Pasteles enteros,1,520.0,520,WhatsApp,Domicilio,Transferencia
+12132,2025-12-12,20:14,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Transferencia
+15489,2026-03-22,21:17,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+11464,2025-11-19,21:28,Brownie,Galletas y brownies,3,45.0,135,Instagram,Domicilio,Efectivo
+16365,2026-04-17,21:47,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Domicilio,Transferencia
+5500,2025-04-22,20:03,Galleta con chispas,Galletas y brownies,4,35.0,140,WhatsApp,Domicilio,Efectivo
+7939,2025-07-14,16:01,Cheesecake clásico (rebanada),Rebanadas,3,75.0,225,Instagram,Recoger,Transferencia
+21251,2026-08-29,22:29,Galleta con chispas,Galletas y brownies,6,35.0,210,Instagram,Recoger,Transferencia
+15555,2026-03-24,19:49,Galleta con chispas,Galletas y brownies,1,35.0,35,WhatsApp,Domicilio,Transferencia
+13678,2026-01-27,10:52,Brownie,Galletas y brownies,1,45.0,45,WhatsApp,Domicilio,Efectivo
+11077,2025-11-05,19:59,Pastel de tres leches (rebanada),Rebanadas,2,65.0,130,Instagram,Domicilio,Efectivo
+22308,2026-09-29,21:22,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Transferencia
+11002,2025-11-02,20:20,Pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Domicilio,Transferencia
+21254,2026-08-29,22:31,Pastel de tres leches (rebanada),Rebanadas,1,65.0,65,Instagram,Domicilio,Efectivo
+7711,2025-07-06,13:39,Pastel de temporada,Pasteles enteros,1,550.0,550,WhatsApp,Domicilio,Efectivo
+15433,2026-03-21,11:28,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Recoger,Transferencia
+17491,2026-05-16,13:58,Brownie,Galletas y brownies,3,45.0,135,WhatsApp,Domicilio,Transferencia
+7637,2025-07-04,13:51,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,WhatsApp,Recoger,Transferencia
+17115,2026-05-08,20:43,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,WhatsApp,Domicilio,Efectivo
+13105,2026-01-06,15:57,Cheesecake clásico (rebanada),Rebanadas,2,75.0,150,Instagram,Domicilio,Transferencia
+15109,2026-03-11,11:31,Cheesecake clásico (rebanada),Rebanadas,4,75.0,300,Instagram,Domicilio,Efectivo
+5976,2025-05-09,21:20,Galleta con chispas,Galletas y brownies,4,35.0,140,WhatsApp,Domicilio,Transferencia
+9022,2025-08-23,21:09,Galleta con chispas,Galletas y brownies,2,35.0,70,WhatsApp,Domicilio,Transferencia
+6485,2025-05-26,13:24,Pastel de tres leches (rebanada),Rebanadas,4,65.0,260,Instagram,Domicilio,Transferencia
+7041,2025-06-15,10:50,Galleta con chispas,Galletas y brownies,4,35.0,140,WhatsApp,Domicilio,Efectivo
+12358,2025-12-19,21:41,pastel de temporada,Pasteles enteros,1,550.0,550,Instagram,Recoger,Transferencia
+7782,2025-07-10,14:59,Cheesecake entero,Pasteles enteros,1,520.0,520,Instagram,Domicilio,Transferencia
