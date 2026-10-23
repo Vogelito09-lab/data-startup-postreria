@@ -1,8 +1,8 @@
 # E0 · Propuesta — DulceDato Analytics
 
 **Proyecto Integrador DATA STARTUP** · Cómputo en la Nube (IAD-2408) × Analítica de Datos (IAD-2403)
-Integrante(s): Carlos Antonio Vogel Romero · Cloud Lead: ⚠️ · Data Lead: ⚠️
-Proveedor de nube: **AWS** · Cliente: **Salomé** (postrería por pedido)
+Integrantes: Jarom Cortes Perez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead)
+Proveedor de nube: **AWS** (AWS Academy Learner Lab) · Cliente: **Salomé** (postrería por pedido)
 
 ## 1. Resumen
 
@@ -84,9 +84,9 @@ Pregunta secundaria para el clasificador de E3: ¿mañana será un día de deman
 
 | Elemento | Estado |
 |---|---|
-| Cuenta AWS con usuario IAM propio y MFA (sin usar la cuenta raíz) | ⚠️ captura |
-| Alerta de presupuesto en AWS Budgets ($0) | ⚠️ captura |
-| Repositorio `data-startup-postreria` en GitHub con ambos integrantes | ⚠️ enlace |
+| Cuenta de nube | AWS Academy Learner Lab: cuenta administrada por la institución, sin cuenta raíz propia; se opera con credenciales temporales del rol del laboratorio, nunca escritas en el código. ![Learner Lab](img/aws-learner-lab.png) |
+| Control de presupuesto | Crédito fijo del Learner Lab, sin tarjeta: no puede generar cargos. El panel muestra el gasto acumulado. ![Presupuesto](img/aws-presupuesto.png) |
+| Repositorio en GitHub con ambos integrantes | https://github.com/Vogelito09-lab/data-startup-postreria |
 | Estructura inicial del repositorio | ✅ (ver README) |
 
 ## 8. Uso de IA generativa

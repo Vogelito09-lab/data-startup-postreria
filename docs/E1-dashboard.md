@@ -1,7 +1,7 @@
 # E1 · Dashboard empresarial — Salomé
 
 **Proyecto Integrador DATA STARTUP** · Cómputo en la Nube (IAD-2408) × Analítica de Datos (IAD-2403)
-Integrante(s): Carlos Antonio Vogel Romero · Fecha: 23 de octubre de 2026
+Integrantes: Jarom Cortes Perez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead) · Fecha: 23 de octubre de 2026
 
 > Salomé no tiene tienda física: todos sus pedidos llegan por Instagram y WhatsApp. Este tablero
 > convierte ese historial de pedidos en decisiones de producción. Los títulos y las recomendaciones se
@@ -77,12 +77,12 @@ Resultado: **25,044 registros limpios** en `clean/`.
 
 | Requisito | Cómo se cumple | Evidencia |
 |---|---|---|
-| Almacenamiento con dos zonas | Bucket S3 con `raw/` y `clean/` | ⚠️ Captura del bucket |
+| Almacenamiento con dos zonas | Bucket S3 con `raw/` y `clean/`, acceso público bloqueado y cifrado por defecto (SSE-S3) | ![Bucket](img/aws-bucket.png) |
 | Convención de nombres | `raw/pedidos/fecha_carga=AAAA-MM-DD/pedidos_salome.csv` (inmutable) y `clean/pedidos/pedidos_salome_clean.csv` (versión vigente) | Este documento |
-| Tablero lee de `clean/` en la nube | `app.py` usa boto3 y lee `s3://<bucket>/clean/pedidos/…` | ⚠️ Captura del tablero con la fuente S3 en la barra lateral |
-| Credenciales fuera del código | `aws configure` o `.streamlit/secrets.toml` (en `.gitignore`) | `.gitignore`, `secrets.toml.example` |
-| Acceso seguro | Usuario IAM personal con MFA; usuario `tablero-lector` solo con `s3:GetObject` sobre `clean/*` (`infra/iam/`) | ⚠️ Captura de IAM |
-| Alerta de presupuesto | AWS Budgets con alerta en $0 | ⚠️ Captura |
+| Tablero lee de `clean/` en la nube | `app.py` usa boto3 y lee `s3://<bucket>/clean/pedidos/…` | ![Tablero leyendo de S3](img/aws-tablero-s3.png) |
+| Credenciales fuera del código | Credenciales temporales en `~/.aws/credentials` y nombre del bucket en `.streamlit/secrets.toml` (en `.gitignore`) | `.gitignore`, `secrets.toml.example` |
+| Acceso seguro | Cuenta de AWS Academy administrada por la institución: no hay cuenta raíz propia ni se pueden crear usuarios IAM; cada integrante entra con su propio acceso al Learner Lab y credenciales temporales. La política de mínimo privilegio del tablero (solo `s3:GetObject` sobre `clean/*`) está lista en `infra/iam/` para aplicarse en cuanto el proyecto pase a una cuenta propia. | ![Learner Lab](img/aws-learner-lab.png) |
+| Control de presupuesto | Crédito fijo del Learner Lab sin tarjeta; el panel muestra el gasto acumulado | ![Presupuesto](img/aws-presupuesto.png) |
 
 **Por qué almacenamiento de objetos:** los CSV se escriben una vez y se leen muchas; S3 es barato, no
 necesita servidor y es la base natural de un data lake. El almacenamiento en bloques (EBS) solo sirve
