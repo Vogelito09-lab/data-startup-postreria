@@ -22,8 +22,10 @@ import streamlit as st
 import importlib
 
 import analisis as an
+import reporte
 
 an = importlib.reload(an)  # toma siempre la versión más reciente de analisis.py
+reporte = importlib.reload(reporte)
 
 AZUL, NARANJA, GRIS = "#2a78d6", "#eb6834", "#9a9893"
 CATEGORIAS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6"]
@@ -80,8 +82,10 @@ def titulo(texto: str, pregunta: str):
 datos, origen = cargar()
 
 # ---------- Filtros ----------
-st.title("🍰 Salomé · tablero de pedidos")
-st.caption("Pedidos por Instagram y WhatsApp, a domicilio o para recoger")
+encabezado, accion = st.columns([3, 1], vertical_alignment="center")
+with encabezado:
+    st.title("🍰 Salomé · tablero de pedidos")
+    st.caption("Pedidos por Instagram y WhatsApp, a domicilio o para recoger")
 with st.sidebar:
     st.header("Filtros")
     ini, fin = datos["fecha"].min().date(), datos["fecha"].max().date()
@@ -104,6 +108,31 @@ if df.empty:
 
 d = an.diario(df)
 k = an.kpis(df)
+
+periodo_txt = f"{df['fecha'].min():%d/%m/%Y} al {df['fecha'].max():%d/%m/%Y}"
+if len(elegidas) < len(cats):
+    periodo_txt += " · " + ", ".join(elegidas)
+
+
+@st.cache_data(show_spinner="Preparando el reporte gerencial…")
+def pdf_reporte(datos_filtrados: pd.DataFrame, periodo: str, colores: dict) -> bytes:
+    return reporte.generar(an, datos_filtrados, periodo, colores)
+
+
+def boton_reporte(clave: str, texto: str = "📄 Descargar reporte gerencial (PDF)"):
+    st.download_button(texto, help="Reporte gerencial en PDF con indicadores, recomendaciones y gráficas del periodo elegido", data=pdf_reporte(df, periodo_txt, COLOR_CAT),
+                       file_name=f"reporte_gerencial_salome_{df['fecha'].max():%Y-%m-%d}.pdf",
+                       mime="application/pdf", type="primary", width="stretch", key=clave)
+
+
+with accion:
+    boton_reporte("reporte_arriba", "📄 Generar PDF")
+
+with st.sidebar:
+    st.divider()
+    st.subheader("Reporte para la dueña")
+    st.caption("Resumen, indicadores, recomendaciones y gráficas del periodo elegido, listo para imprimir o mandar por WhatsApp.")
+    boton_reporte("reporte_lateral")
 
 # ---------- KPIs ----------
 c1, c2, c3, c4 = st.columns(4)
@@ -213,6 +242,9 @@ st.divider()
 st.subheader("Tres recomendaciones para el negocio")
 for i, r in enumerate(an.recomendaciones(df, d, info, tabla), 1):
     st.markdown(f"{i}. " + r.replace("$", "\\$"))
+
+st.write("")
+boton_reporte("reporte_final")
 
 with st.expander("Ver los datos diarios"):
     st.dataframe(d[["ventas", "tickets", "ticket_prom"]].rename(columns={"tickets": "pedidos"}).round(0), width="stretch")

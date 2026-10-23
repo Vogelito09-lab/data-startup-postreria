@@ -73,6 +73,13 @@ Resultado: **25,044 registros limpios** en `clean/`.
 2. **Aprovecha la quincena.** Esos días se vende 17% más. Ten base lista de cheesecake entero y cheesecake clásico para los días 15-16 y 30-1, y publica ahí tus promociones en Instagram.
 3. **Contesta rápido de noche.** El 53% de las ventas entra por mensajes de las 19 h en adelante y el pico es a las 21 h. Publica historias antes de esa hora y deja respuestas rápidas con menú y precios en WhatsApp: un mensaje que tarda en contestarse es un pedido que se va a otra postrería.
 
+### Reporte gerencial
+
+El tablero genera un **reporte gerencial en PDF** con el botón *Descargar reporte gerencial* (barra lateral y final
+de la página). Incluye los 4 indicadores, un resumen, las 3 recomendaciones y las 6 gráficas con sus hallazgos,
+calculados para el periodo y las categorías elegidos, listo para imprimir o enviar por WhatsApp.
+Código: `services/tablero/reporte.py` · Ejemplo: [`docs/reporte-gerencial-ejemplo.pdf`](reporte-gerencial-ejemplo.pdf).
+
 ## 7. Nube (AWS · tema 2.4)
 
 | Requisito | Cómo se cumple | Evidencia |
