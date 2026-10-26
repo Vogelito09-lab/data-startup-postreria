@@ -20,7 +20,9 @@ data-startup-postreria/
 ├── services/
 │   ├── worker/limpieza.py   # limpieza (en E2 la ejecuta el worker)
 │   └── tablero/             # Streamlit: app.py + analisis.py
-├── infra/iam/               # política de solo lectura del tablero
+├── infra/
+│   ├── iam/                 # políticas de solo lectura del tablero
+│   └── ec2/user-data.sh     # instala y arranca el tablero en EC2
 ├── .streamlit/secrets.toml.example
 └── requirements.txt
 ```
@@ -38,15 +40,15 @@ streamlit run services/tablero/app.py            # lee de S3
 Solo para desarrollar sin internet: `DATA_SOURCE=local streamlit run services/tablero/app.py`
 (en Windows PowerShell: `$env:DATA_SOURCE="local"; streamlit run services/tablero/app.py`).
 
-## Configurar AWS (una sola vez)
+## Despliegue en AWS
 
-1. **Asegura la cuenta raíz.** Inicia sesión como raíz → menú de tu nombre → *Security credentials* → activa **MFA**. Captura.
-2. **Alerta de presupuesto.** *Billing and Cost Management* → *Budgets* → *Create budget* → plantilla **Zero spend budget** → tu correo. Captura.
-3. **Tu usuario IAM.** *IAM* → *Users* → *Create user* (`carlos-admin`) → acceso a la consola → política `AdministratorAccess` → actívale MFA. A partir de aquí **no vuelvas a usar la raíz**. Captura de la lista de usuarios.
-4. **Bucket.** *S3* → *Create bucket* → nombre único, por ejemplo `data-startup-salome-carlos`, región `us-east-1`, *Block all public access* activado y cifrado por defecto (SSE-S3).
-5. **Usuario del tablero (mínimo privilegio).** *IAM* → *Policies* → *Create policy* → pestaña JSON → pega `infra/iam/politica-tablero-solo-lectura.json` con el nombre de tu bucket → nómbrala `TableroSoloLecturaClean`. Luego crea el usuario `tablero-lector` **sin consola**, asígnale solo esa política y crea una *access key* (tipo "Application running outside AWS").
-6. **Credenciales en tu computadora (fuera del código).** Instala la AWS CLI y corre `aws configure` con las llaves de tu usuario `carlos-admin` para subir datos. Para el tablero, copia `.streamlit/secrets.toml.example` como `.streamlit/secrets.toml`, pon el nombre del bucket y, si quieres, las llaves de `tablero-lector`.
-7. **Sube los datos** con `python scripts/subir_s3.py TU-BUCKET` y abre el tablero. En la barra lateral debe decir `Fuente: s3://…`. Captura del bucket (carpetas `raw/` y `clean/`) y del tablero.
+Tablero publicado: http://18.191.145.103:8501
+
+1. Cuenta con el **Plan gratuito**, región `us-east-2` (Ohio), alerta de **gasto cero** en Budgets y un acceso por integrante (Builder ID, página de Equipo).
+2. Bucket S3 `data-startup-salome-25460344` (acceso público bloqueado, SSE-S3) con `raw/pedidos/fecha_carga=AAAA-MM-DD/` y `clean/pedidos/`.
+3. Política `TableroSoloLecturaClean` ([`infra/iam/politica-tablero-ec2.json`](infra/iam/politica-tablero-ec2.json)) y rol `tablero-salome-ec2` (más `AmazonSSMManagedInstanceCore`).
+4. Instancia EC2 `t3.micro` con Amazon Linux 2023, el rol anterior, solo el puerto 8501 abierto y [`infra/ec2/user-data.sh`](infra/ec2/user-data.sh) como datos de usuario.
+5. Abrir `http://IP-PUBLICA:8501`. Detener la instancia cuando no se use.
 
 ## Subir a GitHub
 

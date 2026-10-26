@@ -2,7 +2,7 @@
 
 **Proyecto Integrador DATA STARTUP** · Cómputo en la Nube (IAD-2408) × Analítica de Datos (IAD-2403)
 Integrantes: Jarom Cortes Perez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead)
-Proveedor de nube: **AWS** (AWS Academy Learner Lab) · Cliente: **Salomé** (postrería por pedido)
+Proveedor de nube: **AWS** (cuenta propia con el Plan gratuito) · Cliente: **Salomé** (postrería por pedido)
 
 ## 1. Resumen
 
@@ -78,16 +78,38 @@ Pregunta secundaria para el clasificador de E3: ¿mañana será un día de deman
 | Columnas | `pedido_id`, `fecha`, `hora`, `producto`, `categoria`, `unidades`, `precio_unitario`, `total`, `canal` (Instagram/WhatsApp), `entrega` (domicilio/recoger), `metodo_pago` |
 | Periodo | 1-abr-2025 a 30-sep-2026 (18 meses de datos diarios) |
 | Volumen | 25,074 registros · 17,366 pedidos (supera el mínimo de 12 meses y 5,000 registros) |
+| Granularidad | Un renglón por producto dentro de cada pedido (un pedido con 2 productos ocupa 2 renglones) |
 | Privacidad | Sin nombres, teléfonos, usuarios de Instagram ni direcciones de clientes; si vienen en los datos reales se eliminan antes de subirlos (LFPDPPP). |
+
+**Diccionario de datos**
+
+| Columna | Tipo | Significado | Ejemplo |
+|---|---|---|---|
+| `pedido_id` | entero | Número de pedido; se repite si el pedido trae varios productos | 5021 |
+| `fecha` | fecha | Día en que se hizo el pedido | 2026-05-09 |
+| `hora` | hora | Hora en que llegó el mensaje del pedido | 21:14 |
+| `producto` | texto | Postre pedido | Cheesecake clásico (rebanada) |
+| `categoria` | texto | Grupo del producto: Rebanadas, Galletas y brownies, Pasteles enteros | Rebanadas |
+| `unidades` | entero | Piezas de ese producto en el pedido | 2 |
+| `precio_unitario` | decimal (MXN) | Precio de una pieza | 75.00 |
+| `total` | decimal (MXN) | `unidades × precio_unitario` | 150.00 |
+| `canal` | texto | Por dónde llegó el pedido: Instagram o WhatsApp | WhatsApp |
+| `entrega` | texto | Domicilio o Recoger | Domicilio |
+| `metodo_pago` | texto | Transferencia o Efectivo | Transferencia |
 
 ## 7. Arranque técnico
 
-| Elemento | Estado |
-|---|---|
-| Cuenta de nube | AWS Academy Learner Lab: cuenta administrada por la institución, sin cuenta raíz propia; se opera con credenciales temporales del rol del laboratorio, nunca escritas en el código. ![Learner Lab](img/aws-learner-lab.png) |
-| Control de presupuesto | Crédito fijo del Learner Lab, sin tarjeta: no puede generar cargos. El panel muestra el gasto acumulado. ![Presupuesto](img/aws-presupuesto.png) |
-| Repositorio en GitHub con ambos integrantes | https://github.com/Vogelito09-lab/data-startup-postreria |
-| Estructura inicial del repositorio | ✅ (ver README) |
+**Proveedor elegido: AWS.** Se revisó su capa gratuita: las cuentas nuevas con el **Plan gratuito** reciben créditos y
+no generan cargos mientras no se cambie a un plan de pago; el plan dura 6 meses o hasta agotar los créditos. Cubre lo que
+usa el proyecto: S3 para el data lake y una instancia EC2 `t3.micro` para el tablero.
+
+| Elemento | Estado | Evidencia |
+|---|---|---|
+| Cuenta de AWS con el Plan gratuito (sin cargos mientras no se cambie de plan), región `us-east-2` (Ohio) | ✅ | ![Plan gratuito](img/aws-plan-gratuito.png) |
+| Alerta de presupuesto de gasto cero en AWS Budgets (avisa por correo desde el primer dólar) | ✅ | ![Presupuesto](img/aws-presupuesto.png) |
+| Un acceso por integrante: cada uno entra con su propio AWS Builder ID; Jarom fue invitado como miembro del equipo. No se usa una cuenta raíz con contraseña compartida | ✅ | ![Equipo](img/aws-equipo.png) |
+| Repositorio en GitHub con ambos integrantes | ✅ | https://github.com/Vogelito09-lab/data-startup-postreria |
+| Estructura inicial del repositorio | ✅ | Ver README |
 
 ## 8. Uso de IA generativa
 

@@ -82,14 +82,30 @@ Código: `services/tablero/reporte.py` · Ejemplo: [`docs/reporte-gerencial-ejem
 
 ## 7. Nube (AWS · tema 2.4)
 
+**Tablero publicado:** http://18.191.145.103:8501 (instancia EC2 `tablero-salome`, región `us-east-2`; la IP cambia si la instancia se detiene y se vuelve a encender)
+
+**Arquitectura:** los pedidos viven en un bucket S3 con dos zonas; una instancia EC2 `t3.micro` (Amazon Linux 2023)
+corre el tablero de Streamlit como servicio y lee `clean/` con un rol de IAM, sin llaves en el código ni en el servidor.
+
+```
+Pedidos (CSV) ──► S3  data-startup-salome-25460344
+                   ├── raw/pedidos/fecha_carga=2026-10-23/pedidos_salome.csv   (tal como llegaron, no se modifican)
+                   └── clean/pedidos/pedidos_salome_clean.csv                  (limpios, los lee el tablero)
+                                    │  s3:GetObject (rol tablero-salome-ec2)
+                                    ▼
+                  EC2 t3.micro ── Streamlit :8501 ──► navegador de la dueña
+```
+
 | Requisito | Cómo se cumple | Evidencia |
 |---|---|---|
-| Almacenamiento con dos zonas | Bucket S3 con `raw/` y `clean/`, acceso público bloqueado y cifrado por defecto (SSE-S3) | ![Bucket](img/aws-bucket.png) |
-| Convención de nombres | `raw/pedidos/fecha_carga=AAAA-MM-DD/pedidos_salome.csv` (inmutable) y `clean/pedidos/pedidos_salome_clean.csv` (versión vigente) | Este documento |
-| Tablero lee de `clean/` en la nube | `app.py` usa boto3 y lee `s3://<bucket>/clean/pedidos/…` | ![Tablero leyendo de S3](img/aws-tablero-s3.png) |
-| Credenciales fuera del código | Credenciales temporales en `~/.aws/credentials` y nombre del bucket en `.streamlit/secrets.toml` (en `.gitignore`) | `.gitignore`, `secrets.toml.example` |
-| Acceso seguro | Cuenta de AWS Academy administrada por la institución: no hay cuenta raíz propia ni se pueden crear usuarios IAM; cada integrante entra con su propio acceso al Learner Lab y credenciales temporales. La política de mínimo privilegio del tablero (solo `s3:GetObject` sobre `clean/*`) está lista en `infra/iam/` para aplicarse en cuanto el proyecto pase a una cuenta propia. | ![Learner Lab](img/aws-learner-lab.png) |
-| Control de presupuesto | Crédito fijo del Learner Lab sin tarjeta; el panel muestra el gasto acumulado | ![Presupuesto](img/aws-presupuesto.png) |
+| Almacenamiento con dos zonas | Bucket S3 `data-startup-salome-25460344` con `raw/` y `clean/`, acceso público bloqueado y cifrado por defecto (SSE-S3) | ![Bucket](img/aws-bucket.png) |
+| Convención de nombres | `raw/pedidos/fecha_carga=AAAA-MM-DD/archivo.csv` (inmutable, la fecha indica la carga) y `clean/pedidos/pedidos_salome_clean.csv` (versión vigente) | Este documento |
+| Tablero lee de `clean/` en la nube | `app.py` usa boto3 y lee `s3://data-startup-salome-25460344/clean/pedidos/…`; la barra lateral muestra la fuente | ![Tablero leyendo de S3](img/aws-tablero-s3.png) |
+| Tablero desplegado | Instancia EC2 `tablero-salome` con el script `infra/ec2/user-data.sh`: instala Python 3.11, clona el repositorio y deja Streamlit como servicio de systemd | ![EC2](img/aws-ec2.png) |
+| Credenciales fuera del código | El servidor usa un **rol de IAM** (perfil de instancia); no hay llaves en el código, en el repositorio ni en el servidor. `.gitignore` excluye `secrets.toml` | `infra/ec2/user-data.sh`, `.gitignore` |
+| Mínimo privilegio | Política `TableroSoloLecturaClean`: solo `s3:GetObject` sobre `clean/*` (`infra/iam/politica-tablero-ec2.json`); el tablero no puede borrar ni escribir | `infra/iam/` |
+| Acceso seguro a la cuenta | Un acceso por integrante con su propio AWS Builder ID (Jarom invitado al equipo); no se opera con una cuenta raíz compartida. El grupo de seguridad solo abre el puerto 8501 (sin SSH; administración por Session Manager) | ![Equipo](img/aws-equipo.png) |
+| Control de presupuesto | Plan gratuito (sin cargos) + alerta de gasto cero en AWS Budgets; la instancia se detiene cuando no se usa | ![Presupuesto](img/aws-presupuesto.png) ![Plan gratuito](img/aws-plan-gratuito.png) |
 
 **Por qué almacenamiento de objetos:** los CSV se escriben una vez y se leen muchas; S3 es barato, no
 necesita servidor y es la base natural de un data lake. El almacenamiento en bloques (EBS) solo sirve
