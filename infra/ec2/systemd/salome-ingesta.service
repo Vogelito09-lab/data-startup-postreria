@@ -8,6 +8,7 @@ User=salome
 Group=salome
 WorkingDirectory=/opt/salome/services/ingesta
 EnvironmentFile=/etc/salome/ingesta.env
+Environment=HOME=/tmp
 ExecStart=/opt/salome/.venv/bin/uvicorn app:app --host 0.0.0.0 --port 8000 --workers 2
 Restart=always
 RestartSec=5

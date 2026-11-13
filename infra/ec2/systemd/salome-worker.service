@@ -8,6 +8,7 @@ User=salome
 Group=salome
 WorkingDirectory=/opt/salome/services/worker
 EnvironmentFile=/etc/salome/worker.env
+Environment=HOME=/tmp
 ExecStart=/opt/salome/.venv/bin/python worker.py
 Restart=always
 RestartSec=5

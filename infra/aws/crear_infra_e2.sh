@@ -21,7 +21,8 @@ echo "== 1. Colas SQS: principal + cola de mensajes fallidos (DLQ)"
 DLQ_URL=$(aws sqs create-queue --queue-name salome-pedidos-dlq \
   --attributes MessageRetentionPeriod=1209600 --query QueueUrl --output text)
 DLQ_ARN=$(aws sqs get-queue-attributes --queue-url "$DLQ_URL" --attribute-names QueueArn --query Attributes.QueueArn --output text)
-cat > /tmp/atributos-cola.json <<EOF
+# Los JSON van en línea y no en archivos de /tmp: así el script también corre en Git Bash de Windows.
+ATRIBUTOS=$(cat <<EOF
 {
   "VisibilityTimeout": "120",
   "ReceiveMessageWaitTimeSeconds": "20",
@@ -30,12 +31,13 @@ cat > /tmp/atributos-cola.json <<EOF
   "RedrivePolicy": "{\"deadLetterTargetArn\":\"$DLQ_ARN\",\"maxReceiveCount\":\"3\"}"
 }
 EOF
-QUEUE_URL=$(aws sqs create-queue --queue-name salome-pedidos --attributes file:///tmp/atributos-cola.json --query QueueUrl --output text)
+)
+QUEUE_URL=$(aws sqs create-queue --queue-name salome-pedidos --attributes "$ATRIBUTOS" --query QueueUrl --output text)
 echo "   QUEUE_URL=$QUEUE_URL"
 
 echo "== 2. Roles de IAM: uno base para el servidor y uno por servicio"
 sub() { sed "s/CUENTA/$CUENTA/g" "$AQUI/iam/$1"; }
-aws iam create-role --role-name salome-ec2-base --assume-role-policy-document file://"$AQUI/iam/confianza-ec2.json" >/dev/null
+aws iam create-role --role-name salome-ec2-base --assume-role-policy-document "$(cat "$AQUI/iam/confianza-ec2.json")" >/dev/null
 aws iam put-role-policy --role-name salome-ec2-base --policy-name AsumirRolesDeServicio --policy-document "$(sub politica-ec2-base.json)"
 aws iam attach-role-policy --role-name salome-ec2-base --policy-arn arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
 aws iam create-instance-profile --instance-profile-name salome-ec2-base >/dev/null
