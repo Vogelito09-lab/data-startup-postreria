@@ -1,0 +1,201 @@
+pedido_id,cliente_id,fecha_pedido,hora_pedido,fecha_entrega,producto,categoria,unidades,precio_unitario,total,canal,entrega,metodo_pago
+1001,C0001,2020-02-05,12:05,2020-02-06,Caja de brownies (6 pz),Galletas y brownies,1,120,120,Instagram,Domicilio,Efectivo
+1002,C0002,2020-02-08,14:50,2020-02-14,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Efectivo
+1003,C0003,2020-02-16,07:14,2020-02-16,Pay de limón entero,Pasteles enteros,1,260,260,Instagram,Recoge,Efectivo
+1004,C0001,2020-02-17,18:22,2020-02-19,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Recoge,Transferencia
+1004,C0001,2020-02-17,18:22,2020-02-19,Pay de limón entero,Pasteles enteros,1,260,260,WhatsApp,Recoge,Transferencia
+1004,C0001,2020-02-17,18:22,2020-02-19,Rebanada pay de limón,Rebanadas,1,35,35,WhatsApp,Recoge,Transferencia
+1005,C0004,2020-02-25,21:09,2020-02-28,Caja de brownies (6 pz),Galletas y brownies,1,120,120,Instagram,Domicilio,Efectivo
+1005,C0004,2020-02-25,21:09,2020-02-28,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Instagram,Domicilio,Efectivo
+1006,C0005,2020-02-26,13:33,2020-02-27,Rebanada cheesecake frutos rojos,Rebanadas,1,45,45,Instagram,Domicilio,Transferencia
+1007,C0006,2020-03-01,14:34,2020-03-01,Rebanada cheesecake frutos rojos,Rebanadas,1,45,45,WhatsApp,Recoge,Efectivo
+1008,C0003,2020-03-09,15:42,2020-03-11,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Instagram,Domicilio,Efectivo
+1008,C0003,2020-03-09,15:42,2020-03-11,Caja de brownies (6 pz),Galletas y brownies,1,120,120,Instagram,Domicilio,Efectivo
+1009,C0007,2020-03-11,13:33,2020-03-13,Pay de limón entero,Pasteles enteros,1,260,620,Instagram,Domicilio,Efectivo
+1010,C0008,2020-03-12,21:29,2020-03-14,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Facebook,Domicilio,Efectivo
+1010,C0008,2020-03-12,21:29,2020-03-14,Galletas con chispas (docena),Galletas y brownies,1,110,110,Facebook,Domicilio,Efectivo
+1011,C0009,2020-03-19,20:48,2020-03-20,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Efectivo
+1011,C0009,2020-03-19,20:48,2020-03-20,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Domicilio,Efectivo
+1012,C0010,2020-03-22,14:19,2020-03-22,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Efectivo
+1013,C0011,2020-03-23,14:29,2020-03-24,Rebanada cheesecake frutos rojos,Rebanadas,6,45,270,Facebook,Domicilio,Efectivo
+1013,C0011,2020-03-23,14:29,2020-03-24,Galletas con chispas (docena),Galletas y brownies,1,110,110,Facebook,Domicilio,Efectivo
+1014,C0007,2020-03-27,10:10,2020-03-28,cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Instagram,Domicilio,Efectivo
+1015,C0012,2020-04-02,21:24,2020-04-04,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1016,C0013,2020-04-11,12:05,2020-04-12,Pay de limón entero,Pasteles enteros,1,260,260,WhatsApp,Domicilio,Transferencia
+1017,C0014,2020-04-16,16:26,2020-04-17,Brownies 6pz,Galletas y brownies,1,120,120,WhatsApp,Recoge,Transferencia
+1018,C0015,2020-04-16,13:05,2020-04-17,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Efectivo
+1019,C0010,2020-04-17,11:14,2020-04-17,Rebanada pay de limón,Rebanadas,2,35,70,WhatsApp,Domicilio,Transferencia
+1020,C0016,2020-04-18,18:15,2020-04-19,Galletas con chispas (docena),Galletas y brownies,1,110,110,WhatsApp,Domicilio,Efectivo
+1021,C0017,2020-04-19,17:01,2020-04-19,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1021,C0017,2020-04-19,17:01,2020-04-19,Galletas con chispas (docena),Galletas y brownies,1,110,110,WhatsApp,Recoge,Efectivo
+1022,C0018,2020-04-29,14:13,2020-05-09,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Instagram,Domicilio,Efectivo
+1023,C0019,2020-04-30,22:23,2020-05-01,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Transferencia
+1023,C0019,2020-04-30,22:23,2020-05-01,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Recoge,Transferencia
+1024,C0013,2020-05-03,20:06,2020-05-10,Pay de limón entero,Pasteles enteros,1,260,260,WhatsApp,Domicilio,Transferencia
+1024,C0013,2020-05-03,20:06,2020-05-10,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Domicilio,Transferencia
+1025,C0020,2020-05-08,15:01,2020-05-08,Rebanada pay de limón,Rebanadas,1,35,35,WhatsApp,Domicilio,Transferencia
+1026,C0021,2020-05-10,08:54,2020-05-10,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Recoge,Efectivo
+1027,C0003,2020-05-14,21:44,2020-05-14,Rebanada cheesecake frutos rojos,Rebanadas,1,45,45,Instagram,Domicilio,Efectivo
+1027,C0003,2020-05-14,21:44,2020-05-14,Caja de brownies (6 pz),Galletas y brownies,1,120,120,Instagram,Domicilio,Efectivo
+1028,C0022,2020-05-16,13:06,2020-05-17,Rebanada pay de limón,Rebanadas,2,35,70,Instagram,Domicilio,Efectivo
+1028,C0022,2020-05-16,13:06,2020-05-17,Pay de limón entero,Pasteles enteros,1,260,260,Instagram,Domicilio,Efectivo
+1029,C0020,2020-05-21,15:24,2020-05-21,Galletas con chispas (docena),Galletas y brownies,1,110,110,WhatsApp,Domicilio,Efectivo
+1030,C0023,2020-05-22,18:01,2020-05-26,Pay de limón entero,Pasteles enteros,1,260,260,WhatsApp,Recoge,Efectivo
+1030,C0023,2020-05-22,18:01,2020-05-26,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1031,C0024,2020-05-22,10:54,2020-05-23,Caja de brownies (6 pz),Galletas y brownies,3 pz,120,360,WhatsApp,Recoge,Transferencia
+1031,C0024,2020-05-22,10:54,2020-05-23,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Transferencia
+1032,C0025,2020-05-23,20:24,2020-05-24,Rebanada cheesecake frutos rojos,Rebanadas,2,45,90,WhatsApp,Domicilio,Efectivo
+1033,C0026,2020-05-23,19:19,2020-05-23,Rebanada pay de limón,Rebanadas,2,35,70,WhatsApp,Domicilio,Efectivo
+1034,C0020,2020-05-28,18:29,2020-05-28,Rebanada pay de limón,Rebanadas,2,35,70,WhatsApp,Domicilio,Transferencia
+1034,C0020,2020-05-28,18:29,2020-05-28,Galletas con chispas (docena),Galletas y brownies,1,110,110,WhatsApp,Domicilio,Transferencia
+1035,C0027,2020-06-02,20:54,2020-06-03,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1036,C0007,2020-06-05,13:12,2020-06-05,Rebanada cheesecake frutos rojos,Rebanadas,2,45,90,WhatsApp,Domicilio,Efectivo
+1036,C0007,2020-06-05,13:12,2020-06-05,Pay de limón entero,Pasteles enteros,1,260,260,WhatsApp,Domicilio,Efectivo
+1037,C0017,2020-06-10,19:05,2020-06-10,Rebanada pay de limón,Rebanadas,6,35,210,WhatsApp,Recoge,Transferencia
+1038,C0020,2020-06-11,18:14,2020-06-13,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1038,C0020,2020-06-11,18:14,2020-06-13,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Recoge,Efectivo
+1039,C0028,2020-06-12,21:54,2020-06-13,Caja de brownies (6 pz),Galletas y brownies,2,120,240,WhatsApp,Domicilio,Transferencia
+1040,C0029,2020-06-12,09:30,2020-06-12,Rebanada cheesecake frutos rojos,Rebanadas,4,45,180,WhatsApp,Domicilio,Efectivo
+1041,C0030,2020-06-17,11:33,2020-06-17,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Domicilio,Efectivo
+1041,C0030,2020-06-17,11:33,2020-06-17,Pay de limón entero,Pasteles enteros,1,260,260,WhatsApp,Domicilio,Efectivo
+1041,C0030,2020-06-17,11:33,2020-06-17,Rebanada cheesecake frutos rojos,Rebanadas,2,45,90,WhatsApp,Domicilio,Efectivo
+1042,C0031,2020-06-18,20:12,2020-06-19,Rebanada pay de limón,Rebanadas,4,35,140,Facebook,Domicilio,Efectivo
+1043,C0032,2020-06-18,08:31,2020-06-18,Caja de brownies (6 pz),Galletas y brownies,2,120,240,WhatsApp,Recoge,Efectivo
+1044,C0033,2020-06-24,14:57,2020-06-27,Pay de limón entero,Pasteles enteros,2,260,520,Facebook,Domicilio,Efectivo
+1044,C0033,2020-06-24,14:57,2020-06-27,Galletas con chispas (docena),Galletas y brownies,1,110,110,Facebook,Domicilio,Efectivo
+1045,C0034,2020-07-02,13:09,2020-07-02,Rebanada cheesecake frutos rojos,Rebanadas,1,45,45,WhatsApp,Domicilio,Transferencia
+1045,C0034,2020-07-02,13:09,2020-07-02,Rebanada pay de limón,Rebanadas,2,35,70,WhatsApp,Domicilio,Transferencia
+1046,C0035,2020-07-03,12:25,2020-07-03,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Domicilio,Efectivo
+1047,C0019,2020-07-04,17:51,2020-07-04,Galletas con chispas (docena),Galletas y brownies,1,110,110,WhatsApp,Domicilio,Efectivo
+1047,C0019,2020-07-04,17:51,2020-07-04,Rebanada cheesecake frutos rojos,Rebanadas,6,45,270,WhatsApp,Domicilio,Efectivo
+1048,C0036,2020-07-08,10:21,2020-07-10,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Facebook,Recoge,Efectivo
+1049,C0004,2020-07-09,19:38,2020-07-12,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Instagram,Domicilio,Efectivo
+1050,C0018,2020-07-09,18:13,2020-07-10,Caja de brownies (6 pz),Galletas y brownies,2,120,240,Instagram,Domicilio,Efectivo
+1051,C0021,2020-07-13,23:06,2020-07-17,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1051,C0021,2020-07-13,23:06,2020-07-17,Pay de limón entero,Pasteles enteros,,260,260,WhatsApp,Recoge,Efectivo
+1052,C0037,2020-08-06,19:07,2020-08-07,Rebanada cheesecake frutos rojos,Rebanadas,2,45,90,WhatsApp,Domicilio,Efectivo
+1053,C0038,2020-08-08,22:53,2020-08-09,reb pay de limón,Rebanadas,2,35,70,Instagram,Recoge,Efectivo
+1054,C0031,2020-08-09,13:01,2020-08-09,Cheesecake frutos rojos entero,Pasteles enteros,2,380,760,WhatsApp,Domicilio,Efectivo
+1055,C0039,2020-08-19,20:12,2020-08-19,Rebanada cheesecake frutos rojos,Rebanadas,3,45,135,WhatsApp,Recoge,Transferencia
+1056,C0040,2020-08-20,21:00,2020-08-22,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Instagram,Domicilio,Efectivo
+1057,C0003,2020-08-23,09:56,2020-08-23,Rebanada pay de limón,Rebanadas,2,,70,Instagram,Domicilio,Efectivo
+1058,C0021,2020-09-01,19:44,2020-09-02,Galletas con chispas (docena),Galletas y brownies,1,110,110,WhatsApp,Recoge,Efectivo
+1059,C0041,2020-09-02,19:19,2020-09-02,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Domicilio,Efectivo
+1060,C0037,2020-09-10,14:20,2020-09-13,Rebanada pay de limón,Rebanadas,1,35,35,WhatsApp,Domicilio,Efectivo
+1060,C0037,2020-09-10,14:20,2020-09-13,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Efectivo
+1060,C0037,10/09/2020,14:20,2020-09-13,Pay de limón entero,Pasteles enteros,1,260,260,WhatsApp,Domicilio,Efectivo
+1061,C0042,2020-09-24,21:19,2020-09-26,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Transferencia
+1062,C0021,2020-09-25,11:27,2020-09-27,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Efectivo
+1063,C0043,2020-09-25,11:10,2020-09-26,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Instagram,Recoge,Efectivo
+1063,C0043,2020-09-25,11:10,2020-09-26,Caja de brownies (6 pz),Galletas y brownies,1,120,120,Instagram,Recoge,Efectivo
+1064,C0037,2020-09-25,17:31,2020-09-25,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Recoge,Transferencia
+1065,C0044,2020-09-25,20:00,2020-09-25,Rebanada pay de limón,Rebanadas,1,35,35,WhatsApp,Domicilio,Efectivo
+1066,C0044,2020-10-01,22:29,2020-10-02,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Domicilio,Efectivo
+1067,C0045,2020-10-04,18:14,2020-10-04,Rebanada pay de limón,Rebanadas,2,35,70,WhatsApp,Recoge,Efectivo
+1068,C0031,2020-10-04,16:45,2020-10-04,Rebanada pay de limón,Rebanadas,2,35,70,Facebook,Recoge,Transferencia
+1069,C0046,2020-10-06,18:02,2020-10-08,Galletas con chispas (docena),Galletas y brownies,1,110,110,WhatsApp,Domicilio,Efectivo
+1069,C0046,2020-10-06,18:02,2020-10-08,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Efectivo
+1070,C0047,2020-10-08,18:54,2020-10-09,Rebanada pay de limón,Rebanadas,2,35,70,WhatsApp,Domicilio,Efectivo
+1070,C0047,2020-10-08,18:54,2020-10-09,Rebanada cheesecake frutos rojos,Rebanadas,1,45,45,WhatsApp,Domicilio,Efectivo
+1071,C0048,2020-10-10,19:30,2020-10-13,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1071,C0048,2020-10-10,19:30,2020-10-13,Pay de limón entero,Pasteles enteros,1,260,260,WhatsApp,Recoge,Efectivo
+1072,C0049,2020-10-10,11:50,2020-10-10,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Facebook,Domicilio,Efectivo
+1073,C0034,2020-10-13,15:17,2020-10-14,Rebanada cheesecake frutos rojos,Rebanadas,1,45,45,WhatsApp,Domicilio,Efectivo
+1074,C0050,2020-10-16,10:28,2020-10-16,Rebanada cheesecake frutos rojos,Rebanadas,3,45,135,WhatsApp,Domicilio,Efectivo
+1075,C0051,2020-10-25,23:30,2020-10-25,Caja de brownies (6 pz),Galletas y brownies,1,120,120,Instagram,Domicilio,Transferencia
+1076,C0052,29/10/2020,20:43,2020-10-30,Caja de brownies (6 pz),Galletas y brownies,1,120,120,Instagram,Recoge,Efectivo
+1076,C0052,2020-10-29,20:43,2020-10-30,Rebanada cheesecake frutos rojos,Rebanadas,2,45,90,Instagram,Recoge,Efectivo
+1077,C0053,2020-10-29,10:43,2020-10-29,Rebanada cheesecake frutos rojos,Rebanadas,1,45,45,Instagram,Recoge,Efectivo
+1078,C0002,2020-11-05,14:27,2020-11-06,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Efectivo
+1079,C0017,2020-11-08,13:01,2020-11-08,Rebanada cheesecake frutos rojos,Rebanadas,2,45,90,WhatsApp,Domicilio,Efectivo
+1079,C0017,2020-11-08,13:01,2020-11-08,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Domicilio,Efectivo
+1080,C0054,2020-11-13,21:03,2020-11-14,Pay de limón entero,Pasteles enteros,10,260,260,WhatsApp,Domicilio,Efectivo
+1081,C0009,2020-11-13,16:36,2020-11-13,Caja de brownies (6 pz),Galletas y brownies,3,120,360,WhatsApp,Domicilio,Efectivo
+1081,C0009,2020-11-13,16:36,2020-11-13,Rebanada pay de limón,Rebanadas,2,,70,WhatsApp,Domicilio,Efectivo
+1082,C0044,2020-11-18,18:32,2020-11-20,Pay de limón entero,Pasteles enteros,1,260,260,WhatsApp,Domicilio,Transferencia
+1083,C0050,2020-11-21,21:46,2020-11-22,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Efectivo
+1084,C0039,2020-11-24,13:15,2020-11-26,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Transferencia
+1085,C0055,2020-11-25,16:25,2020-11-27,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Domicilio,Transferencia
+1085,C0055,2020-11-25,16:25,2020-11-27,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Transferencia
+1085,C0055,2020-11-25,16:25,2020-11-27,Pay de limón entero,Pasteles enteros,1,260,260,WhatsApp,Domicilio,Transferencia
+1086,C0012,2020-11-27,19:50,2020-11-28,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Domicilio,Efectivo
+1087,C0056,2020-11-28,17:15,2020-11-28,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1088,C0038,2020-11-30,21:10,2020-12-01,Rebanada pay de limón,Rebanadas,2,35,70,Instagram,Domicilio,Transferencia
+1088,C0038,2020-11-30,21:10,2020-12-01,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Instagram,Domicilio,Transferencia
+1089,C0053,2020-12-05,14:35,2020-12-06,Galletas con chispas (docena),Galletas y brownies,1,110,110,WhatsApp,Domicilio,Transferencia
+1090,C0024,2020-12-06,19:18,2020-12-08,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1091,C0057,2020-12-09,14:42,2020-12-10,Galletas con chispas (docena),Galletas y brownies,1,110,110,Instagram,Recoge,Efectivo
+1092,C0058,2020-12-10,22:05,2020-12-12,Rebanada cheesecake frutos rojos,Rebanadas,2,45,90,Instagram,Recoge,Transferencia
+1092,C0058,2020-12-10,22:05,2020-12-12,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Instagram,Recoge,Transferencia
+1093,C0059,2020-12-16,17:52,2020-12-20,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Facebook,Domicilio,Efectivo
+1093,C0059,2020-12-16,17:52,2020-12-20,Pay de limón entero,Pasteles enteros,1,260,260,Facebook,Domicilio,Efectivo
+1094,C0060,2020-12-17,21:55,2020-12-18,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1095,C0053,2020-12-19,19:23,2020-12-19,Rebanada cheesecake frutos rojos,Rebanadas,4,45,180,WhatsApp,Domicilio,Transferencia
+1095,C0053,2020-12-19,19:23,2020-12-19,Caja de brownies (6 pz),Galletas y brownies,1,120,120,WhatsApp,Domicilio,Transferencia
+1096,C0061,2020-12-19,13:35,2020-12-19,Rebanada cheesecake frutos rojos,Rebanadas,3,45,135,WhatsApp,Recoge,Efectivo
+1097,C0062,2020-12-24,13:18,2020-12-26,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Transferencia
+1097,C0062,2020-12-24,13:18,2020-12-26,Rebanada cheesecake frutos rojos,Rebanadas,1,45,45,WhatsApp,Domicilio,Transferencia
+1098,C0063,2020-12-26,13:53,2020-12-26,Caja de brownies (6 pz),Galletas y brownies,2,120,240,WhatsApp,Domicilio,Transferencia
+1099,C0064,2020-12-29,17:06,2020-12-30,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,Facebook,Domicilio,Transferencia
+1100,C0053,2021-01-02,18:49,2021-01-02,Rebanada cheesecake frutos rojos,Rebanadas,2,45,90,Instagram,Domicilio,Transferencia
+1101,C0065,2021-01-05,19:34,2021-01-09,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Domicilio,Efectivo
+1101,C0065,2021-01-05,19:34,2021-01-09,Rebanada pay de limón,Rebanadas,1,35,35,WhatsApp,Domicilio,Efectivo
+1101,C0065,2021-01-05,19:34,2021-01-09,Rebanada cheesecake frutos rojos,Rebanadas,3,45,135,WhatsApp,Domicilio,Efectivo
+1102,C0066,2021-01-05,13:23,2021-01-08,Rebanada cheesecake frutos rojos,Rebanadas,2,45,90,Instagram,Domicilio,Efectivo
+1102,C0066,2021-01-05,13:23,2021-01-08,Rosca de Reyes,Temporada,1,320,320,Instagram,Domicilio,Efectivo
+1103,C0051,2021-01-09,13:13,2021-01-09,Cheesecake frutos rojos entero,Pasteles enteros,1,380,380,WhatsApp,Recoge,Efectivo
+1103,C0051,2021-01-09,13:13,2021-01-09,Rebanada cheesecake frutos rojos,Rebanadas,3,45,135,WhatsApp,Recoge,Efectivo
+1104,C0018,2021-01-16,10:33,2021-01-23,Cheesecake frutos rojos entero,Pasteles enteros,1,400,400,Instagram,Domicilio,Efectivo
+1105,C0067,2021-01-23,19:09,2021-01-23,Galletas con chispas (docena),Galletas y brownies,1,120,120,Instagram,Domicilio,Transferencia
+1106,C0068,2021-01-29,19:38,2021-01-30,Cheesecake frutos rojos entero,Pasteles enteros,2,400,800,Instagram,Recoge,Transferencia
+1106,C0068,2021-01-29,19:38,2021-01-30,Galletas con chispas (docena),Galletas y brownies,1,120,120,Instagram,Recoge,Transferencia
+1106,C0068,2021-01-29,19:38,2021-01-30,Rebanada pay de limón,Rebanadas,1,38,38,Instagram,Recoge,Transferencia
+1107,C0018,2021-02-04,21:46,2021-02-14,Rebanada cheesecake frutos rojos,Rebanadas,2,48,96,WhatsApp,Domicilio,Efectivo
+1107,C0018,2021-02-04,21:46,2021-02-14,Cheesecake frutos rojos entero,Pasteles enteros,1,400,400,WhatsApp,Domicilio,Efectivo
+1108,C0066,2021-02-04,08:19,2021-02-05,Rebanada cheesecake frutos rojos,Rebanadas,1,48,48,Instagram,Domicilio,Efectivo
+1108,C0066,2021-02-04,08:19,2021-02-05,Rebanada pay de limón,Rebanadas,1,38,38,Instagram,Domicilio,Efectivo
+1109,C0002,2021-02-05,17:44,2021-02-14,Rebanada cheesecake frutos rojos,Rebanadas,1,48,48,WhatsApp,Domicilio,Efectivo
+1109,C0002,2021-02-05,17:44,2021-02-14,Cheesecake frutos rojos entero,Pasteles enteros,1,400,400,WhatsApp,Domicilio,Efectivo
+1110,C0069,2021-02-07,21:51,2021-02-07,Rebanada cheesecake frutos rojos,Rebanadas,2,48,96,Instagram,Recoge,Efectivo
+1111,C0070,2021-02-09,21:55,2021-02-13,Caja de brownies (6 pz),Galletas y brownies,1,130,130,WhatsApp,Domicilio,Efectivo
+1111,C0070,2021-02-09,21:55,2021-02-13,Rebanada pay de limón,Rebanadas,3,38,114,WhatsApp,Domicilio,Efectivo
+1111,C0070,2021-02-09,21:55,2021-02-13,Cheesecake frutos rojos entero,Pasteles enteros,1,400,400,WhatsApp,Domicilio,Efectivo
+1112,C0071,2021-02-09,13:17,2021-02-12,Pay de limón entero,Pasteles enteros,2,280,560,WhatsApp,Recoge,Efectivo
+1113,C0072,2021-02-09,21:09,2021-02-09,Rebanada pay de limón,Rebanadas,1,38,38,WhatsApp,Domicilio,Efectivo
+1114,C0073,2021-02-12,18:41,2021-02-13,Rebanada cheesecake frutos rojos,Rebanadas,1,48,48,WhatsApp,Domicilio,Transferencia
+1115,C0057,2021-02-13,09:17,2021-02-13,Rebanada cheesecake frutos rojos,Rebanadas,2,48,96,Instagram,Domicilio,Efectivo
+1116,C0064,2021-02-13,14:34,2021-02-13,Rebanada cheesecake frutos rojos,Rebanadas,1 pz,48,48,WhatsApp,Domicilio,Efectivo
+1117,C0074,2021-02-14,13:40,2021-02-14,Caja de brownies (6 pz),Galletas y brownies,1,130,130,Instagram,Domicilio,Efectivo
+1118,C0075,2021-02-18,22:33,2021-02-19,Pay de limón entero,Pasteles enteros,1,280,280,Instagram,Domicilio,Efectivo
+1119,C0076,2021-02-19,23:59,2021-02-21,Cheesecake frutos rojos entero,Pasteles enteros,1,400,400,Facebook,Domicilio,Efectivo
+1119,C0076,2021-02-19,23:59,2021-02-21,Galletas con chispas (docena),Galletas y brownies,1,120,120,Facebook,Domicilio,Efectivo
+1120,C0077,2021-02-19,18:33,2021-02-20,Rebanada pay de limón,Rebanadas,6,38,228,WhatsApp,Domicilio,Efectivo
+1120,C0077,2021-02-19,18:33,2021-02-20,Cheesecake frutos rojos entero,Pasteles enteros,2,400,800,WhatsApp,Domicilio,Efectivo
+1121,C0078,2021-02-20,10:58,2021-02-20,Rebanada cheesecake frutos rojos,Rebanadas,1,48,48,WhatsApp,Domicilio,Efectivo
+1122,C0079,2021-02-27,23:02,2021-02-28,Rebanada pay de limón,Rebanadas,2,38,76,WhatsApp,Domicilio,Transferencia
+1123,C0031,2021-02-27,22:05,2021-02-27,Rebanada cheesecake frutos rojos,Rebanadas,2,48,96,Facebook,Recoge,Efectivo
+1124,C0080,2021-03-03,18:59,2021-03-04,Rebanada tres leches,Rebanadas,6,45,270,Instagram,Domicilio,Efectivo
+1125,C0073,2021-03-03,21:36,2021-03-03,Rebanada cheesecake frutos rojos,Rebanadas,2,48,96,WhatsApp,Recoge,Efectivo
+1126,C0078,2021-03-05,12:11,2021-03-06,Cheesecake frutos rojos entero,Pasteles enteros,1,400,400,WhatsApp,Recoge,Efectivo
+1127,C0066,2021-03-11,11:55,2021-03-12,Rebanada cheesecake frutos rojos,Rebanadas,1,48,48,Instagram,Domicilio,Efectivo
+1128,C0008,2021-03-12,10:43,2021-03-12,Caja de brownies (6 pz),Galletas y brownies,1,130,130,WhatsApp,Recoge,Transferencia
+1128,C0008,2021-03-12,10:43,2021-03-12,Caja de brownies (6 pz),Galletas y brownies,1,130,130,WhatsApp,Recoge,Transferencia
+1129,C0005,2021-03-12,17:33,2021-03-12,Caja de brownies (6 pz),Galletas y brownies,1,130,130,WhatsApp,Recoge,Transferencia
+1130,C0035,2021-03-12,14:31,2021-03-12,Rebanada tres leches,Rebanadas,2,45,90,WhatsApp,Domicilio,Efectivo
+1131,C0078,2021-03-13,13:56,2021-03-16,Cheesecake frutos rojos entero,Pasteles enteros,1,400,400,WhatsApp,Domicilio,Efectivo
+1132,C0081,2021-03-13,22:00,2021-03-13,Rebanada cheesecake frutos rojos,Rebanadas,1,48,48,Instagram,Recoge,Transferencia
+1133,C0038,2021-03-19,21:18,2021-03-23,Caja de brownies (6 pz),Galletas y brownies,3,130,390,Instagram,Domicilio,Efectivo
+1133,C0038,2021-03-19,21:18,2021-03-23,Rebanada tres leches,Rebanadas,1,45,45,Instagram,Domicilio,Efectivo
+1133,C0038,2021-03-19,21:18,2021-03-23,Cheesecake frutos rojos entero,Pasteles enteros,1,400,400,Instagram,Domicilio,Efectivo
+1134,C0078,2021-03-19,12:52,2021-03-21,Cheesecake frutos rojos entero,Pasteles enteros,1,400,400,WhatsApp,Domicilio,Transferencia
+1135,C0062,2021-03-19,19:09,2021-03-19,Rebanada cheesecake frutos rojos,Rebanadas,3,48,144,WhatsApp,Recoge,Efectivo
+1136,C0031,2021-03-23,13:44,2021-03-25,Pay de limón entero,Pasteles enteros,1,280,280,Facebook,Domicilio,Efectivo
+1137,C0048,2021-03-25,11:11,2021-03-26,Rebanada tres leches,Rebanadas,4,45,180,WhatsApp,Recoge,Efectivo
+1138,C0016,2021-03-26,14:16,2021-03-26,Rebanada cheesecake frutos rojos,Rebanadas,2,48,96,WhatsApp,Domicilio,Efectivo
+1139,C0052,2021-03-26,21:49,2021-03-26,Galletas con chispas (docena),Galletas y brownies,1,120,120,Instagram,Recoge,Transferencia
+1139,C0052,2021-03-26,21:49,2021-03-26,Caja de brownies (6 pz),Galletas y brownies,1,130,130,Instagram,Recoge,Transferencia
+1139,C0052,2021-03-26,21:49,2021-03-26,Rebanada cheesecake frutos rojos,Rebanadas,4,48,192,Instagram,Recoge,Transferencia
+1140,C0082,2021-03-28,10:52,2021-03-28,Rebanada cheesecake frutos rojos,Rebanadas,3,48,144,Instagram,Domicilio,Efectivo
+1140,C0082,28/03/2021,10:52,2021-03-28,Rebanada pay de limón,Rebanadas,1,38,38,Instagram,Domicilio,Efectivo
+1141,C0066,2021-04-01,08:38,2021-04-02,Pastel tres leches entero,Pasteles enteros,1,420,420,Instagram,Domicilio,Transferencia
+1142,C0078,2021-04-01,23:30,2021-04-02,Rebanada pay de limón,Rebanadas,3,38,114,WhatsApp,Domicilio,Transferencia

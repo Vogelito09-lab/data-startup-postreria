@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Sid": "SoloPuedeConvertirseEnLosRolesDeCadaServicio",
+    "Effect": "Allow",
+    "Action": "sts:AssumeRole",
+    "Resource": [
+      "arn:aws:iam::CUENTA:role/salome-ingesta",
+      "arn:aws:iam::CUENTA:role/salome-worker",
+      "arn:aws:iam::CUENTA:role/salome-tablero"
+    ]
+  }]
+}

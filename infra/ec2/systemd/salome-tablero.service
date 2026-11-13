@@ -1,0 +1,23 @@
+[Unit]
+Description=Salomé · tablero
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=salome
+Group=salome
+WorkingDirectory=/opt/salome/services/tablero
+EnvironmentFile=/etc/salome/tablero.env
+Environment=HOME=/tmp
+ExecStart=/opt/salome/.venv/bin/streamlit run app.py --server.port 8501 --server.address 0.0.0.0 --server.headless true
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/tmp
+MemoryMax=350M
+
+[Install]
+WantedBy=multi-user.target

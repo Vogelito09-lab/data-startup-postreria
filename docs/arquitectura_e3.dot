@@ -1,0 +1,27 @@
+digraph G {
+  graph [rankdir=LR, fontname="DejaVu Sans", fontsize=11, nodesep=0.35, ranksep=0.6, pad=0.3, bgcolor="white"];
+  node  [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=10, fillcolor="#fbf4ef", color="#7a4a2e"];
+  edge  [fontname="DejaVu Sans", fontsize=9, color="#555555"];
+  salome [label="Salomé\n(celular)", fillcolor="#fde8ec", color="#d97a8c"];
+  subgraph cluster_aws { label="AWS · us-east-2 (Terraform: bucket, colas, roles, ECR, Lambda)"; style="rounded,dashed"; color="#999999"; fontcolor="#555555";
+    subgraph cluster_ecs { label="ECS Express Mode (Fargate · HTTPS *.ecs.us-east-2.on.aws · autoescalado por CPU 60%)"; style="rounded,filled"; fillcolor="#f7f7f7"; fontsize=9;
+      ingesta [label="ingesta\n1 a 2 tareas · X-Api-Key"];
+      modelos [label="modelos\n/pronostico · /clasificar\n1 a 4 tareas"];
+      tablero [label="tablero v3\n1 a 2 tareas"];
+    }
+    ecr [label="ECR\n4 repos, escaneo al subir", fillcolor="#eeeeee", color="#888888"];
+    ssm [label="Parameter Store\nDATABASE_URL, TOKEN", fillcolor="#eeeeee", color="#888888"];
+    raw [label="S3 raw/", fillcolor="#eef5f9", color="#6a9fb5"];
+    clean [label="S3 clean/", fillcolor="#eef5f9", color="#6a9fb5"];
+    sqs [label="SQS salome-pedidos\n(+ DLQ tras 3)", fillcolor="#fff6dd", color="#c9a227"];
+    lambda [label="Lambda worker\n(imagen de contenedor)\nlotes de 5, fallas parciales", fillcolor="#fff0e0", color="#c9772f"];
+    rds [label="RDS PostgreSQL", shape=cylinder, fillcolor="#eef7ee", color="#4f8a4f"];
+    modelos_dir [label="models/ v1\nSARIMA + árbol\nregistro.json", shape=note, fillcolor="#ffffff"];
+  }
+  salome -> ingesta [label="CSV"]; salome -> tablero [label="navegador"];
+  ingesta -> raw; ingesta -> sqs; sqs -> lambda [label="event source\nmapping"];
+  lambda -> raw [label="lee"]; lambda -> clean [label="escribe"]; lambda -> rds [label="upsert"];
+  rds -> modelos; rds -> tablero; tablero -> modelos [label="HTTP interno"];
+  modelos_dir -> modelos [style=dashed, label="dentro de la imagen"];
+  ecr -> ingesta [style=dotted]; ssm -> ingesta [style=dotted];
+}

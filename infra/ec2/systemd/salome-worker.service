@@ -1,0 +1,22 @@
+[Unit]
+Description=Salomé · worker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=salome
+Group=salome
+WorkingDirectory=/opt/salome/services/worker
+EnvironmentFile=/etc/salome/worker.env
+ExecStart=/opt/salome/.venv/bin/python worker.py
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/tmp
+MemoryMax=350M
+
+[Install]
+WantedBy=multi-user.target

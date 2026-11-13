@@ -1,0 +1,7 @@
+# Mismas versiones con que se entrenaron los modelos (Python 3.13)
+fastapi==0.162.5
+uvicorn==0.54.0
+python-multipart==0.0.32
+pydantic==2.13.5
+boto3==1.44.1
+psycopg2-binary==2.9.13

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: salome-config
+  namespace: salome
+data:
+  FUENTE: local                                   # en la nube: postgres
+  RUTA_LOCAL: /datos/pedidos_salome_clean.csv
+  CACHE_SEGUNDOS: "60"
+  MODELOS_URL: http://modelos:8100

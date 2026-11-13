@@ -1,15 +1,17 @@
-# Secretos: NUNCA al repositorio
-.streamlit/secrets.toml
+# Historial completo de Salomé: vive en S3 (raw/); no se sube al repositorio público
+data/historial/
+# Credenciales y entornos
 .env
-*.pem
+*.env
+.streamlit/secrets.toml
 .aws/
-
-# Datos completos: solo se sube la muestra de data/sample/
-data/raw/
-data/clean/
-
+# Python
 __pycache__/
 *.pyc
 .venv/
+.pytest_cache/
 .ipynb_checkpoints/
-.DS_Store
+# Terraform: estado y proveedores (el estado puede tener datos sensibles)
+.terraform/
+*.tfstate
+*.tfstate.*

@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "entrenado_en": "2026-11-12T15:41:35+00:00",
+  "datos": {
+    "archivo": "pedidos_salome_clean.csv",
+    "renglones": 2614,
+    "pedidos": 1963,
+    "sha256": "9c190b4aaac6480f",
+    "hasta": "2026-10-31"
+  },
+  "sarima": {
+    "orden": [
+      0,
+      0,
+      0
+    ],
+    "estacional": [
+      0,
+      1,
+      1,
+      7
+    ],
+    "metricas_prueba": {
+      "MAE": 498.4324897498289,
+      "RMSE": 682.3285103851435,
+      "n": 295,
+      "aic": 20517.3,
+      "bic": 20527.8,
+      "parametros": 2,
+      "cobertura_95": 0.8817567567567568
+    }
+  },
+  "clasificador": {
+    "modelo": "Árbol de decisión",
+    "parametros": {
+      "max_depth": 2,
+      "min_samples_leaf": 20
+    },
+    "umbral_enteros": 2,
+    "columnas": [
+      "apartados_enteros",
+      "apartados_pedidos",
+      "enteros_hace_7",
+      "media_enteros_28",
+      "fecha_fuerte",
+      "vispera",
+      "quincena",
+      "es_diciembre",
+      "es_mayo",
+      "vie",
+      "sab",
+      "dom",
+      "mar_jue"
+    ],
+    "metricas_prueba": {
+      "precision": 0.625,
+      "recall": 0.78125,
+      "f1": 0.6944444444444444,
+      "f2": 0.7440476190476191,
+      "auc": 0.8661772629310345
+    },
+    "anticipo_dias": 2
+  },
+  "artefactos": {
+    "sarima_venta": {
+      "archivo": "sarima_venta_v1.pkl",
+      "bytes": 149,
+      "sha256": "afbfeeae5b09d21d"
+    },
+    "sarima_enteros": {
+      "archivo": "sarima_enteros_v1.pkl",
+      "bytes": 151,
+      "sha256": "adea6033df4c1f26"
+    },
+    "clasificador_dia_fuerte": {
+      "archivo": "clasificador_dia_fuerte_v1.pkl",
+      "bytes": 1962,
+      "sha256": "578f9e425bcc02a5"
+    }
+  }
+}

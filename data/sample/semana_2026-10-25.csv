@@ -1,0 +1,9 @@
+pedido_id,cliente_id,fecha_pedido,hora_pedido,fecha_entrega,producto,categoria,unidades,precio_unitario,total,canal,entrega,metodo_pago
+2953,C0666,2026-10-21,17:33,2026-10-25,Pastel tres leches entero,Pasteles enteros,1,590,590,WhatsApp,Domicilio,Transferencia
+2960,C0709,2026-10-27,22:24,2026-10-28,Cheesecake frutos rojos entero,Pasteles enteros,1,590,590,WhatsApp,Domicilio,Transferencia
+2960,C0709,2026-10-27,22:24,2026-10-28,Pan de muerto (4 pz),Temporada,1,180,180,WhatsApp,Domicilio,Transferencia
+2961,C0710,2026-10-28,13:35,2026-10-28,Pan de muerto (4 pz),Temporada,1,180,180,Instagram,Recoge,Transferencia
+2961,C0710,2026-10-28,13:35,2026-10-28,Caja de brownies (6 pz),Galletas y brownies,2,190,380,Instagram,Recoge,Transferencia
+2962,C0711,2026-10-29,21:30,2026-10-31,Cheesecake frutos rojos entero,Pasteles enteros,1,590,590,Instagram,Domicilio,Transferencia
+2962,C0711,2026-10-29,21:30,2026-10-31,Pan de muerto (4 pz),Temporada,1,180,180,Instagram,Domicilio,Transferencia
+2963,C0608,2026-10-31,11:55,2026-10-31,Caja de brownies (6 pz),Galletas y brownies,2,190,380,WhatsApp,Domicilio,Transferencia

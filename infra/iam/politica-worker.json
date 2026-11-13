@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LeeRaw",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::data-startup-salome-13454721/raw/pedidos/*"
+    },
+    {
+      "Sid": "LeeYEscribeClean",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject"],
+      "Resource": "arn:aws:s3:::data-startup-salome-13454721/clean/pedidos/*"
+    },
+    {
+      "Sid": "ListarSoloEsosPrefijosParaDistinguir404De403",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::data-startup-salome-13454721",
+      "Condition": {"StringLike": {"s3:prefix": ["raw/pedidos/*", "clean/pedidos/*"]}}
+    },
+    {
+      "Sid": "ConsumeLaCola",
+      "Effect": "Allow",
+      "Action": ["sqs:ReceiveMessage", "sqs:DeleteMessage", "sqs:ChangeMessageVisibility", "sqs:GetQueueAttributes"],
+      "Resource": "arn:aws:sqs:us-east-2:CUENTA:salome-pedidos"
+    }
+  ]
+}

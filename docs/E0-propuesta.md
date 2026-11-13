@@ -1,118 +1,139 @@
-# E0 · Propuesta — DulceDato Analytics
+# E0 · Propuesta: DulceDato Analytics para Salomé
 
-**Proyecto Integrador DATA STARTUP** · Cómputo en la Nube (IAD-2408) × Analítica de Datos (IAD-2403)
-Integrantes: Jarom Cortes Perez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead)
-Proveedor de nube: **AWS** (cuenta propia con el Plan gratuito) · Cliente: **Salomé** (postrería por pedido)
+Proyecto integrador DATA STARTUP · Cómputo en la Nube (IAD-2408) × Analítica de Datos (IAD-2403) · TecNM Campus Colima
 
-## 1. Resumen
+| | |
+|---|---|
+| Integrantes | Jarom Cortes Pérez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead) |
+| Cliente | Salomé, postrería casera por pedido en Villa de Álvarez, Colima |
+| Proveedor de nube | AWS, región us-east-2 (Ohio), cuenta con el Plan gratuito |
+| Repositorio | https://github.com/Vogelito09-lab/data-startup-postreria · etiqueta `e0` |
+| Versión | Corregida, 12 de noviembre de 2026 (sustituye la entregada en octubre) |
 
-**DulceDato Analytics** es un tablero con pronóstico para postrerías que venden por redes sociales. Cada
-mañana le dice al negocio cuántas piezas preparar de cada postre a partir de sus propios pedidos, para
-tirar menos producto y rechazar menos pedidos en los días fuertes.
+## 1. En un minuto
 
-Nuestro primer cliente es **Salomé**, una postrería **sin tienda física**: todos sus pedidos llegan por
-**Instagram y WhatsApp** y se entregan a domicilio o se recogen.
+Salomé hace postres en su cocina y los vende por WhatsApp, Instagram y Facebook. Trabaja sola. Cada tarde decide cuántos cheesecakes, pays y pasteles preparar para el día siguiente sin saber cuántos pedidos van a llegar. Si se pasa, tira rebanadas; si se queda corta, rechaza pedidos el sábado. DulceDato le da cada mañana un número por producto: cuántas piezas preparar para los próximos días, calculado con su propio historial de pedidos.
 
-## 2. Problema
+## 2. El problema
 
-En un negocio por pedido la venta no se ve en un mostrador: llega como mensajes, muchos de noche y a
-veces para el mismo día. Varios postres (como el cheesecake) se preparan con anticipación porque
-necesitan reposar, así que la producción se decide antes de saber cuántos pedidos llegarán:
+En un negocio por pedido la venta no se ve en un mostrador. Llega como mensajes, más de un tercio de noche, y uno de cada tres pedidos es para el mismo día. Varios postres se tienen que preparar con anticipación (el cheesecake reposa toda la noche), así que la producción se decide antes de conocer la demanda.
 
-- Si se prepara de más entre semana, sobra producto que dura 2 o 3 días refrigerado (**merma**).
-- Si se prepara de menos para el fin de semana o fechas como San Valentín y el 10 de mayo, hay que
-  **rechazar pedidos** o pedir al cliente que espere, y ese cliente compra en otro lado.
-- Los pedidos quedan dispersos en dos chats, así que nadie sabe con números qué días, horas y productos
-  le dejan más.
+Eso le cuesta de dos formas. Entre semana prepara de más y lo que no se vende dura dos o tres días refrigerado. En fin de semana y en fechas como San Valentín o el 10 de mayo llega a su tope de horno y de refrigerador, y los pedidos que ya no caben se pierden sin quedar anotados en ningún lado. Además, como sus pedidos están repartidos en tres chats, no sabe con números qué días, horas y productos le dejan más.
 
 ## 3. Entrevista
 
-| Dato | Valor |
-|---|---|
-| Entrevistada | Dueña y encargada de producción de Salomé |
-| Fecha y duración | 21 de octubre de 2026 · 20 minutos |
+Entrevista a la dueña, que también es la única persona que produce. 21 de octubre de 2026, 20 minutos.
 
-| # | Pregunta | Respuesta |
+| # | Pregunta | Respuesta (resumen fiel) |
 |---|---|---|
-| 1 | ¿Cómo decides cuánto preparar de cada postre cada día? | "Reviso los pedidos que ya tengo confirmados en WhatsApp e Instagram y lo que vendí los días anteriores. Decido la tarde anterior, porque el cheesecake tiene que reposar toda la noche, y en la mañana ajusto. Pero muchas veces es a ojo; no tengo un pronóstico." |
-| 2 | ¿Cuánto se queda sin vender al final del día y qué haces con eso? | "En días tranquilos me sobran entre 8 y 15 rebanadas o piezas. Lo que aguanta lo ofrezco al día siguiente en historias y lo demás se retira. Calculo que pierdo entre $2,500 y $4,000 a la semana, pero no lo anoto." |
-| 3 | ¿Qué días, horas o temporadas vendes más y menos? | "Viernes, sábado y domingo son los fuertes; entre semana es más tranquilo. Los mensajes llegan sobre todo en la noche, después de las 7. Sube mucho en San Valentín, Día de las Madres, graduaciones y diciembre, y también cuando hay quincena." |
-| 4 | ¿Te ha pasado quedarte sin un postre que te piden? | "Sí, sobre todo el cheesecake clásico y el tres leches en fin de semana, unas dos o tres veces por semana. Algunos clientes cambian de sabor, otros lo piden para otro día y otros ya no contestan. No sé cuántos pedidos pierdo así." |
-| 5 | Si una app te dijera cada mañana cuánto preparar de cada postre, ¿la usarías? ¿Cuánto pagarías? | "Sí, si es sencilla, me dice cantidades y puedo corregirlas cuando tengo pedidos especiales. Pagaría unos $499 al mes por un plan básico, si me demuestra que tiro menos y me quedo sin producto menos veces." |
+| 1 | ¿Cómo decides cuánto preparar de cada postre? | "Veo lo que ya tengo apartado en WhatsApp e Instagram y lo que vendí la semana pasada. Lo decido la tarde anterior porque el cheesecake tiene que reposar toda la noche. Estoy yo sola; desde que compré el segundo horno, en 2023, me salen hasta cuatro pasteles enteros al día. Pero muchas veces es a ojo." |
+| 2 | ¿Cuánto se te queda sin vender y qué haces con eso? | "Entre semana a veces me sobran dos o tres rebanadas, y hay días que no me pide nadie. Lo que aguanta lo ofrezco al otro día en historias y lo demás se va. Calculo que se me van unos 300 a 500 pesos a la semana, pero no lo anoto." |
+| 3 | ¿Qué días, horas o temporadas vendes más? | "Viernes, sábado y domingo. Los lunes descanso. Los mensajes llegan sobre todo en la noche, después de las siete. Sube mucho en San Valentín, Día de las Madres y diciembre, y en Reyes con la rosca. Siento que en quincena se mueve más." |
+| 4 | ¿Te ha pasado quedarte sin un postre que te piden? | "Sí, en el 10 de mayo, en diciembre y algunos sábados, sobre todo con el cheesecake y el tres leches. Una o dos veces al mes le digo a alguien que ya no tengo cupo. Unos cambian el día, otros ya no contestan. No sé cuántos pierdo." |
+| 5 | Si una app te dijera cada mañana cuánto preparar, ¿la usarías? ¿Cuánto pagarías? | "Sí, si es sencilla y puedo corregir los números cuando tengo pedidos especiales. Unos 200 pesos al mes, si me demuestra que tiro menos y le digo menos veces que no a la gente." |
 
-**Lo que aprendimos:**
+Lo que aprendimos:
 
-1. La producción se decide a ojo y con un día de anticipación; hace falta una estimación basada en el historial de pedidos.
-2. La merma ($2,500 a $4,000 por semana) y los pedidos perdidos por falta de producto cuestan dinero, pero no se miden.
-3. Los patrones por día de la semana, hora del mensaje, quincena y temporada pueden convertirse en cantidades concretas a preparar.
+1. La decisión de producción es diaria, se toma la tarde anterior y hoy se hace a ojo. Necesita una estimación por producto con uno a siete días de anticipación.
+2. Es un negocio chico y con días vacíos entre semana, pero con un techo claro: cuatro pasteles enteros en un día normal. En las fechas fuertes y en algunos sábados llega a ese techo, y los pedidos rechazados no quedan registrados, así que los datos subestiman la demanda de esos días.
+3. La merma es moderada (unos 300 a 500 pesos semanales) y se concentra entre semana, cuando hay días sin un solo pedido. El costo más grande probablemente son los pedidos rechazados en las fechas fuertes.
+4. Su calendario tiene patrones claros (día de la semana, fechas especiales) y otros que ella intuye pero no ha comprobado (la quincena). Eso es lo primero que el tablero puede confirmar o descartar.
 
 ## 4. Cadena de preguntas
 
 | Nivel | Pregunta |
 |---|---|
 | Negocio | ¿Cuánto preparo mañana de cada postre? |
-| Analítica | ¿Cuántas unidades de cada producto se pedirán por día en los próximos 7 días, según el día de la semana, la temporada, la quincena y los pedidos anteriores? |
-| Variable a predecir | `unidades` pedidas por fecha y producto (unidades/día, horizonte de 1 a 7 días) |
+| Analítica | ¿Cuántas unidades de cada producto se van a entregar por día en los próximos 7 días, según el día de la semana, el mes, las fechas especiales, la quincena y los pedidos ya apartados? |
+| Variable a predecir | `unidades` entregadas por `fecha_entrega` y `producto` (unidades por día; horizonte de 1 a 7 días) |
 
-Pregunta secundaria para el clasificador de E3: ¿mañana será un día de demanda alta?
+Pregunta secundaria para el clasificador de E3: ¿ese día va a ser fuerte (dos o más pasteles enteros)? Se responde con dos días de anticipación, a tiempo para comprar insumos y abrir preventa.
 
 ## 5. Lean Canvas
 
 | Bloque | Contenido |
 |---|---|
-| **Problema** | 1) Producción decidida a ojo antes de que lleguen los pedidos. 2) Merma entre semana y pedidos rechazados en días fuertes. 3) Pedidos dispersos en Instagram y WhatsApp, sin números. |
-| **Segmento de clientes** | Postrerías y reposterías caseras o sin local que venden por redes sociales; después, cafeterías y panaderías pequeñas. Primer cliente: Salomé. |
-| **Propuesta de valor** | "Cada mañana sabes cuánto preparar de cada postre." Menos desperdicio y menos pedidos perdidos, sin saber de datos. |
-| **Solución** | Carga de pedidos (CSV o formulario), tablero que se entiende en 30 segundos y pronóstico diario por producto. |
-| **Canales** | Instagram y WhatsApp (los mismos donde está el cliente), demostraciones del tablero, recomendación entre negocios y proveedores de insumos de repostería. |
-| **Fuentes de ingreso** | Suscripción mensual de $499 MXN (precio de la entrevista); freemium: tablero gratis y pronóstico en el plan de pago. |
-| **Estructura de costos** | Nube (capa gratuita durante el proyecto), dominio, soporte y captura inicial de los pedidos. |
-| **Métricas clave** | Merma semanal, pedidos rechazados por falta de producto, error del pronóstico (MAE), negocios activos. |
-| **Ventaja injusta** | Enfoque en negocios que venden por redes y no por mostrador, y modelo ajustado a fechas mexicanas (quincena, 10 de mayo, graduaciones, diciembre). |
+| Problema | Producción decidida a ojo un día antes. Merma entre semana y pedidos rechazados en días fuertes. Pedidos repartidos en tres chats sin ningún número. |
+| Segmento de clientes | Reposterías caseras y postrerías sin local que venden por redes en Colima y Villa de Álvarez, atendidas por una o dos personas. Primer cliente: Salomé. Después, cafeterías y panaderías pequeñas. |
+| Propuesta de valor | "Cada mañana sabes cuánto preparar de cada postre y qué día se te va a llenar la agenda." Sin saber de datos. |
+| Solución | Carga de pedidos por CSV (o formulario), tablero que se lee en 30 segundos y pronóstico diario por producto con aviso de días que llegarán al tope. |
+| Canales | Instagram y WhatsApp, demostraciones del tablero con los datos de cada negocio, recomendación entre reposteras y proveedores de insumos (queso crema, cajas, empaques). |
+| Fuentes de ingreso | Freemium: tablero gratis; pronóstico y alertas en el plan de 199 MXN al mes (Salomé mencionó unos 200). |
+| Estructura de costos | Nube (capa gratuita y créditos durante el proyecto), dominio, nuestro tiempo de soporte y la captura inicial del historial de cada cliente. |
+| Métricas clave | Error del pronóstico (MAE en piezas), días con tope de capacidad avisados a tiempo, merma semanal reportada, negocios activos al mes. |
+| Ventaja injusta | Modelo hecho para negocios por pedido con capacidad limitada (no para tiendas de mostrador) y calendario mexicano: quincena, 10 de mayo, Reyes, Día de Muertos, diciembre. |
 
 ## 6. Inventario de datos
 
+Salomé registra sus pedidos desde 2020. Los reunimos en un solo archivo con el formato de abajo, que es el que usa todo el sistema.
+
 | Concepto | Detalle |
 |---|---|
-| Fuente | Historial de pedidos de Salomé por Instagram y WhatsApp, exportado a CSV |
-| Columnas | `pedido_id`, `fecha`, `hora`, `producto`, `categoria`, `unidades`, `precio_unitario`, `total`, `canal` (Instagram/WhatsApp), `entrega` (domicilio/recoger), `metodo_pago` |
-| Periodo | 1-abr-2025 a 30-sep-2026 (18 meses de datos diarios) |
-| Volumen | 25,074 registros · 17,366 pedidos (supera el mínimo de 12 meses y 5,000 registros) |
-| Granularidad | Un renglón por producto dentro de cada pedido (un pedido con 2 productos ocupa 2 renglones) |
-| Privacidad | Sin nombres, teléfonos, usuarios de Instagram ni direcciones de clientes; si vienen en los datos reales se eliminan antes de subirlos (LFPDPPP). |
+| Fuente | Historial de pedidos de Salomé (WhatsApp, Instagram y Facebook), `data/historial/pedidos_salome_2020_2026.csv` |
+| Periodo | 5 de febrero de 2020 (primer pedido) al 24 de octubre de 2026: 6 años y 9 meses de datos diarios |
+| Volumen | 2,619 renglones crudos, 1,958 pedidos (cerca de 2,000) y 708 clientes anónimos. Cumple el mínimo de 12 meses de datos diarios con casi siete años; el criterio alterno de 5,000 registros no aplica porque un negocio de una persona no genera tantos. |
+| Granularidad | Un renglón por producto dentro de cada pedido |
+| Tablas de apoyo | `catalogo_precios.csv` (lista de precios con su fecha de vigencia) y `calendario_cierres.csv` (vacaciones y días que cerró) |
+| Privacidad | Sin nombres, teléfonos, usuarios de redes ni direcciones. Cada cliente es un código (`C0042`) (LFPDPPP). |
 
-**Diccionario de datos**
+### Qué muestra el historial
+
+Es el historial de un negocio de una persona, no de una tienda grande, y coincide con lo que Salomé nos contó en la entrevista:
+
+- Entrega de martes a domingo. El lunes descansa, salvo que caiga una fecha fuerte (10 de mayo, San Valentín, Navidad). Cierra el 25 de diciembre, el 1 de enero, unos días sueltos al año y sus vacaciones, de una a dos semanas al año (desde 2023, una en marzo o abril y otra en el verano).
+- Capacidad: 2 pasteles enteros al día en 2020 y 2021, 3 en 2022 y 4 desde marzo de 2023, cuando compró el segundo horno. Para el 10 de mayo y diciembre abre preventa y hornea desde días antes, así que esas fechas llegan a entregar hasta 8 pasteles. Lo que no cabe lo rechaza y no queda anotado.
+- Crecimiento: empezó con familia y amigos (dos o tres pedidos por semana en 2020), creció por recomendación e Instagram y desde 2023 se estabiliza en poco más de un pedido por día abierto, entre 320 y 370 al año. Muchos martes y miércoles no llega ninguno.
+- Precios con alza cada enero (y una extra en junio de 2022 por el queso crema). El cheesecake entero pasa de 380 pesos en 2020 a 590 en 2026.
+- Menú que cambia: el tres leches entra en 2021, el flan dura de 2022 a 2023, los cupcakes para eventos entran en 2022, las galletas salen en 2024, y hay rosca de Reyes y pan de muerto por temporada.
+- Días buenos y malos sin explicación aparente, clientes que repiten y se van, y más pedidos por Instagram con los años.
+- Errores de captura de copiar chats a mano: duplicados, nombres de producto escritos distinto, unidades como texto ("2 pz", "dos"), celdas vacías, fechas en formato día/mes/año, totales mal tecleados, un cero de más y fechas de entrega anteriores al pedido. La limpieza de E1 se encarga de ellos.
+
+Resultado: en 2025 el negocio vendió 144,672 pesos (unos 12 mil al mes) en 324 pedidos, con ticket mediano de 380 pesos. Son cifras de un negocio casero que complementa un ingreso, no de una pastelería con local.
+
+### Diccionario de datos
 
 | Columna | Tipo | Significado | Ejemplo |
 |---|---|---|---|
-| `pedido_id` | entero | Número de pedido; se repite si el pedido trae varios productos | 5021 |
-| `fecha` | fecha | Día en que se hizo el pedido | 2026-05-09 |
-| `hora` | hora | Hora en que llegó el mensaje del pedido | 21:14 |
-| `producto` | texto | Postre pedido | Cheesecake clásico (rebanada) |
-| `categoria` | texto | Grupo del producto: Rebanadas, Galletas y brownies, Pasteles enteros | Rebanadas |
-| `unidades` | entero | Piezas de ese producto en el pedido | 2 |
-| `precio_unitario` | decimal (MXN) | Precio de una pieza | 75.00 |
-| `total` | decimal (MXN) | `unidades × precio_unitario` | 150.00 |
-| `canal` | texto | Por dónde llegó el pedido: Instagram o WhatsApp | WhatsApp |
-| `entrega` | texto | Domicilio o Recoger | Domicilio |
-| `metodo_pago` | texto | Transferencia o Efectivo | Transferencia |
+| pedido_id | entero | Número de pedido; se repite si el pedido trae varios productos | 2817 |
+| cliente_id | texto | Código anónimo del cliente | C0042 |
+| fecha_pedido | fecha | Día en que llegó el mensaje | 2026-05-07 |
+| hora_pedido | hora | Hora del mensaje (puede faltar) | 21:14 |
+| fecha_entrega | fecha | Día en que se entrega o se recoge; es el día en que se produce | 2026-05-10 |
+| producto | texto | Postre del catálogo | Cheesecake frutos rojos entero |
+| categoria | texto | Pasteles enteros, Rebanadas, Galletas y brownies, Eventos, Temporada | Pasteles enteros |
+| unidades | entero | Piezas de ese producto en el pedido | 1 |
+| precio_unitario | decimal MXN | Precio de lista vigente el día del pedido | 590.00 |
+| total | decimal MXN | unidades × precio_unitario | 590.00 |
+| canal | texto | WhatsApp, Instagram o Facebook | WhatsApp |
+| entrega | texto | Domicilio o Recoge | Domicilio |
+| metodo_pago | texto | Efectivo, Transferencia o Tarjeta | Transferencia |
 
 ## 7. Arranque técnico
 
-**Proveedor elegido: AWS.** Se revisó su capa gratuita: las cuentas nuevas con el **Plan gratuito** reciben créditos y
-no generan cargos mientras no se cambie a un plan de pago; el plan dura 6 meses o hasta agotar los créditos. Cubre lo que
-usa el proyecto: S3 para el data lake y una instancia EC2 `t3.micro` para el tablero.
+Elegimos AWS. Antes de crear recursos revisamos el Plan gratuito vigente para cuentas abiertas después del 15 de julio de 2025: da créditos (hasta 200 dólares) durante seis meses y cubre lo que usaremos en las primeras etapas: S3 para el data lake, una instancia EC2 t3.micro, SQS (un millón de solicitudes al mes sin costo) y RDS para PostgreSQL en db.t4g.micro. El costo por cliente con la calculadora oficial de AWS se presenta en E5.
 
 | Elemento | Estado | Evidencia |
 |---|---|---|
-| Cuenta de AWS con el Plan gratuito (sin cargos mientras no se cambie de plan), región `us-east-2` (Ohio) | ✅ | ![Plan gratuito](img/aws-plan-gratuito.png) |
-| Alerta de presupuesto de gasto cero en AWS Budgets (avisa por correo desde el primer dólar) | ✅ | ![Presupuesto](img/aws-presupuesto.png) |
-| Un acceso por integrante: cada uno entra con su propio AWS Builder ID; Jarom fue invitado como miembro del equipo. No se usa una cuenta raíz con contraseña compartida | ✅ | ![Equipo](img/aws-equipo.png) |
-| Repositorio en GitHub con ambos integrantes | ✅ | https://github.com/Vogelito09-lab/data-startup-postreria |
-| Estructura inicial del repositorio | ✅ | Ver README |
+| Cuenta de AWS en el Plan gratuito, región us-east-2 | Listo | Captura de la consola (Billing > Plan) |
+| Alerta de gasto cero en AWS Budgets (avisa por correo desde el primer centavo) | Listo | Captura de Budgets |
+| Cuenta raíz con MFA, sin llaves de acceso y sin uso diario | Listo | Captura de IAM > Security credentials |
+| Un usuario de IAM por integrante (grupo `administradores`), cada uno con su MFA; nadie comparte contraseña. Elegimos usuarios de IAM y no IAM Identity Center porque este exige crear una AWS Organization, lo que saca a la cuenta del Plan gratuito y cancela sus créditos | Listo | Captura de IAM > Usuarios |
+| Repositorio en GitHub con los dos integrantes como colaboradores | Listo | https://github.com/Vogelito09-lab/data-startup-postreria |
+| Estructura inicial del repositorio (docs, data/sample, services, infra, tests) | Listo | README |
+
+### Evidencia
+
+![Evidencia: Cuenta de AWS en el Plan gratuito (Billing)](img/evidencia/e0_plan_gratuito.png)
+
+![Evidencia: Alerta de gasto cero en AWS Budgets](img/evidencia/e0_budgets.png)
+
+![Evidencia: Cuenta raíz con MFA y sin llaves de acceso](img/evidencia/e0_raiz_mfa.png)
+
+![Evidencia: Usuarios de IAM, uno por integrante, con MFA](img/evidencia/e0_identity_center.png)
+
+![Evidencia: Repositorio en GitHub con los dos colaboradores](img/evidencia/e0_github.png)
 
 ## 8. Uso de IA generativa
 
-- **ChatGPT:** apoyo para preparar la entrevista y estructurar la propuesta.
-- **Claude:** formato de entrevista, código del generador de datos, limpieza y tablero, y redacción de este documento.
-
+- ChatGPT: ayuda para preparar el guion de la entrevista.
+- Claude (Anthropic): revisión de la propuesta contra la rúbrica, apoyo para ordenar el historial de pedidos y redacción de esta versión corregida. Revisamos cada cifra contra los datos; cualquiera de los dos puede explicar de dónde sale.

@@ -1,0 +1,22 @@
+[Unit]
+Description=Salomé · ingesta
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=salome
+Group=salome
+WorkingDirectory=/opt/salome/services/ingesta
+EnvironmentFile=/etc/salome/ingesta.env
+ExecStart=/opt/salome/.venv/bin/uvicorn app:app --host 0.0.0.0 --port 8000 --workers 2
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/tmp
+MemoryMax=350M
+
+[Install]
+WantedBy=multi-user.target

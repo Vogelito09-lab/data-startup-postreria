@@ -1,0 +1,31 @@
+@page { size: Letter; margin: 2cm 1.9cm 2cm 1.9cm; }
+body { font-family: "Inter", "DejaVu Sans", sans-serif; font-size: 10pt; line-height: 1.45; color: #222; }
+h1 { font-size: 18pt; color: #5b3520; margin: 0 0 6pt; }
+h2 { font-size: 13pt; color: #5b3520; border-bottom: 1px solid #e6d5c8; padding-bottom: 2pt; margin-top: 18pt; page-break-after: avoid; }
+h3 { font-size: 11pt; color: #7a4a2e; margin-top: 12pt; page-break-after: avoid; }
+table { border-collapse: collapse; width: 100%; margin: 6pt 0 10pt; font-size: 8.6pt; page-break-inside: auto; }
+tr { page-break-inside: avoid; }
+th, td { border: 1px solid #ddd; padding: 3pt 5pt; vertical-align: top; text-align: left; }
+th { background: #f6eee8; }
+img { max-width: 100%; display: block; margin: 6pt auto; page-break-inside: avoid; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 8.3pt; background: #f5f5f5; padding: 0 2pt; }
+pre { background: #f7f7f7; padding: 6pt; font-size: 7.8pt; overflow-x: hidden; white-space: pre-wrap; page-break-inside: avoid; }
+pre code { background: none; }
+p:has(> img) + p { margin-top: 0; }
+.portada { height: 23cm; display: flex; flex-direction: column; justify-content: center; text-align: center; page-break-after: always; }
+.portada .inst { font-size: 15pt; font-weight: 600; color: #333; }
+.portada .carrera { font-size: 12pt; margin-top: 4pt; color: #555; }
+.portada .materias { font-size: 11pt; margin-top: 40pt; color: #555; }
+.portada .titulo { font-size: 22pt; font-weight: 700; color: #5b3520; margin-top: 14pt; }
+.portada .sub { font-size: 13pt; margin-top: 6pt; color: #7a4a2e; }
+.portada .equipo { font-size: 12pt; margin-top: 60pt; line-height: 1.8; }
+.portada .fecha { font-size: 11pt; margin-top: 40pt; color: #555; }
+.evidencias { display: flex; flex-wrap: wrap; gap: 8pt; margin: 6pt 0 10pt; }
+.evidencias > * { break-inside: avoid; }
+.evidencias > * { width: calc(50% - 4pt); box-sizing: border-box; }
+figure.evidencia { margin: 0; }
+figure.evidencia img { margin: 0; border: 1px solid #ddd; }
+figure.evidencia figcaption, .pendiente .texto { font-size: 8pt; color: #555; margin-top: 3pt; }
+.pendiente { border: 1.5px dashed #c9a98f; border-radius: 4pt; background: #fbf6f2; padding: 14pt 10pt; text-align: center; min-height: 60pt; }
+.pendiente .rotulo { font-size: 8.5pt; font-weight: 600; color: #7a4a2e; letter-spacing: .3pt; }
+.pendiente code { font-size: 7.5pt; background: none; color: #888; }

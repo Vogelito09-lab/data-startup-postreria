@@ -1,0 +1,557 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Salomé · API de ingesta",
+    "description": "Recibe los pedidos de Salomé (CSV o JSON), los guarda sin tocar en `raw/` del data lake y avisa al worker por la cola SQS. La limpieza ocurre de forma asíncrona; el estado de cada carga se consulta en `GET /cargas/{carga_id}`.",
+    "version": "2.0.0"
+  },
+  "paths": {
+    "/salud": {
+      "get": {
+        "summary": "Revisa que la API esté viva",
+        "operationId": "salud_salud_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pedidos/csv": {
+      "post": {
+        "summary": "Sube un CSV de pedidos",
+        "operationId": "subir_csv_pedidos_csv_post",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Llave de la ingesta (obligatoria en la nube)",
+              "title": "X-Api-Key"
+            },
+            "description": "Llave de la ingesta (obligatoria en la nube)"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_subir_csv_pedidos_csv_post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CargaAceptada"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Falta la llave X-Api-Key"
+          },
+          "400": {
+            "description": "Archivo vacío o mal codificado"
+          },
+          "413": {
+            "description": "Archivo demasiado grande"
+          },
+          "422": {
+            "description": "Faltan columnas o hay renglones mal formados"
+          },
+          "503": {
+            "description": "Falla temporal de la nube"
+          }
+        }
+      }
+    },
+    "/pedidos": {
+      "post": {
+        "summary": "Envía pedidos como JSON",
+        "operationId": "subir_json_pedidos_post",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Llave de la ingesta (obligatoria en la nube)",
+              "title": "X-Api-Key"
+            },
+            "description": "Llave de la ingesta (obligatoria en la nube)"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/LineaPedido"
+                },
+                "title": "Lineas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CargaAceptada"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Algún campo no pasa la validación"
+          }
+        }
+      }
+    },
+    "/cargas/{carga_id}": {
+      "get": {
+        "summary": "Estado de una carga",
+        "operationId": "estado_cargas__carga_id__get",
+        "parameters": [
+          {
+            "name": "carga_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Carga Id"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Llave de la ingesta (obligatoria en la nube)",
+              "title": "X-Api-Key"
+            },
+            "description": "Llave de la ingesta (obligatoria en la nube)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadoCarga"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No existe esa carga"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Body_subir_csv_pedidos_csv_post": {
+        "properties": {
+          "archivo": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "Archivo",
+            "description": "CSV con las 13 columnas del diccionario de datos"
+          }
+        },
+        "type": "object",
+        "required": [
+          "archivo"
+        ],
+        "title": "Body_subir_csv_pedidos_csv_post"
+      },
+      "CargaAceptada": {
+        "properties": {
+          "carga_id": {
+            "type": "string",
+            "title": "Carga Id"
+          },
+          "estado": {
+            "type": "string",
+            "const": "recibida",
+            "title": "Estado"
+          },
+          "s3_key": {
+            "type": "string",
+            "title": "S3 Key"
+          },
+          "renglones": {
+            "type": "integer",
+            "title": "Renglones"
+          },
+          "mensaje": {
+            "type": "string",
+            "title": "Mensaje"
+          }
+        },
+        "type": "object",
+        "required": [
+          "carga_id",
+          "estado",
+          "s3_key",
+          "renglones",
+          "mensaje"
+        ],
+        "title": "CargaAceptada"
+      },
+      "EstadoCarga": {
+        "properties": {
+          "carga_id": {
+            "type": "string",
+            "title": "Carga Id"
+          },
+          "estado": {
+            "type": "string",
+            "title": "Estado"
+          },
+          "recibida_en": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Recibida En"
+          },
+          "procesada_en": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Procesada En"
+          },
+          "registros_crudos": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Registros Crudos"
+          },
+          "registros_limpios": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Registros Limpios"
+          },
+          "intentos": {
+            "type": "integer",
+            "title": "Intentos"
+          },
+          "reporte": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reporte"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "carga_id",
+          "estado",
+          "recibida_en",
+          "procesada_en",
+          "registros_crudos",
+          "registros_limpios",
+          "intentos",
+          "reporte",
+          "error"
+        ],
+        "title": "EstadoCarga"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "LineaPedido": {
+        "properties": {
+          "pedido_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Pedido Id",
+            "examples": [
+              8001
+            ]
+          },
+          "cliente_id": {
+            "type": "string",
+            "maxLength": 20,
+            "minLength": 1,
+            "pattern": "^C\\d{3,6}$",
+            "title": "Cliente Id",
+            "examples": [
+              "C0042"
+            ]
+          },
+          "fecha_pedido": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "Fecha Pedido",
+            "examples": [
+              "2026-11-03"
+            ]
+          },
+          "hora_pedido": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 8
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hora Pedido",
+            "examples": [
+              "20:41"
+            ]
+          },
+          "fecha_entrega": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "Fecha Entrega",
+            "examples": [
+              "2026-11-05"
+            ]
+          },
+          "producto": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 2,
+            "title": "Producto",
+            "examples": [
+              "Cheesecake frutos rojos entero"
+            ]
+          },
+          "categoria": {
+            "type": "string",
+            "maxLength": 120,
+            "title": "Categoria",
+            "examples": [
+              "Pasteles enteros"
+            ]
+          },
+          "unidades": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "title": "Unidades",
+            "examples": [
+              1
+            ]
+          },
+          "precio_unitario": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 20000.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Precio Unitario",
+            "examples": [
+              590
+            ]
+          },
+          "total": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100000.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total",
+            "examples": [
+              590
+            ]
+          },
+          "canal": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "Canal",
+            "examples": [
+              "WhatsApp"
+            ]
+          },
+          "entrega": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "Entrega",
+            "examples": [
+              "Domicilio"
+            ]
+          },
+          "metodo_pago": {
+            "type": "string",
+            "maxLength": 20,
+            "title": "Metodo Pago",
+            "examples": [
+              "Transferencia"
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "pedido_id",
+          "cliente_id",
+          "fecha_pedido",
+          "fecha_entrega",
+          "producto",
+          "categoria",
+          "unidades",
+          "canal",
+          "entrega",
+          "metodo_pago"
+        ],
+        "title": "LineaPedido",
+        "description": "Un renglón tal como Salomé lo captura. Se aceptan textos porque raw/ guarda los datos como llegan;\nel worker se encarga de corregirlos."
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

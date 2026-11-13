@@ -1,0 +1,448 @@
+{
+  "e1": {
+    "limpieza": {
+      "crudos": 2619,
+      "limpios": 2606,
+      "conteos": {
+        "duplicados": 13,
+        "formato_producto": 38,
+        "formato_canal": 26,
+        "formato_entrega": 0,
+        "formato_pago": 0,
+        "producto_por_precio_y_categoria": 1,
+        "unidades_texto": 10,
+        "fecha_formato": 26,
+        "precio_vacio": 7,
+        "unidades_vacias": 7,
+        "hora_vacia_sin_imputar": 13,
+        "unidades_negativas": 3,
+        "fechas_invertidas": 4,
+        "unidades_atipicas": 5,
+        "total_inconsistente": 10,
+        "total_vacio": 0,
+        "precio_distinto_a_lista_reportado": 0,
+        "irrecuperables_apartados": 0,
+        "duplicados_tras_normalizar": 0
+      },
+      "irrecuperables": 0
+    },
+    "periodo": [
+      "2020-02-06",
+      "2026-10-24"
+    ],
+    "pedidos": 1958,
+    "renglones": 2606,
+    "clientes": 708,
+    "productos": [
+      "Caja de brownies (6 pz)",
+      "Cheesecake frutos rojos entero",
+      "Cupcakes (docena)",
+      "Flan napolitano entero",
+      "Galletas con chispas (docena)",
+      "Pan de muerto (4 pz)",
+      "Pastel tres leches entero",
+      "Pay de limón entero",
+      "Rebanada cheesecake frutos rojos",
+      "Rebanada pay de limón",
+      "Rebanada tres leches",
+      "Rosca de Reyes"
+    ],
+    "kpi": {
+      "ventas": 786227.0,
+      "pedidos": 1958.0,
+      "ticket": 401.54596527068435,
+      "ticket_mediana": 360.0,
+      "estrella": "Cheesecake frutos rojos entero",
+      "estrella_pct": 0.3511517666017575,
+      "ult7": 4172.0,
+      "ant7": 5115.0,
+      "var7": -0.18435972629521014,
+      "fin": "2026-10-24 00:00:00"
+    },
+    "titulos": {
+      "lineas": "Septiembre 2026 vendió 31% más que un año antes; los picos de cada año caen en mayo, diciembre y octubre",
+      "lineas_sub": "2025 cerró -1% en pesos y -3% en piezas contra 2024: vendió un poco menos y las alzas de precio casi lo compensaron",
+      "histograma": "La mitad de los pedidos es de $360 o menos; 1 de cada 10 pasa de $795, casi siempre por un pastel entero",
+      "calor": "38% de los pedidos llega después de las 7 de la noche; el pico es el jueves de 21 a 22 h",
+      "dispersion": "Cada pedido extra en un día deja $416 más (r = 0.76): la venta depende de cuántos pedidos entran, no de pedidos más grandes",
+      "espectro": "El ciclo fuerte es de 7.0 días (la semana); la quincena no aparece como pico (5% de la potencia semanal) ni se distingue del azar en venta",
+      "barras": "Los pasteles enteros mandan todo el año; en diciembre venden 1.3 veces su promedio diario",
+      "dia_semana": "El sábado vende 2.9 veces lo del martes ($604 contra $210); el lunes no hay entregas"
+    },
+    "dia_semana": {
+      "lunes": 313,
+      "martes": 210,
+      "miércoles": 281,
+      "jueves": 323,
+      "viernes": 489,
+      "sábado": 604,
+      "domingo": 443
+    },
+    "picos": [
+      {
+        "periodo": 7.009,
+        "potencia_relativa": 1.0
+      },
+      {
+        "periodo": 3.499,
+        "potencia_relativa": 0.406
+      },
+      {
+        "periodo": 19.624,
+        "potencia_relativa": 0.101
+      },
+      {
+        "periodo": 2.334,
+        "potencia_relativa": 0.085
+      },
+      {
+        "periodo": 2.065,
+        "potencia_relativa": 0.077
+      },
+      {
+        "periodo": 2.593,
+        "potencia_relativa": 0.075
+      }
+    ],
+    "potencia_15": 0.04695751874246807,
+    "potencia_30": 0.020975818284211013,
+    "quincena": {
+      "efecto": 0.07173697758860054,
+      "p_valor": 0.40926342383198056,
+      "dias_quincena": 259,
+      "dias_normales": 1102
+    },
+    "recomendaciones": [
+      {
+        "titulo": "Arma el fin de semana desde el jueves",
+        "texto": "El sábado vendes 2.9 veces lo de un martes, y para el jueves ya tienes apartados 69% de los pasteles enteros del sábado. Esa noche puedes dejar listos los cheesecakes que necesitan reposar y comprar el queso crema justo. Entre semana no hornees de más: en 58% de los martes y miércoles que abriste no hubo ninguna entrega."
+      },
+      {
+        "titulo": "Los sábados fuertes ya llegan a tu tope: aparta con anticipo",
+        "texto": "En 6 de 51 sábados del último año entregaste 4 pasteles enteros, que es lo más que sale de tu cocina en un día normal. Esos días seguramente le dijiste que no a alguien. Abre la agenda del sábado el miércoles en tus historias y, cuando se llene, ofrece entrega el domingo."
+      },
+      {
+        "titulo": "Contesta rápido de noche",
+        "texto": "35% de los pedidos llega después de las 7 de la noche. Publica el menú en historias por la tarde y deja respuestas rápidas en WhatsApp con precios para contestar al momento. La quincena no mueve tus ventas de forma clara (la diferencia que se ve es chica y puede ser casualidad), así que no cambies la producción por ella."
+      }
+    ],
+    "ticket_p90": 795.0,
+    "bins_sturges": 12,
+    "noche": 0.3849308047155305,
+    "por_anio": {
+      "2020": {
+        "venta": 29645.0,
+        "pedidos": 99,
+        "piezas": 197
+      },
+      "2021": {
+        "venta": 64428.0,
+        "pedidos": 224,
+        "piezas": 461
+      },
+      "2022": {
+        "venta": 118655.0,
+        "pedidos": 308,
+        "piezas": 623
+      },
+      "2023": {
+        "venta": 147201.0,
+        "pedidos": 368,
+        "piezas": 775
+      },
+      "2024": {
+        "venta": 146426.0,
+        "pedidos": 351,
+        "piezas": 716
+      },
+      "2025": {
+        "venta": 144672.0,
+        "pedidos": 324,
+        "piezas": 692
+      },
+      "2026": {
+        "venta": 135200.0,
+        "pedidos": 284,
+        "piezas": 614
+      }
+    },
+    "venta_mensual_2025": 12056.0,
+    "por_categoria": {
+      "Eventos": 0.049,
+      "Galletas y brownies": 0.101,
+      "Pasteles enteros": 0.673,
+      "Rebanadas": 0.158,
+      "Temporada": 0.02
+    },
+    "por_canal_2026": {
+      "Facebook": 0.011,
+      "Instagram": 0.338,
+      "WhatsApp": 0.651
+    },
+    "dispersion": {
+      "pendiente": 415.92428092935694,
+      "r": 0.7565112215262434
+    }
+  },
+  "e2": {
+    "adf": {
+      "diaria_2022": {
+        "estadistico": -8.550074453093341,
+        "p_valor": 9.274440801054354e-14,
+        "rezagos": 22,
+        "n": 1742,
+        "critico_5": -2.8632005876775297,
+        "estacionaria_5": true
+      },
+      "diaria_2022_ct": {
+        "estadistico": -8.8837702695104,
+        "p_valor": 6.655727463127195e-13,
+        "rezagos": 22,
+        "n": 1742,
+        "critico_5": -3.413013307746046,
+        "estacionaria_5": true
+      },
+      "diaria_completa_ct": {
+        "estadistico": -7.9855758787127495,
+        "p_valor": 7.715322816189345e-11,
+        "rezagos": 27,
+        "n": 2432,
+        "critico_5": -3.4122967940509947,
+        "estacionaria_5": true
+      },
+      "diaria_dif7": {
+        "estadistico": -14.117114084031062,
+        "p_valor": 2.4614840295671217e-26,
+        "rezagos": 21,
+        "n": 1736,
+        "critico_5": -2.863206331927479,
+        "estacionaria_5": true
+      },
+      "mensual_completa": {
+        "estadistico": -2.12421091106764,
+        "p_valor": 0.2348913594662534,
+        "rezagos": 11,
+        "n": 68,
+        "critico_5": -2.9050874099328317,
+        "estacionaria_5": false
+      },
+      "mensual_dif1": {
+        "estadistico": -4.708417746635186,
+        "p_valor": 8.114152879294518e-05,
+        "rezagos": 10,
+        "n": 68,
+        "critico_5": -2.9050874099328317,
+        "estacionaria_5": true
+      }
+    },
+    "acf": [
+      1.0,
+      0.078,
+      -0.021,
+      -0.066,
+      -0.042,
+      -0.03,
+      0.056,
+      0.168,
+      0.054,
+      -0.071,
+      -0.078,
+      -0.084,
+      -0.042,
+      0.029,
+      0.182,
+      0.073,
+      -0.023,
+      -0.065,
+      -0.07,
+      -0.063,
+      0.057,
+      0.112,
+      0.052,
+      -0.068,
+      -0.071,
+      -0.081,
+      -0.014,
+      0.052,
+      0.133
+    ],
+    "pacf": [
+      1.0,
+      0.078,
+      -0.027,
+      -0.063,
+      -0.033,
+      -0.027,
+      0.056,
+      0.157,
+      0.029,
+      -0.069,
+      -0.049,
+      -0.064,
+      -0.034,
+      0.01,
+      0.144,
+      0.042,
+      -0.005,
+      -0.023,
+      -0.035,
+      -0.049,
+      0.036,
+      0.043,
+      0.009,
+      -0.052,
+      -0.022,
+      -0.032,
+      0.016,
+      0.027,
+      0.066
+    ],
+    "stl_var": {
+      "tendencia": 0.046126357275743025,
+      "semanal": 0.24846490169154123,
+      "residuo": 0.7906074975831447
+    },
+    "estacional_semana": {
+      "lunes": -232,
+      "martes": -112,
+      "miércoles": -52,
+      "jueves": -30,
+      "viernes": 69,
+      "sábado": 293,
+      "domingo": 64
+    },
+    "estacional_mes": {
+      "enero": 0.87,
+      "febrero": 1.02,
+      "marzo": 1.17,
+      "abril": 0.729,
+      "mayo": 1.483,
+      "junio": 0.995,
+      "julio": 0.798,
+      "agosto": 0.6,
+      "septiembre": 0.906,
+      "octubre": 0.978,
+      "noviembre": 0.993,
+      "diciembre": 1.458
+    },
+    "regresion": {
+      "beta": {
+        "intercepto": 80.77,
+        "t_anios": 35.86,
+        "miercoles": 113.63,
+        "jueves": 180.46,
+        "viernes": 270.13,
+        "sabado": 450.09,
+        "domingo": 204.68,
+        "feb": 35.61,
+        "mar": 202.64,
+        "abr": 10.64,
+        "may": 209.34,
+        "jun": 100.7,
+        "jul": 56.44,
+        "ago": -8.42,
+        "sep": 71.76,
+        "oct": 104.63,
+        "nov": 120.94,
+        "dic": 285.91,
+        "quincena": -53.48,
+        "fecha_fuerte": 987.14,
+        "vispera_fuerte": 290.1
+      },
+      "beta_sklearn": {
+        "intercepto": 80.77,
+        "t_anios": 35.86,
+        "miercoles": 113.63,
+        "jueves": 180.46,
+        "viernes": 270.13,
+        "sabado": 450.09,
+        "domingo": 204.68,
+        "feb": 35.61,
+        "mar": 202.64,
+        "abr": 10.64,
+        "may": 209.34,
+        "jun": 100.7,
+        "jul": 56.44,
+        "ago": -8.42,
+        "sep": 71.76,
+        "oct": 104.63,
+        "nov": 120.94,
+        "dic": 285.91,
+        "quincena": -53.48,
+        "fecha_fuerte": 987.14,
+        "vispera_fuerte": 290.1
+      },
+      "dif_max_sklearn": 2.5153212845907547e-12,
+      "dif_pred_sklearn": 6.195932655828074e-12,
+      "condicion": 859.6637762155611,
+      "entrenamiento": {
+        "MSE": 295093.98414705956,
+        "RMSE": 543.2255370903135,
+        "MAE": 420.91948152671904,
+        "R2": 0.14471990034224969
+      },
+      "prueba": {
+        "MSE": 479482.48823382123,
+        "RMSE": 692.4467403590122,
+        "MAE": 534.0667208889481,
+        "R2": 0.062121652902518365
+      },
+      "ingenuo": {
+        "MSE": 911218.6418918918,
+        "RMSE": 954.5777296228379,
+        "MAE": 645.8783783783783,
+        "R2": -0.7823638082173818
+      },
+      "sklearn_prueba": {
+        "MSE": 479482.488233821,
+        "RMSE": 692.446740359012,
+        "MAE": 534.0667208889467,
+        "R2": 0.06212165290251881
+      },
+      "n_tr": 1144,
+      "n_te": 296,
+      "p": 21,
+      "cuadratica_prueba": {
+        "MSE": 503604.6525399103,
+        "RMSE": 709.6510780234962,
+        "MAE": 504.2640643159059,
+        "R2": 0.0149381662414243
+      },
+      "validacion_2025": {
+        "lineal": {
+          "MSE": 371963.66597429145,
+          "RMSE": 609.8882405607534,
+          "MAE": 487.25185084321123,
+          "R2": 0.11003018205445037
+        },
+        "cuadratica": {
+          "MSE": 382578.27788944525,
+          "RMSE": 618.5291245280575,
+          "MAE": 450.4083974747189,
+          "R2": 0.08463338903987405
+        }
+      },
+      "sesgo_prueba": -4.224482286165057,
+      "sesgo_prueba_cuadratica": 135.73287933830014,
+      "residuos": {
+        "media": -9.2221490739213e-13,
+        "asimetria": 1.2862014843072866,
+        "curtosis_exceso": 2.2774547979976782,
+        "durbin_watson": 1.9638800950853323,
+        "breusch_pagan_p": 1.054708901471673e-15,
+        "shapiro_p": 3.4746944869634864e-26,
+        "acf_1_7": [
+          0.017,
+          -0.04,
+          0.025,
+          -0.026,
+          -0.007,
+          0.011,
+          -0.031
+        ],
+        "corr_abs_ajustado": 0.3291572083421046
+      },
+      "venta_media_dia_abierto_prueba": 554.9966216216217
+    }
+  }
+}

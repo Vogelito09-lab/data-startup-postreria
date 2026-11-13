@@ -1,0 +1,5 @@
+# Mismas versiones con que se entrenaron los modelos (Python 3.13)
+pandas==3.0.5
+numpy==2.5.3
+boto3==1.44.1
+psycopg2-binary==2.9.13

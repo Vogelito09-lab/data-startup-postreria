@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tablero
+  namespace: salome
+  labels: {app: tablero}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: tablero}
+  template:
+    metadata:
+      labels: {app: tablero}
+    spec:
+      securityContext: {runAsNonRoot: true, runAsUser: 10001}
+      containers:
+        - name: tablero
+          image: salome-tablero:3
+          imagePullPolicy: IfNotPresent
+          ports: [{containerPort: 8501}]
+          envFrom: [{configMapRef: {name: salome-config}}]
+          resources:
+            requests: {cpu: 200m, memory: 384Mi}
+            limits: {cpu: "1", memory: 1Gi}
+          readinessProbe:
+            httpGet: {path: /_stcore/health, port: 8501}
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          volumeMounts: [{name: datos, mountPath: /datos, readOnly: true}]
+      volumes:
+        - name: datos
+          hostPath: {path: /datos, type: Directory}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tablero
+  namespace: salome
+spec:
+  type: NodePort
+  selector: {app: tablero}
+  ports:
+    - {port: 8501, targetPort: 8501, nodePort: 30501}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: tablero
+  namespace: salome
+spec:
+  scaleTargetRef: {apiVersion: apps/v1, kind: Deployment, name: tablero}
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target: {type: Utilization, averageUtilization: 70}

@@ -1,0 +1,73 @@
+producto,categoria,vigente_desde,precio
+Caja de brownies (6 pz),Galletas y brownies,2020-02-01,120
+Caja de brownies (6 pz),Galletas y brownies,2021-01-15,130
+Caja de brownies (6 pz),Galletas y brownies,2022-01-15,150
+Caja de brownies (6 pz),Galletas y brownies,2023-01-15,160
+Caja de brownies (6 pz),Galletas y brownies,2024-01-15,170
+Caja de brownies (6 pz),Galletas y brownies,2025-01-15,180
+Caja de brownies (6 pz),Galletas y brownies,2026-01-15,190
+Cheesecake frutos rojos entero,Pasteles enteros,2020-02-01,380
+Cheesecake frutos rojos entero,Pasteles enteros,2021-01-15,400
+Cheesecake frutos rojos entero,Pasteles enteros,2022-01-15,450
+Cheesecake frutos rojos entero,Pasteles enteros,2022-06-01,475
+Cheesecake frutos rojos entero,Pasteles enteros,2023-01-15,490
+Cheesecake frutos rojos entero,Pasteles enteros,2024-01-15,520
+Cheesecake frutos rojos entero,Pasteles enteros,2025-01-15,550
+Cheesecake frutos rojos entero,Pasteles enteros,2026-01-15,590
+Cupcakes (docena),Eventos,2022-01-15,300
+Cupcakes (docena),Eventos,2023-01-15,320
+Cupcakes (docena),Eventos,2024-01-15,340
+Cupcakes (docena),Eventos,2025-01-15,360
+Cupcakes (docena),Eventos,2026-01-15,380
+Flan napolitano entero,Pasteles enteros,2022-01-15,280
+Flan napolitano entero,Pasteles enteros,2023-01-15,300
+Galletas con chispas (docena),Galletas y brownies,2020-02-01,110
+Galletas con chispas (docena),Galletas y brownies,2021-01-15,120
+Galletas con chispas (docena),Galletas y brownies,2022-01-15,140
+Galletas con chispas (docena),Galletas y brownies,2023-01-15,150
+Galletas con chispas (docena),Galletas y brownies,2024-01-15,160
+Pan de muerto (4 pz),Temporada,2022-01-15,140
+Pan de muerto (4 pz),Temporada,2023-01-15,150
+Pan de muerto (4 pz),Temporada,2024-01-15,160
+Pan de muerto (4 pz),Temporada,2025-01-15,170
+Pan de muerto (4 pz),Temporada,2026-01-15,180
+Pastel tres leches entero,Pasteles enteros,2021-01-15,420
+Pastel tres leches entero,Pasteles enteros,2022-01-15,450
+Pastel tres leches entero,Pasteles enteros,2023-01-15,480
+Pastel tres leches entero,Pasteles enteros,2024-01-15,520
+Pastel tres leches entero,Pasteles enteros,2025-01-15,550
+Pastel tres leches entero,Pasteles enteros,2026-01-15,590
+Pay de limón entero,Pasteles enteros,2020-02-01,260
+Pay de limón entero,Pasteles enteros,2021-01-15,280
+Pay de limón entero,Pasteles enteros,2022-01-15,320
+Pay de limón entero,Pasteles enteros,2023-01-15,340
+Pay de limón entero,Pasteles enteros,2024-01-15,360
+Pay de limón entero,Pasteles enteros,2025-01-15,380
+Pay de limón entero,Pasteles enteros,2026-01-15,400
+Rebanada cheesecake frutos rojos,Rebanadas,2020-02-01,45
+Rebanada cheesecake frutos rojos,Rebanadas,2021-01-15,48
+Rebanada cheesecake frutos rojos,Rebanadas,2022-01-15,55
+Rebanada cheesecake frutos rojos,Rebanadas,2022-06-01,60
+Rebanada cheesecake frutos rojos,Rebanadas,2023-01-15,58
+Rebanada cheesecake frutos rojos,Rebanadas,2024-01-15,62
+Rebanada cheesecake frutos rojos,Rebanadas,2025-01-15,65
+Rebanada cheesecake frutos rojos,Rebanadas,2026-01-15,70
+Rebanada pay de limón,Rebanadas,2020-02-01,35
+Rebanada pay de limón,Rebanadas,2021-01-15,38
+Rebanada pay de limón,Rebanadas,2022-01-15,42
+Rebanada pay de limón,Rebanadas,2023-01-15,45
+Rebanada pay de limón,Rebanadas,2024-01-15,48
+Rebanada pay de limón,Rebanadas,2025-01-15,50
+Rebanada pay de limón,Rebanadas,2026-01-15,55
+Rebanada tres leches,Rebanadas,2021-01-15,45
+Rebanada tres leches,Rebanadas,2022-01-15,52
+Rebanada tres leches,Rebanadas,2023-01-15,55
+Rebanada tres leches,Rebanadas,2024-01-15,60
+Rebanada tres leches,Rebanadas,2025-01-15,62
+Rebanada tres leches,Rebanadas,2026-01-15,68
+Rosca de Reyes,Temporada,2021-01-01,320
+Rosca de Reyes,Temporada,2022-01-01,350
+Rosca de Reyes,Temporada,2023-01-01,380
+Rosca de Reyes,Temporada,2024-01-01,420
+Rosca de Reyes,Temporada,2025-01-01,450
+Rosca de Reyes,Temporada,2026-01-01,480

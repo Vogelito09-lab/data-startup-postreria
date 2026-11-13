@@ -1,0 +1,325 @@
+{
+  "datos": {
+    "archivo": "pedidos_salome_clean.csv",
+    "renglones": 2614,
+    "pedidos": 1963,
+    "sha256": "9c190b4aaac6480f",
+    "hasta": "2026-10-31"
+  },
+  "sarima_busqueda_segundos": 39.9,
+  "sarima_top": [
+    {
+      "p": 1,
+      "d": 0,
+      "q": 2,
+      "P": 1,
+      "D": 1,
+      "Q": 1,
+      "aic": 20508.6,
+      "bic": 20540.0,
+      "parametros": 6
+    },
+    {
+      "p": 1,
+      "d": 0,
+      "q": 2,
+      "P": 0,
+      "D": 1,
+      "Q": 1,
+      "aic": 20512.2,
+      "bic": 20538.4,
+      "parametros": 5
+    },
+    {
+      "p": 1,
+      "d": 0,
+      "q": 0,
+      "P": 1,
+      "D": 1,
+      "Q": 1,
+      "aic": 20512.9,
+      "bic": 20533.9,
+      "parametros": 4
+    },
+    {
+      "p": 0,
+      "d": 0,
+      "q": 1,
+      "P": 1,
+      "D": 1,
+      "Q": 1,
+      "aic": 20513.1,
+      "bic": 20534.0,
+      "parametros": 4
+    },
+    {
+      "p": 2,
+      "d": 0,
+      "q": 0,
+      "P": 1,
+      "D": 1,
+      "Q": 1,
+      "aic": 20514.6,
+      "bic": 20540.8,
+      "parametros": 5
+    },
+    {
+      "p": 0,
+      "d": 0,
+      "q": 2,
+      "P": 1,
+      "D": 1,
+      "Q": 1,
+      "aic": 20514.6,
+      "bic": 20540.8,
+      "parametros": 5
+    },
+    {
+      "p": 1,
+      "d": 0,
+      "q": 0,
+      "P": 0,
+      "D": 1,
+      "Q": 1,
+      "aic": 20514.9,
+      "bic": 20530.7,
+      "parametros": 3
+    },
+    {
+      "p": 0,
+      "d": 0,
+      "q": 0,
+      "P": 1,
+      "D": 1,
+      "Q": 1,
+      "aic": 20515.0,
+      "bic": 20530.7,
+      "parametros": 3
+    }
+  ],
+  "sarima_mejor_D0": [
+    {
+      "p": 0,
+      "d": 0,
+      "q": 1,
+      "P": 1,
+      "D": 0,
+      "Q": 1,
+      "aic": 20597.1,
+      "bic": 20623.3,
+      "parametros": 5
+    }
+  ],
+  "sarima_evaluacion": {
+    "SARIMA(1,0,2)(1,1,1)7": {
+      "MAE": 500.3799177263842,
+      "RMSE": 682.3214506709292,
+      "n": 295,
+      "aic": 20508.6,
+      "bic": 20540.0,
+      "parametros": 6,
+      "cobertura_95": 0.8817567567567568
+    },
+    "SARIMA(1,0,2)(0,1,1)7": {
+      "MAE": 499.368379468898,
+      "RMSE": 681.2580220431945,
+      "n": 295,
+      "aic": 20512.2,
+      "bic": 20538.4,
+      "parametros": 5,
+      "cobertura_95": 0.8817567567567568
+    },
+    "SARIMA(1,0,0)(1,1,1)7": {
+      "MAE": 501.08171054894495,
+      "RMSE": 683.2024797098767,
+      "n": 295,
+      "aic": 20512.9,
+      "bic": 20533.9,
+      "parametros": 4,
+      "cobertura_95": 0.8851351351351351
+    },
+    "SARIMA(0,0,0)(0,1,1)7": {
+      "MAE": 498.4324897498289,
+      "RMSE": 682.3285103851435,
+      "n": 295,
+      "aic": 20517.3,
+      "bic": 20527.8,
+      "parametros": 2,
+      "cobertura_95": 0.8817567567567568
+    },
+    "Ingenuo estacional (mismo día semana pasada)": {
+      "MAE": 645.8783783783783,
+      "RMSE": 954.5777296228379,
+      "n": 296
+    },
+    "Regresión de E2": {
+      "MAE": 534.0667208889481,
+      "RMSE": 692.4467403590122,
+      "n": 296
+    },
+    "Promedio por día de la semana": {
+      "MAE": 500.2160045922615,
+      "RMSE": 685.4236063902928,
+      "n": 296
+    }
+  },
+  "sarima_elegido": "SARIMA(0,0,0)(0,1,1)7",
+  "sarima_ljung_box": {
+    "7": 0.3059600739786983,
+    "14": 0.6008373644713365
+  },
+  "sarima_parametros": {
+    "ma.S.L7": -0.9997,
+    "sigma2": 281457.9989
+  },
+  "sarima_pvalores": {
+    "ma.S.L7": 0.0,
+    "sigma2": 0.0
+  },
+  "sarima_enteros": {
+    "MAE": 0.8922157613048797,
+    "RMSE": 1.1628595057234967,
+    "n": 295,
+    "cobertura_95": 0.8817567567567568,
+    "ingenuo": {
+      "MAE": 1.0608108108108107,
+      "RMSE": 1.6460435776307563,
+      "n": 296
+    }
+  },
+  "clasificador_datos": {
+    "dias_entrenamiento": 1139,
+    "dias_prueba": 296,
+    "tasa_alto_entrenamiento": 0.22388059701492538,
+    "tasa_alto_prueba": 0.21621621621621623
+  },
+  "clasificador": {
+    "Naive Bayes": {
+      "f2_cv": 0.6580722291916578,
+      "f2": 0.7057057057057057,
+      "mejores": {},
+      "precision": 0.6103896103896104,
+      "recall": 0.734375,
+      "f1": 0.6666666666666666,
+      "exactitud": 0.8412162162162162,
+      "auc": 0.8459388469827586,
+      "matriz": [
+        [
+          202,
+          30
+        ],
+        [
+          17,
+          47
+        ]
+      ],
+      "segundos": 0.07
+    },
+    "SVM (RBF)": {
+      "f2_cv": 0.6843117726820369,
+      "f2": 0.7352941176470589,
+      "mejores": {
+        "svc__C": 0.3,
+        "svc__gamma": 0.03
+      },
+      "precision": 0.5952380952380952,
+      "recall": 0.78125,
+      "f1": 0.6756756756756757,
+      "exactitud": 0.8378378378378378,
+      "auc": 0.848767510775862,
+      "matriz": [
+        [
+          198,
+          34
+        ],
+        [
+          14,
+          50
+        ]
+      ],
+      "segundos": 1.74
+    },
+    "KNN": {
+      "f2_cv": 0.531545443962742,
+      "f2": 0.6389776357827476,
+      "mejores": {
+        "kneighborsclassifier__n_neighbors": 5,
+        "kneighborsclassifier__weights": "distance"
+      },
+      "precision": 0.7017543859649122,
+      "recall": 0.625,
+      "f1": 0.6611570247933884,
+      "exactitud": 0.8614864864864865,
+      "auc": 0.8010506465517242,
+      "matriz": [
+        [
+          215,
+          17
+        ],
+        [
+          24,
+          40
+        ]
+      ],
+      "segundos": 0.33
+    },
+    "Árbol de decisión": {
+      "f2_cv": 0.6846082548258161,
+      "f2": 0.7440476190476191,
+      "mejores": {
+        "max_depth": 2,
+        "min_samples_leaf": 20
+      },
+      "precision": 0.625,
+      "recall": 0.78125,
+      "f1": 0.6944444444444444,
+      "exactitud": 0.8513513513513513,
+      "auc": 0.8661772629310345,
+      "matriz": [
+        [
+          202,
+          30
+        ],
+        [
+          14,
+          50
+        ]
+      ],
+      "segundos": 0.32
+    },
+    "Regla simple (apartados y fin de semana)": {
+      "precision": 0.6911764705882353,
+      "recall": 0.734375,
+      "f1": 0.7121212121212122,
+      "f2": 0.7253086419753086,
+      "exactitud": 0.8716216216216216,
+      "matriz": [
+        [
+          211,
+          21
+        ],
+        [
+          17,
+          47
+        ]
+      ]
+    }
+  },
+  "clasificador_elegido": "Árbol de decisión",
+  "importancias": {
+    "apartados_enteros": 0.945,
+    "apartados_pedidos": 0.0,
+    "enteros_hace_7": 0.0,
+    "media_enteros_28": 0.0,
+    "fecha_fuerte": 0.0,
+    "vispera": 0.0,
+    "quincena": 0.0,
+    "es_diciembre": 0.0,
+    "es_mayo": 0.0,
+    "vie": 0.0,
+    "sab": 0.055,
+    "dom": 0.0,
+    "mar_jue": 0.0
+  },
+  "segundos_reentreno_final": 0.81
+}

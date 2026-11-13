@@ -1,0 +1,41 @@
+digraph G {
+  graph [rankdir=LR, fontname="DejaVu Sans", fontsize=11, nodesep=0.35, ranksep=0.55, pad=0.3, bgcolor="white"];
+  node  [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=10, fillcolor="#fbf4ef", color="#7a4a2e", penwidth=1.2];
+  edge  [fontname="DejaVu Sans", fontsize=9, color="#555555"];
+
+  salome [label="Salomé\n(celular o laptop)\nCSV o JSON", shape=box, fillcolor="#fde8ec", color="#d97a8c"];
+  equipo [label="Equipo\nIAM + MFA", fillcolor="#eeeeee", color="#888888"];
+
+  subgraph cluster_aws {
+    label="AWS · us-east-2 · VPC por defecto"; style="rounded,dashed"; color="#999999"; fontcolor="#555555";
+    subgraph cluster_ec2 {
+      label="EC2 t3.micro  tablero-salome\nperfil salome-ec2-base (solo sts:AssumeRole + SSM)\nSG: 8000 solo IP del equipo · 8501 abierto · sin SSH";
+      style="rounded,filled"; fillcolor="#f7f7f7"; color="#7a4a2e"; fontsize=9;
+      ingesta [label="Ingesta FastAPI :8000\nrol salome-ingesta\nPOST /pedidos/csv · POST /pedidos\nGET /cargas/{id} · /docs"];
+      worker  [label="Worker (limpieza.py)\nrol salome-worker\nlong polling 20 s"];
+      tablero [label="Tablero Streamlit :8501\nrol salome-tablero\ncaché 60 s"];
+    }
+    subgraph cluster_s3 {
+      label="S3  data-startup-salome-13454721\n(acceso público bloqueado · SSE-S3)"; style="rounded"; color="#6a9fb5"; fontsize=9;
+      raw   [label="raw/pedidos/\nfecha_carga=AAAA-MM-DD/<carga_id>.csv\n(inmutable)", fillcolor="#eef5f9", color="#6a9fb5"];
+      clean [label="clean/pedidos/\ncargas/<carga_id>.csv\npedidos_salome_clean.csv", fillcolor="#eef5f9", color="#6a9fb5"];
+    }
+    sqs [label="SQS salome-pedidos\nvisibilidad 120 s", fillcolor="#fff6dd", color="#c9a227"];
+    dlq [label="SQS salome-pedidos-dlq\n(tras 3 intentos)", fillcolor="#fff6dd", color="#c9a227"];
+    rds [label="RDS PostgreSQL 16\ndb.t4g.micro · sin IP pública\nSG: 5432 solo desde la EC2", shape=cylinder, fillcolor="#eef7ee", color="#4f8a4f"];
+    budget [label="Budgets\nalerta de gasto", fillcolor="#eeeeee", color="#888888"];
+  }
+
+  salome -> ingesta [label="1 HTTP"];
+  ingesta -> raw [label="2 PutObject"];
+  ingesta -> rds [label="3 carga = recibida", style=dashed];
+  ingesta -> sqs [label="4 SendMessage"];
+  sqs -> worker [label="5 ReceiveMessage"];
+  worker -> raw [label="6 GetObject"];
+  worker -> clean [label="7 PutObject"];
+  worker -> rds [label="8 upsert en 1 transacción"];
+  sqs -> dlq [label="falla 3 veces", color="#c0392b", fontcolor="#c0392b"];
+  rds -> tablero [label="9 SELECT v_lineas"];
+  tablero -> salome [label="10 navegador", constraint=false];
+  equipo -> budget [style=invis];
+}

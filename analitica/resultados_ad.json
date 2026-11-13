@@ -1,0 +1,226 @@
+{
+ "datos": {
+  "dias": 1442,
+  "entrenamiento": 1146,
+  "prueba": 296,
+  "pct_fuertes": 0.2212,
+  "variables": 10
+ },
+ "preliminar": [
+  {
+   "Modelo": "Clase mayoritaria",
+   "F1 en CV": 0.0,
+   "± (desv.)": 0.0,
+   "F2 en CV": 0.0,
+   "Accuracy": 0.7838,
+   "Precision": 0.0,
+   "Recall": 0.0,
+   "F1": 0.0,
+   "F2": 0.0
+  },
+  {
+   "Modelo": "Naive Bayes",
+   "F1 en CV": 0.5673,
+   "± (desv.)": 0.0618,
+   "F2 en CV": 0.6745,
+   "Accuracy": 0.8311,
+   "Precision": 0.5875,
+   "Recall": 0.7344,
+   "F1": 0.6528,
+   "F2": 0.6994
+  },
+  {
+   "Modelo": "KNN (k=5)",
+   "F1 en CV": 0.6412,
+   "± (desv.)": 0.0666,
+   "F2 en CV": 0.5699,
+   "Accuracy": 0.9088,
+   "Precision": 0.9302,
+   "Recall": 0.625,
+   "F1": 0.7477,
+   "F2": 0.6689
+  },
+  {
+   "Modelo": "SVM (RBF)",
+   "F1 en CV": 0.6496,
+   "± (desv.)": 0.0709,
+   "F2 en CV": 0.5498,
+   "Accuracy": 0.9122,
+   "Precision": 1.0,
+   "Recall": 0.5938,
+   "F1": 0.7451,
+   "F2": 0.6463
+  },
+  {
+   "Modelo": "Árbol de decisión",
+   "F1 en CV": 0.6276,
+   "± (desv.)": 0.0956,
+   "F2 en CV": 0.6136,
+   "Accuracy": 0.8412,
+   "Precision": 0.6269,
+   "Recall": 0.6562,
+   "F1": 0.6412,
+   "F2": 0.6502
+  },
+  {
+   "Modelo": "Regla simple",
+   "F1 en CV": 0.6845,
+   "± (desv.)": NaN,
+   "F2 en CV": 0.664,
+   "Accuracy": 0.8716,
+   "Precision": 0.6912,
+   "Recall": 0.7344,
+   "F1": 0.7121,
+   "F2": 0.7253
+  }
+ ],
+ "optimizacion": [
+  {
+   "Modelo": "Árbol de decisión",
+   "combinaciones": 48,
+   "mejores hiperparámetros": "{'class_weight': 'balanced', 'max_depth': 3, 'min_samples_leaf': 5}",
+   "F2 en CV": 0.6936,
+   "±": 0.0563,
+   "segundos": 3.2
+  },
+  {
+   "Modelo": "SVM (RBF)",
+   "combinaciones": 40,
+   "mejores hiperparámetros": "{'C': 0.3, 'class_weight': 'balanced', 'gamma': 0.01}",
+   "F2 en CV": 0.686,
+   "±": 0.0614,
+   "segundos": 3.9
+  },
+  {
+   "Modelo": "Naive Bayes",
+   "combinaciones": 5,
+   "mejores hiperparámetros": "{'var_smoothing': 1e-06}",
+   "F2 en CV": 0.676,
+   "±": 0.059,
+   "segundos": 1.7
+  },
+  {
+   "Modelo": "KNN",
+   "combinaciones": 24,
+   "mejores hiperparámetros": "{'n_neighbors': 3, 'p': 2, 'weights': 'distance'}",
+   "F2 en CV": 0.6065,
+   "±": 0.0638,
+   "segundos": 1.7
+  }
+ ],
+ "final": [
+  {
+   "Modelo": "Naive Bayes",
+   "F2 en CV": 0.676,
+   "Accuracy": 0.8311,
+   "Precision": 0.5875,
+   "Recall": 0.7344,
+   "F1": 0.6528,
+   "F2": 0.6994,
+   "AUC": 0.8506
+  },
+  {
+   "Modelo": "KNN",
+   "F2 en CV": 0.6065,
+   "Accuracy": 0.8514,
+   "Precision": 0.6562,
+   "Recall": 0.6562,
+   "F1": 0.6562,
+   "F2": 0.6562,
+   "AUC": 0.8278
+  },
+  {
+   "Modelo": "SVM (RBF)",
+   "F2 en CV": 0.686,
+   "Accuracy": 0.8514,
+   "Precision": 0.625,
+   "Recall": 0.7812,
+   "F1": 0.6944,
+   "F2": 0.744,
+   "AUC": 0.8777
+  },
+  {
+   "Modelo": "Árbol de decisión",
+   "F2 en CV": 0.6936,
+   "Accuracy": 0.8581,
+   "Precision": 0.6447,
+   "Recall": 0.7656,
+   "F1": 0.7,
+   "F2": 0.738,
+   "AUC": 0.8692
+  },
+  {
+   "Modelo": "Regla simple",
+   "F2 en CV": 0.664,
+   "Accuracy": 0.8716,
+   "Precision": 0.6912,
+   "Recall": 0.7344,
+   "F1": 0.7121,
+   "F2": 0.7253,
+   "AUC": NaN
+  }
+ ],
+ "costos": [
+  {
+   "index": "Sin modelo (siempre 1 pastel)",
+   "días fuertes que pasó por alto": 64,
+   "falsas alarmas": 0,
+   "costo estimado del año (MXN)": 32000,
+   "ahorro contra no hacer nada": 0
+  },
+  {
+   "index": "Regla simple",
+   "días fuertes que pasó por alto": 17,
+   "falsas alarmas": 21,
+   "costo estimado del año (MXN)": 11650,
+   "ahorro contra no hacer nada": 20350
+  },
+  {
+   "index": "Naive Bayes",
+   "días fuertes que pasó por alto": 17,
+   "falsas alarmas": 33,
+   "costo estimado del año (MXN)": 13450,
+   "ahorro contra no hacer nada": 18550
+  },
+  {
+   "index": "KNN",
+   "días fuertes que pasó por alto": 22,
+   "falsas alarmas": 22,
+   "costo estimado del año (MXN)": 14300,
+   "ahorro contra no hacer nada": 17700
+  },
+  {
+   "index": "SVM (RBF)",
+   "días fuertes que pasó por alto": 14,
+   "falsas alarmas": 30,
+   "costo estimado del año (MXN)": 11500,
+   "ahorro contra no hacer nada": 20500
+  },
+  {
+   "index": "Árbol de decisión",
+   "días fuertes que pasó por alto": 15,
+   "falsas alarmas": 27,
+   "costo estimado del año (MXN)": 11550,
+   "ahorro contra no hacer nada": 20450
+  }
+ ],
+ "elegido": "Árbol de decisión",
+ "errores": {
+  "acierto normal": 205,
+  "acierto fuerte": 49,
+  "falso positivo": 27,
+  "falso negativo": 15
+ },
+ "importancia": {
+  "media_enteros_28": -0.0006,
+  "apartados_pedidos": 0.0,
+  "enteros_hace_7": 0.0,
+  "apartados_otros": 0.0,
+  "mes": 0.0,
+  "tipo_fecha": 0.0,
+  "quincena": 0.0,
+  "dia_semana": 0.0112,
+  "apartados_enteros": 0.0114,
+  "apartados_monto": 0.456
+ }
+}

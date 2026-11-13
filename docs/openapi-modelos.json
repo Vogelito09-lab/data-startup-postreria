@@ -1,0 +1,202 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Salomé · API de modelos",
+    "description": "Pronóstico SARIMA de la venta diaria y clasificador de días fuertes, servidos desde la nube.",
+    "version": "3.0.0"
+  },
+  "paths": {
+    "/salud": {
+      "get": {
+        "summary": "Salud",
+        "operationId": "salud_salud_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/modelo": {
+      "get": {
+        "summary": "Modelo",
+        "operationId": "modelo_modelo_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pronostico": {
+      "get": {
+        "summary": "Pronosticar",
+        "operationId": "pronosticar_pronostico_get",
+        "parameters": [
+          {
+            "name": "dias",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 30,
+              "minimum": 1,
+              "description": "Días a pronosticar (1 a 30)",
+              "default": 14,
+              "title": "Dias"
+            },
+            "description": "Días a pronosticar (1 a 30)"
+          },
+          {
+            "name": "serie",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "venta",
+                "enteros"
+              ],
+              "type": "string",
+              "default": "venta",
+              "title": "Serie"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clasificar": {
+      "get": {
+        "summary": "Clasificar",
+        "operationId": "clasificar_clasificar_get",
+        "parameters": [
+          {
+            "name": "fecha",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Día de entrega; por omisión, dos días después del último dato",
+              "title": "Fecha"
+            },
+            "description": "Día de entrega; por omisión, dos días después del último dato"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

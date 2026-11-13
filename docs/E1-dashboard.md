@@ -1,119 +1,154 @@
-# E1 · Dashboard empresarial — Salomé
+# E1 · Dashboard empresarial de Salomé
 
-**Proyecto Integrador DATA STARTUP** · Cómputo en la Nube (IAD-2408) × Analítica de Datos (IAD-2403)
-Integrantes: Jarom Cortes Perez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead) · Fecha: 23 de octubre de 2026
+Proyecto integrador DATA STARTUP · Cómputo en la Nube (IAD-2408) × Analítica de Datos (IAD-2403) · TecNM Campus Colima
 
-> Salomé no tiene tienda física: todos sus pedidos llegan por Instagram y WhatsApp. Este tablero
-> convierte ese historial de pedidos en decisiones de producción. Los títulos y las recomendaciones se
-> calculan directamente de los datos, así que se actualizan solos cuando llegan pedidos nuevos.
+| | |
+|---|---|
+| Integrantes | Jarom Cortes Pérez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead) |
+| Repositorio | https://github.com/Vogelito09-lab/data-startup-postreria · etiqueta `e1` |
+| Tablero | http://18.226.251.46:8501 (EC2 `tablero-salome`; la IP cambia si se apaga la instancia) |
+| Versión | Corregida, 12 de noviembre de 2026. Se recalcularon todos los números con el historial completo (2020 a 2026). |
+
+El tablero convierte el historial de pedidos de Salomé en decisiones de producción. Los títulos de las gráficas y las recomendaciones se calculan con los datos (`services/tablero/analitica.py`), así que cambian solos cuando entran pedidos nuevos. Las cifras de este documento corresponden a los datos hasta el 24 de octubre de 2026 y se reproducen con `python scripts/figuras_docs.py` y el notebook `notebooks/E1_limpieza_y_hallazgos.ipynb`.
 
 ## 1. Datos
 
 | Concepto | Valor |
 |---|---|
-| Fuente | Historial de pedidos de Salomé por Instagram y WhatsApp |
-| Periodo | 1 de abril de 2025 al 30 de septiembre de 2026 (548 días, 18 meses) |
-| Volumen | 25,074 registros crudos · 17,366 pedidos |
-| Columnas | `pedido_id`, `fecha`, `hora` (hora del mensaje), `producto`, `categoria`, `unidades`, `precio_unitario`, `total`, `canal`, `entrega`, `metodo_pago` |
-| Productos | Cheesecake clásico y tres leches (rebanada), brownie, galleta con chispas, cheesecake entero y pastel de temporada |
-| Temporadas relevantes | San Valentín, 10 de mayo, graduaciones, Día de Muertos, diciembre y cuesta de enero |
+| Periodo | 6 de febrero de 2020 (primera entrega) al 24 de octubre de 2026 |
+| Volumen | 2,619 renglones crudos · 2,606 limpios · 1,958 pedidos · 708 clientes anónimos |
+| Productos | 12: cheesecake de frutos rojos (entero y rebanada), pay de limón (entero y rebanada), tres leches (entero y rebanada), caja de brownies, galletas con chispas (hasta junio de 2024), flan napolitano (2022 a 2023), cupcakes para eventos, rosca de Reyes y pan de muerto |
+| Cómo se cuenta la venta | En la fecha de entrega, porque ese es el día que Salomé produce |
+| Origen | Historial de pedidos de Salomé (E0, sección 6) |
 
-## 2. Limpieza (`services/worker/limpieza.py`)
+## 2. Limpieza
 
-La limpieza es un módulo de Python reutilizable; en E2 lo ejecutará el worker de la cola.
+El código está en `services/worker/limpieza.py` y no adivina: si un valor se puede reconstruir con otra columna del mismo renglón, se reconstruye; si no, el renglón se aparta y se reporta. Desde E2 este mismo módulo lo ejecuta el worker de la cola.
 
-| Tipo de error | Qué se encontró | Registros | Corrección |
-|---|---|---:|---|
-| Duplicados | Filas idénticas repetidas | 30 | Eliminadas |
-| Formato | Nombre de producto en minúsculas o con espacios | 45 | Unificado al nombre oficial |
-| Tipo de dato | Unidades escritas como texto ("2 pz") | 12 | Convertidas a número |
-| Faltantes | Precio unitario vacío | 20 | Precio de catálogo del producto |
-| Faltantes | Unidades vacías | 40 | Reconstruidas con total ÷ precio |
-| Error lógico | Unidades negativas | 15 | Reconstruidas con total ÷ precio |
-| Atípicos | Unidades imposibles (999) | 10 | Reconstruidas con total ÷ precio |
-| Error lógico | Total ≠ unidades × precio | 20 | Total recalculado |
-| Irrecuperables | Sin forma de reconstruir | 0 | — |
-
-Resultado: **25,044 registros limpios** en `clean/`.
-
-## 3. Indicadores (KPI)
-
-| Indicador | Valor (periodo completo) |
-|---|---|
-| Ventas del periodo | $5,674,140 en 17,366 pedidos |
-| Ticket promedio por pedido | $327 (mediana $225) |
-| Producto estrella | Cheesecake entero, 30% de las ventas |
-| Últimos 7 días vs. semana anterior | $68,400 · −0.7% |
-
-## 4. Visualizaciones (cada título es el hallazgo)
-
-| # | Tipo | Pregunta | Hallazgo |
+| Tipo de error | Qué se encontró | Renglones | Corrección |
 |---|---|---|---|
-| 1 | Líneas | ¿Mi negocio está creciendo? | Septiembre 2026 vendió 19% más que septiembre 2025; los picos son 10 de mayo, San Valentín y diciembre |
-| 2 | Histograma (16 bins, regla de Sturges) | ¿Cuánto gasta un cliente por pedido? | La mitad de los pedidos es de $225 o menos; 1 de cada 10 pasa de $680, por los pasteles enteros |
-| 3 | Mapa de calor día × hora | ¿Cuándo llegan los pedidos? | Los pedidos llegan sobre todo de noche; el pico es el sábado de 21 a 22 h |
-| 4 | Dispersión pedidos vs. venta | ¿Vendo más por más pedidos o por pedidos más grandes? | Cada pedido extra deja $364 (r = 0.92): la venta depende de cuántos mensajes se convierten en pedido |
-| 5 | Análisis espectral (FFT) | ¿Mis ventas siguen ciclos? | Ciclo dominante de 7 días y otro de ~14 días (quincena) |
-| 6 | Barras apiladas por mes y categoría | ¿Qué vendo en cada temporada? | Los pasteles enteros se disparan en diciembre: 2.0 veces su promedio diario del año |
+| Duplicados | El mismo renglón copiado dos veces del chat | 13 | Se elimina la copia |
+| Formato | Nombre de producto escrito distinto ("Cheescake", "pay de limon", "Brownies 6pz", espacios de más) | 38 | Se unifica al nombre del catálogo por clave sin acentos, alias y similitud de texto |
+| Formato | Un nombre irreconocible ("flan entero") | 1 | Se identifica por su categoría y su precio de lista de ese día |
+| Formato | Canal abreviado ("WA", "IG", "face") | 26 | Se unifica a WhatsApp, Instagram o Facebook |
+| Tipo de dato | Unidades escritas como texto ("2 pz", "dos", "1 entero") | 10 | Se convierten a número |
+| Tipo de dato | Fecha en formato día/mes/año | 26 | Se convierte a AAAA-MM-DD |
+| Faltantes | Precio unitario vacío | 7 | Precio de lista vigente en la fecha del pedido |
+| Faltantes | Unidades vacías | 7 | total ÷ precio, solo si da un entero positivo |
+| Faltantes | Hora del mensaje vacía | 13 | No se imputa: se queda vacía y esos pedidos no entran al mapa de calor |
+| Error lógico | Unidades negativas | 3 | Valor absoluto (el total era positivo) |
+| Error lógico | Fecha de entrega anterior a la del pedido | 4 | Año viejo tecleado en enero: se suma un año; si no, se voltean las fechas |
+| Error lógico | Total distinto de unidades × precio | 10 | Se recalcula el total |
+| Atípicos | Unidades imposibles para una persona (10 pasteles enteros en un renglón: un cero de más) | 5 | total ÷ precio. Los pedidos grandes de cupcakes para eventos, que sí son reales, se conservan |
+| Irrecuperables | Sin forma de reconstruir | 0 | Se apartarían con su reporte |
+
+Resultado: 2,606 renglones limpios en `clean/`. El archivo limpio pasa todas las reglas de `validar_limpio` (sin duplicados, sin faltantes críticos, total igual a unidades × precio, entrega posterior al pedido) y cada regla de limpieza tiene su prueba automática en `tests/test_limpieza.py`.
+
+## 3. Indicadores
+
+| Indicador | Valor |
+|---|---|
+| Ventas del periodo | $786,227 en 1,958 pedidos |
+| Ticket promedio por pedido | $402 (mediana $360) |
+| Producto estrella | Cheesecake de frutos rojos entero, 35% de la venta |
+| Últimos 7 días contra los 7 anteriores | $4,172 del 18 al 24 de octubre contra $5,115 de la semana previa (−18%) |
+
+Con poco más de un pedido por día, una semana puede subir o bajar 20% solo porque entró o no entró un pastel entero. El tablero muestra la variación tal cual; para decidir conviene mirar la tendencia de varias semanas y no una sola.
+
+## 4. Visualizaciones
+
+Cada título es el hallazgo. En el tablero se pueden filtrar por periodo y categoría.
+
+![](img/e1_1_lineas.png)
+
+Tendencia de venta mensual (líneas). El negocio creció rápido de 2020 a 2023 y desde ahí se quedó en unos 12 mil pesos al mes. 2025 cerró 1% abajo de 2024 en pesos y 3% abajo en piezas: vendió un poco menos y las alzas de precio casi lo compensaron. Septiembre de 2026 vendió 31% más que septiembre de 2025, que fue un mes flojo.
+
+![](img/e1_2_histograma.png)
+
+Distribución del ticket (histograma con 12 barras por la regla de Sturges, k = 1 + log₂ 1,958). La distribución tiene sesgo a la derecha: la mitad de los pedidos es de $360 o menos y el 10% más alto pasa de $795, casi siempre porque incluye un pastel entero o cupcakes para un evento.
+
+![](img/e1_3_calor.png)
+
+Mapa de calor de pedidos por día y hora del mensaje. 38% de los pedidos llega después de las 7 de la noche, con el pico el jueves entre 9 y 10 de la noche: la gente aparta el pastel del fin de semana desde antes.
+
+![](img/e1_4_dispersion.png)
+
+Relación entre pedidos y venta por día (dispersión). Cada pedido adicional en un día suma $416 en promedio y la correlación de Pearson es r = 0.76. Los días de venta alta lo son porque entran más pedidos, no porque cada pedido sea más grande.
+
+![](img/e1_5_espectro.png)
+
+Análisis espectral (sección 5).
+
+![](img/e1_6_barras.png)
+
+Composición por mes y categoría (barras apiladas, venta promedio por día con entregas). Los pasteles enteros son dos tercios de la venta. Diciembre y mayo son los meses más altos y en diciembre los enteros venden 1.3 veces su promedio diario. En enero aparece la rosca y en octubre el pan de muerto.
 
 ## 5. Análisis espectral
 
-1. Se suman las ventas por día y se rellena con 0 cualquier día sin pedidos para que la serie sea regular (Δt = 1 día).
-2. Se quita la tendencia restando la media móvil de 28 días, para que la FFT no confunda el crecimiento con un ciclo largo.
-3. Se aplica `numpy.fft.rfft` y se calcula la potencia |X(f)|². El periodo de cada componente es **T = 1/f** días.
-4. Picos encontrados:
-   - **7.0 días (ciclo semanal)**, el más fuerte. Venta promedio por día: lunes $7,837 · martes $6,974 · miércoles $8,072 · jueves $9,889 · viernes $12,229 · **sábado $15,452** · domingo $12,100.
-   - **~14 días (quincena)**. Los días 15, 16, 30, 31 y 1 se vende **17% más** que un día normal. El pico no cae exactamente en 15 porque los meses duran entre 28 y 31 días.
+1. Se suma la venta por día de entrega y se rellena con 0 cada día sin entregas (lunes, vacaciones), para tener una serie regular con Δt = 1 día (2,453 días).
+2. Se le resta su media móvil centrada de 28 días. Sin esto, el crecimiento de 2020 a 2023 aparece como un ciclo largo falso.
+3. Se aplica `numpy.fft.rfft`, se calcula la potencia |X(f)|² y el periodo de cada componente con T = 1/f.
 
-**Para el negocio:** la producción no puede ser igual todos los días. Se planea por semana (más de viernes a domingo) y se ajusta en quincena.
+| Pico | Periodo | Potencia relativa | Qué significa |
+|---|---|---|---|
+| 1 | 7.0 días | 1.00 | El ciclo semanal |
+| 2 | 3.5 días | 0.41 | Armónico de la semana (7/2) |
+| 3 | 19.6 días | 0.10 | Ruido; no corresponde a nada del calendario |
+| 4 | 2.33 días | 0.09 | Armónico de la semana (7/3) |
+| cerca de 15.2 | quincena | 0.05 | No sobresale |
+| cerca de 30.4 | mes | 0.02 | No sobresale |
+
+Los armónicos de 3.5 y 2.33 días salen porque la semana de Salomé no tiene forma de seno: el lunes vale cero y el sábado sube de golpe, y una onda cuadrada se descompone en la frecuencia base más sus múltiplos. No son ciclos nuevos.
+
+Venta promedio por día abierto (contando los días que abrió y no le pidieron nada): martes $210, miércoles $281, jueves $323, viernes $489, sábado $604 y domingo $443. El sábado vende 2.9 veces lo del martes. En 44% de los días que abrió no hubo ninguna entrega; seis de cada diez de esos días caen entre martes y jueves. Los pocos lunes que abre son fechas fuertes, por eso su promedio ($313) no se compara con los demás.
+
+La quincena no aparece en el espectro. Salomé siente que en quincena se mueve más, así que la buscamos también de otra forma: comparamos cada día abierto de quincena (1, 14, 15, 16 y los dos últimos del mes) contra el promedio de su mismo día de la semana en el mismo año, sin contar fechas especiales. Desde 2022, en quincena se vende 7% más, pero la diferencia no es significativa (prueba t de Welch, p = 0.41, 259 días de quincena contra 1,102 normales). Con poco más de un pedido diario el ruido es tan grande que un efecto de ese tamaño no se distingue del azar. No podemos confirmar la quincena con estos datos; si existe, es mucho menor que el efecto del sábado.
+
+Para el negocio: la producción se planea por semana y se concentra de viernes a domingo. La quincena no justifica hornear más.
 
 ## 6. Recomendaciones para Salomé
 
-1. **Prepara según el día, no igual toda la semana.** El sábado se vende 2.2 veces lo del martes. Como el cheesecake necesita reposar, decide la producción del fin de semana desde el jueves: menos merma entre semana y menos pedidos rechazados el sábado.
-2. **Aprovecha la quincena.** Esos días se vende 17% más. Ten base lista de cheesecake entero y cheesecake clásico para los días 15-16 y 30-1, y publica ahí tus promociones en Instagram.
-3. **Contesta rápido de noche.** El 53% de las ventas entra por mensajes de las 19 h en adelante y el pico es a las 21 h. Publica historias antes de esa hora y deja respuestas rápidas con menú y precios en WhatsApp: un mensaje que tarda en contestarse es un pedido que se va a otra postrería.
+Calculadas con el último año de pedidos.
 
-### Reporte gerencial
-
-El tablero genera un **reporte gerencial en PDF** con el botón *Descargar reporte gerencial* (barra lateral y final
-de la página). Incluye los 4 indicadores, un resumen, las 3 recomendaciones y las 6 gráficas con sus hallazgos,
-calculados para el periodo y las categorías elegidos, listo para imprimir o enviar por WhatsApp.
-Código: `services/tablero/reporte.py` · Ejemplo: [`docs/reporte-gerencial-ejemplo.pdf`](reporte-gerencial-ejemplo.pdf).
+1. Arma el fin de semana desde el jueves. El sábado vendes 2.9 veces lo de un martes, y el jueves en la noche ya tienes apartados 69% de los pasteles enteros del sábado. Con esa cuenta puedes dejar listos los cheesecakes que necesitan reposar y comprar el queso crema justo. Entre semana no hornees de más: en 58% de los martes y miércoles que abriste no hubo ninguna entrega.
+2. Los sábados fuertes ya llegan a tu tope: aparta con anticipo. En 6 de los últimos 51 sábados entregaste cuatro pasteles enteros, que es lo más que sale de tu cocina en un día normal. Esos días seguro le dijiste que no a alguien. Abre la agenda del sábado el miércoles en tus historias y, cuando se llene, ofrece entrega el domingo.
+3. Contesta rápido de noche. 35% de los pedidos del último año llegó después de las 7 de la noche. Publica el menú en historias por la tarde y deja respuestas rápidas en WhatsApp con precios para contestar al momento. La quincena no mueve tus ventas de forma clara, así que no cambies la producción por ella.
 
 ## 7. Nube (AWS · tema 2.4)
 
-**Tablero publicado:** http://18.191.145.103:8501 (instancia EC2 `tablero-salome`, región `us-east-2`; la IP cambia si la instancia se detiene y se vuelve a encender)
-
-**Arquitectura:** los pedidos viven en un bucket S3 con dos zonas; una instancia EC2 `t3.micro` (Amazon Linux 2023)
-corre el tablero de Streamlit como servicio y lee `clean/` con un rol de IAM, sin llaves en el código ni en el servidor.
+Los pedidos viven en un bucket de S3 con dos zonas. Una instancia EC2 t3.micro corre el tablero de Streamlit como servicio de systemd y lee `clean/` con un rol de IAM, sin llaves en el código ni en el servidor.
 
 ```
-Pedidos (CSV) ──► S3  data-startup-salome-25460344
-                   ├── raw/pedidos/fecha_carga=2026-10-23/pedidos_salome.csv   (tal como llegaron, no se modifican)
-                   └── clean/pedidos/pedidos_salome_clean.csv                  (limpios, los lee el tablero)
-                                    │  s3:GetObject (rol tablero-salome-ec2)
-                                    ▼
-                  EC2 t3.micro ── Streamlit :8501 ──► navegador de la dueña
+Pedidos (CSV) ──► S3 data-startup-salome-13454721
+                   ├── raw/pedidos/fecha_carga=2026-10-24/historial.csv     (tal como llegó)
+                   └── clean/pedidos/pedidos_salome_clean.csv             (versión vigente)
+                                  │  s3:GetObject solo sobre clean/pedidos/*
+                                  ▼
+                 EC2 t3.micro ── Streamlit :8501 ──► navegador de Salomé
 ```
 
 | Requisito | Cómo se cumple | Evidencia |
 |---|---|---|
-| Almacenamiento con dos zonas | Bucket S3 `data-startup-salome-25460344` con `raw/` y `clean/`, acceso público bloqueado y cifrado por defecto (SSE-S3) | ![Bucket](img/aws-bucket.png) |
-| Convención de nombres | `raw/pedidos/fecha_carga=AAAA-MM-DD/archivo.csv` (inmutable, la fecha indica la carga) y `clean/pedidos/pedidos_salome_clean.csv` (versión vigente) | Este documento |
-| Tablero lee de `clean/` en la nube | `app.py` usa boto3 y lee `s3://data-startup-salome-25460344/clean/pedidos/…`; la barra lateral muestra la fuente | ![Tablero leyendo de S3](img/aws-tablero-s3.png) |
-| Tablero desplegado | Instancia EC2 `tablero-salome` con el script `infra/ec2/user-data.sh`: instala Python 3.11, clona el repositorio y deja Streamlit como servicio de systemd | ![EC2](img/aws-ec2.png) |
-| Credenciales fuera del código | El servidor usa un **rol de IAM** (perfil de instancia); no hay llaves en el código, en el repositorio ni en el servidor. `.gitignore` excluye `secrets.toml` | `infra/ec2/user-data.sh`, `.gitignore` |
-| Mínimo privilegio | Política `TableroSoloLecturaClean`: solo `s3:GetObject` sobre `clean/*` (`infra/iam/politica-tablero-ec2.json`); el tablero no puede borrar ni escribir | `infra/iam/` |
-| Acceso seguro a la cuenta | Un acceso por integrante con su propio AWS Builder ID (Jarom invitado al equipo); no se opera con una cuenta raíz compartida. El grupo de seguridad solo abre el puerto 8501 (sin SSH; administración por Session Manager) | ![Equipo](img/aws-equipo.png) |
-| Control de presupuesto | Plan gratuito (sin cargos) + alerta de gasto cero en AWS Budgets; la instancia se detiene cuando no se usa | ![Presupuesto](img/aws-presupuesto.png) ![Plan gratuito](img/aws-plan-gratuito.png) |
+| Almacenamiento con dos zonas | Bucket `data-startup-salome-13454721` con `raw/` y `clean/`, acceso público bloqueado y cifrado por defecto (SSE-S3) | Captura del bucket |
+| Convención de nombres | `raw/pedidos/fecha_carga=AAAA-MM-DD/<archivo>.csv`: inmutable, particionado por día de carga (estilo Hive, para que Athena o Glue lo lean después). `clean/pedidos/pedidos_salome_clean.csv`: la versión vigente que se sobrescribe | Este documento |
+| Tablero lee de `clean/` en la nube | `services/tablero/fuente.py` con `FUENTE=s3` usa boto3 y lee `s3://data-startup-salome-13454721/clean/pedidos/pedidos_salome_clean.csv`; la barra lateral muestra la fuente | Captura del tablero |
+| Credenciales fuera del código | El servidor usa un perfil de instancia; no hay llaves en el código, en el repositorio ni en el servidor. `.gitignore` excluye `.env`, `secrets.toml` y `data/historial/` | `.gitignore` |
+| Mínimo privilegio | Política `TableroSoloLecturaClean`: solo `s3:GetObject` sobre `clean/pedidos/*` (`infra/iam/politica-tablero.json`). El tablero no puede escribir, borrar ni leer `raw/` | Política en el repositorio |
+| Acceso seguro a la cuenta | Un usuario de IAM por integrante, cada uno con MFA y sin llaves de acceso de larga duración (la terminal usa `aws login`). La cuenta raíz tiene MFA, no tiene llaves de acceso y no se usa para operar. El grupo de seguridad abre solo el 8501; no hay SSH, la administración es por Session Manager | Capturas de IAM y del grupo de seguridad |
+| Control de presupuesto | Plan gratuito y alerta de Budgets; la instancia se detiene cuando no se usa | Captura de Budgets |
 
-**Por qué almacenamiento de objetos:** los CSV se escriben una vez y se leen muchas; S3 es barato, no
-necesita servidor y es la base natural de un data lake. El almacenamiento en bloques (EBS) solo sirve
-conectado a una máquina, y el de archivos (EFS) sirve para carpetas compartidas que se editan, que no es
-este caso.
+Por qué almacenamiento de objetos: los CSV se escriben una vez y se leen muchas, S3 no necesita servidor, cobra por lo que se guarda y es la base de un data lake. El almacenamiento en bloques (EBS) solo existe pegado a una máquina y el de archivos (EFS) sirve para carpetas que varios servidores editan a la vez; ninguno es nuestro caso. Un data warehouse (Redshift) tendría sentido con muchos clientes y consultas pesadas, no con tres mil renglones.
+
+### Evidencia
+
+![Evidencia: Bucket con las zonas raw/ y clean/ y acceso público bloqueado](img/evidencia/e1_bucket.png)
+
+![Evidencia: Tablero publicado en la EC2 leyendo de clean/ (fuente en la barra lateral)](img/evidencia/e1_tablero_ec2.png)
+
+![Evidencia: Grupo de seguridad de la EC2 con solo el puerto 8501](img/evidencia/e1_grupo_seguridad.png)
+
+![Evidencia: Rol de la EC2 con la política TableroSoloLecturaClean](img/evidencia/e1_rol_iam.png)
 
 ## 8. Uso de IA generativa
 
-Se usó Claude (Anthropic) para generar el código base del generador de datos, del módulo de limpieza y
-del tablero, y para redactar el borrador de este documento. Todo el código se revisó, se ejecutó y se puede
-explicar en la defensa.
+Claude (Anthropic) generó el código base del módulo de limpieza y del tablero, y el borrador de este documento. Revisamos y ejecutamos todo el código; las pruebas automáticas (`python -m pytest tests/`) cubren cada regla de limpieza.
