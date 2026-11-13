@@ -6,8 +6,8 @@ Proyecto integrador DATA STARTUP · Cómputo en la Nube (IAD-2408) × Analítica
 |---|---|
 | Integrantes | Jarom Cortes Pérez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead) |
 | Repositorio | https://github.com/Vogelito09-lab/data-startup-postreria · etiqueta `e2` |
-| API de ingesta | `http://<IP de tablero-salome>:8000/docs` (abierta solo a la IP del equipo) |
-| Tablero v2 | `http://<IP de tablero-salome>:8501` |
+| API de ingesta | `http://18.227.72.184:8000/docs` (abierta solo a la IP del equipo) |
+| Tablero v2 | `http://18.227.72.184:8501` |
 | Fecha | 12 de noviembre de 2026 |
 
 En E1 los datos se subieron a mano. Ahora Salomé (o nosotros por ella) sube un CSV a una API, la API lo guarda tal cual en `raw/`, avisa por una cola, y un worker lo limpia, lo escribe en `clean/` y en PostgreSQL. El tablero lee de la base y se actualiza solo. Nadie toca nada en medio.
@@ -110,12 +110,12 @@ Demostración: `infra/aws/probar_privilegios.sh` intenta 16 acciones con cada pe
 
 Lo que se demuestra en vivo, con `tests/demo_punta_a_punta.sh`:
 
-1. Se sube `data/sample/semana_2026-10-25.csv` (8 renglones, los pedidos de la semana del 25 al 31 de octubre, con sus errores de captura) a `POST /pedidos/csv`.
+1. Se sube `data/sample/semana_2026-10-25.csv` (8 renglones, los pedidos de la semana del 25 al 31 de octubre; esta semana llegó sin errores de captura, así que el reporte de limpieza sale en ceros) a `POST /pedidos/csv`.
 2. La API contesta 202 con el `carga_id`.
 3. El script consulta `GET /cargas/{id}` cada 2 segundos hasta que dice `procesada`, y muestra el reporte de limpieza.
 4. En el tablero, la última fecha entregada pasa del 24 al 31 de octubre y el panel de últimas cargas muestra la nueva.
 
-En nuestra prueba con el mismo código (S3 y SQS emulados con moto y PostgreSQL 16 local), la carga del historial completo (2,619 renglones) quedó procesada en 0.5 segundos y la de la semana nueva en 0.2 segundos, medidos desde que la API la recibió hasta que el worker la marcó como procesada. La base y el consolidado de `clean/` terminaron idénticos al archivo limpio de referencia: 2,614 renglones, 1,963 pedidos y $789,297. Reenviar la semana dejó los mismos totales. En AWS se suma la latencia de red; el tablero, con su caché de 60 segundos, muestra el dato nuevo en menos de 2 minutos, bajo el límite de 5.
+En nuestra prueba con el mismo código (S3 y SQS emulados con moto y PostgreSQL 16 local), la carga del historial completo (2,619 renglones) quedó procesada en 0.5 segundos y la de la semana nueva en 0.2 segundos, medidos desde que la API la recibió hasta que el worker la marcó como procesada. La base y el consolidado de `clean/` terminaron idénticos al archivo limpio de referencia: 2,614 renglones, 1,963 pedidos y $789,297. Reenviar la semana dejó los mismos totales. En la EC2 con RDS (13 de noviembre) el historial quedó procesado 3 segundos después de subirlo y la semana nueva en 2 (0.61 s de limpieza y escritura), y la base terminó con los mismos 2,614 renglones, 1,963 pedidos y $789,297. En AWS se suma la latencia de red; el tablero, con su caché de 60 segundos, muestra el dato nuevo en menos de 2 minutos, bajo el límite de 5.
 
 ![Evidencia: Terminal con la demo contra la EC2 y el tiempo medido](img/evidencia/e2_demo_ec2.png)
 

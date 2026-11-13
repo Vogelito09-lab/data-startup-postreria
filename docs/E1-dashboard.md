@@ -6,7 +6,7 @@ Proyecto integrador DATA STARTUP · Cómputo en la Nube (IAD-2408) × Analítica
 |---|---|
 | Integrantes | Jarom Cortes Pérez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead) |
 | Repositorio | https://github.com/Vogelito09-lab/data-startup-postreria · etiqueta `e1` |
-| Tablero | http://18.226.251.46:8501 (EC2 `tablero-salome`; la IP cambia si se apaga la instancia) |
+| Tablero | http://18.227.72.184:8501 (EC2 `tablero-salome`; la IP cambia si se apaga la instancia) |
 | Versión | Corregida, 12 de noviembre de 2026. Se recalcularon todos los números con el historial completo (2020 a 2026). |
 
 El tablero convierte el historial de pedidos de Salomé en decisiones de producción. Los títulos de las gráficas y las recomendaciones se calculan con los datos (`services/tablero/analitica.py`), así que cambian solos cuando entran pedidos nuevos. Las cifras de este documento corresponden a los datos hasta el 24 de octubre de 2026 y se reproducen con `python scripts/figuras_docs.py` y el notebook `notebooks/E1_limpieza_y_hallazgos.ipynb`.
