@@ -117,7 +117,7 @@ Elegimos AWS. Antes de crear recursos revisamos el Plan gratuito vigente para cu
 | Cuenta de AWS en el Plan gratuito, región us-east-2 | Listo | Captura de la consola (Billing > Plan) |
 | Alerta de gasto cero en AWS Budgets (avisa por correo desde el primer centavo) | Listo | Captura de Budgets |
 | Cuenta raíz con MFA, sin llaves de acceso y sin uso diario | Listo | Captura de IAM > Security credentials |
-| Un usuario de IAM por integrante (grupo `administradores`), cada uno con su MFA; nadie comparte contraseña. Elegimos usuarios de IAM y no IAM Identity Center porque este exige crear una AWS Organization, lo que saca a la cuenta del Plan gratuito y cancela sus créditos | Listo | Captura de IAM > Usuarios |
+| Un usuario de IAM por integrante (grupo `administradores`), cada uno con su propia contraseña; nadie comparte contraseña ni usa la raíz. El usuario del Cloud Lead, que es el que opera la infraestructura, tiene MFA. Elegimos usuarios de IAM y no IAM Identity Center porque este exige crear una AWS Organization, lo que saca a la cuenta del Plan gratuito y cancela sus créditos | Listo | Captura de IAM > Usuarios |
 | Repositorio en GitHub con los dos integrantes como colaboradores | Listo | https://github.com/Vogelito09-lab/data-startup-postreria |
 | Estructura inicial del repositorio (docs, data/sample, services, infra, tests) | Listo | README |
 
@@ -129,7 +129,7 @@ Elegimos AWS. Antes de crear recursos revisamos el Plan gratuito vigente para cu
 
 ![Evidencia: Cuenta raíz con MFA y sin llaves de acceso](img/evidencia/e0_raiz_mfa.png)
 
-![Evidencia: Usuarios de IAM, uno por integrante, con MFA](img/evidencia/e0_identity_center.png)
+![Evidencia: Usuarios de IAM, uno por integrante](img/evidencia/e0_identity_center.png)
 
 ![Evidencia: Repositorio en GitHub con los dos colaboradores](img/evidencia/e0_github.png)
 

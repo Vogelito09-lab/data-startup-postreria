@@ -9,7 +9,7 @@ los documentos. Mientras falta, el PDF muestra un recuadro "Captura pendiente"; 
 | e0_plan_gratuito.png | E0 | Cuenta de AWS en el Plan gratuito (Billing) |
 | e0_budgets.png | E0 | Alerta de gasto cero en AWS Budgets |
 | e0_raiz_mfa.png | E0 | Cuenta raíz con MFA y sin llaves de acceso |
-| e0_identity_center.png | E0 | Usuarios de IAM, uno por integrante, con MFA |
+| e0_identity_center.png | E0 | Usuarios de IAM, uno por integrante |
 | e0_github.png | E0 | Colaboradores del repositorio en GitHub |
 | e1_bucket.png | E1 | Bucket con raw/ y clean/ y acceso público bloqueado |
 | e1_tablero_ec2.png | E1 | Tablero en la EC2 con la fuente s3:// en la barra lateral |
