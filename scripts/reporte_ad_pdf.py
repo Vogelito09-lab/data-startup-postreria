@@ -1,4 +1,4 @@
-"""PDF del reporte ejecutivo de Analítica de Datos: analitica/Reporte_ejecutivo_Salome.md -> .pdf"""
+"""PDF del reporte ejecutivo de Analítica de Datos: analisis-de-datos/Reporte_ejecutivo_Salome.md -> .pdf"""
 import asyncio
 import subprocess
 from pathlib import Path
@@ -6,7 +6,7 @@ from pathlib import Path
 from playwright.async_api import async_playwright
 
 RAIZ = Path(__file__).resolve().parents[1]
-AD = RAIZ / "analitica"
+AD = RAIZ / "analisis-de-datos"
 CSS = (RAIZ / "docs" / "estilo_pdf.css").read_text() + """
 body { font-size: 9.6pt; line-height: 1.42; }
 h1 { font-size: 17pt; margin-bottom: 8pt; }

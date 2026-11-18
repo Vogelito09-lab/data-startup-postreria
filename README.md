@@ -4,12 +4,20 @@ Tablero y pronóstico de producción para Salomé, postrería casera que vende p
 
 Equipo: Jarom Cortes Pérez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead)
 
-| Qué | Dónde |
+## Guía para revisar: ¿qué materia busca?
+
+| Materia | Dónde está | Entregas |
+|---|---|---|
+| **Análisis de Datos** (IAD-2403, Prof. Armando Gallardo Heredia) | Carpeta [`analisis-de-datos/`](analisis-de-datos/) (lo único de esta materia; el resto del repositorio es de Cómputo en la Nube) | Avance 1: [`Avance1_EDA_Salome.ipynb`](analisis-de-datos/Avance1_EDA_Salome.ipynb) · Avance 2: [`Avance2_Modelos_Salome.ipynb`](analisis-de-datos/Avance2_Modelos_Salome.ipynb) · Final: [`Final_Salome_Modelado_Predictivo.ipynb`](analisis-de-datos/Final_Salome_Modelado_Predictivo.ipynb) y [`Reporte_ejecutivo_Salome.pdf`](analisis-de-datos/Reporte_ejecutivo_Salome.pdf) |
+| **Cómputo en la Nube** (IAD-2408, proyecto DATA STARTUP) | Todo lo demás: documentos en [`docs/`](docs/), código en `services/`, infraestructura en `infra/` y `k8s/` | E0 [`docs/E0-propuesta.pdf`](docs/E0-propuesta.pdf) · E1 [`docs/E1-dashboard.pdf`](docs/E1-dashboard.pdf) · E2 [`docs/E2-cimientos.pdf`](docs/E2-cimientos.pdf) · E3 [`docs/E3-produccion.pdf`](docs/E3-produccion.pdf). Cada entrega tiene su etiqueta (`e0`, `e1`, `e2`, ...) |
+
+Los notebooks de `notebooks/` son la parte analítica de los entregables E1 a E3 de Cómputo en la Nube, no los avances de Análisis de Datos.
+
+| Servicio (E3) | Dónde |
 |---|---|
 | Tablero | `https://salome-tablero.<id>.ecs.us-east-2.on.aws` (ECS Express Mode) |
 | API de modelos | `https://salome-modelos.<id>.ecs.us-east-2.on.aws/docs` |
 | API de ingesta | `https://salome-ingesta.<id>.ecs.us-east-2.on.aws/docs` (pide `X-Api-Key`) |
-| Entregables | `docs/E0-propuesta.md`, `docs/E1-dashboard.md`, `docs/E2-cimientos.md`, `docs/E3-produccion.md` |
 
 ## Cómo está armado
 
@@ -24,7 +32,7 @@ docs/              entregables, figuras, diagrama y resultados.json
 data/historial/    historial de pedidos 2020 a 2026, catálogo y cierres (fuera de GitHub; viene en el zip y en S3)
 data/sample/       muestra pequeña (200 renglones) y la semana de la demo
 notebooks/         E1 limpieza y hallazgos · E2 series y regresión · E3 SARIMA y clasificador (ejecutados)
-analitica/         Analítica de Datos: avances 1 y 2, notebook final y reporte ejecutivo
+analisis-de-datos/ Análisis de Datos (Prof. Gallardo): avances 1 y 2, notebook final y reporte ejecutivo
 scripts/           figuras, notebooks, entrenamiento y entorno local
 services/ingesta/  API FastAPI
 services/worker/   limpieza.py, worker.py, db.py y tablas de referencia

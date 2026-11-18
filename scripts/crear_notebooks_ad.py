@@ -1,4 +1,4 @@
-"""Arma y ejecuta los tres notebooks de Analítica de Datos (IAD-2403) en analitica/.
+"""Arma y ejecuta los tres notebooks de Analítica de Datos (IAD-2403) en analisis-de-datos/.
 
     python scripts/crear_notebooks_ad.py            # los tres
     python scripts/crear_notebooks_ad.py 1          # solo el Avance 1
@@ -13,7 +13,7 @@ import nbformat as nbf
 from nbclient import NotebookClient
 
 RAIZ = Path(__file__).resolve().parents[1]
-AD = RAIZ / "analitica"
+AD = RAIZ / "analisis-de-datos"
 md, code = nbf.v4.new_markdown_cell, nbf.v4.new_code_cell
 
 EQUIPO = "Jarom Cortes Pérez · Carlos Antonio Vogel Romero"
