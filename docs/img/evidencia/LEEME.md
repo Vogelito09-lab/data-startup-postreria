@@ -1,8 +1,7 @@
 # Capturas de evidencia
 
-Cada captura tomada en la consola de AWS o en la terminal se guarda aquí con el nombre exacto que usan
-los documentos. Mientras falta, el PDF muestra un recuadro "Captura pendiente"; al agregarla y correr
-`python scripts/docs_a_pdf.py`, aparece la imagen.
+Capturas tomadas en la consola de AWS, en la terminal y en el navegador durante cada entrega. Los documentos
+las incluyen por nombre y `python scripts/docs_a_pdf.py` las inserta en los PDF.
 
 | Archivo | Documento | Qué debe mostrar |
 |---|---|---|
