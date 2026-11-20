@@ -1,0 +1,5 @@
+Method,Name,Error,Occurrences,First Seen,Last Seen
+GET,/pronostico (enteros),HTTPError('502 Server Error: Bad Gateway for url: /pronostico (enteros)'),79,2026-11-20T04:47:42Z,2026-11-20T04:54:49Z
+GET,/salud,HTTPError('502 Server Error: Bad Gateway for url: /salud'),4,2026-11-20T04:47:42Z,2026-11-20T04:51:54Z
+GET,/clasificar,HTTPError('502 Server Error: Bad Gateway for url: /clasificar'),40,2026-11-20T04:47:42Z,2026-11-20T04:54:49Z
+GET,/pronostico (venta),HTTPError('502 Server Error: Bad Gateway for url: /pronostico (venta)'),127,2026-11-20T04:47:42Z,2026-11-20T04:54:49Z

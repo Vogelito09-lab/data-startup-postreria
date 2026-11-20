@@ -15,9 +15,9 @@ Los notebooks de `notebooks/` son la parte analítica de los entregables E1 a E3
 
 | Servicio (E3) | Dónde |
 |---|---|
-| Tablero | `https://salome-tablero.<id>.ecs.us-east-2.on.aws` (ECS Express Mode) |
-| API de modelos | `https://salome-modelos.<id>.ecs.us-east-2.on.aws/docs` |
-| API de ingesta | `https://salome-ingesta.<id>.ecs.us-east-2.on.aws/docs` (pide `X-Api-Key`) |
+| Tablero | `https://sa-e7534c88ee9e4a2abb60db3aa642242d.ecs.us-east-2.on.aws` (ECS Express Mode; se apaga entre revisiones) |
+| API de modelos | `https://sa-4a340ffb9b624e52980333ab674441b5.ecs.us-east-2.on.aws/docs` |
+| API de ingesta | `https://sa-0df9f449806a48c7a39cbc08ef01363c.ecs.us-east-2.on.aws/docs` (pide `X-Api-Key`) |
 
 ## Cómo está armado
 

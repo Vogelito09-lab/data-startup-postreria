@@ -18,6 +18,7 @@ Uso:
 """
 import argparse
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -31,7 +32,9 @@ TF = Path(__file__).resolve().parents[1] / "terraform"
 SERVICIOS = {
     # nombre: puerto, salud, cpu, memoria, min, max, variables, ¿usa SQS/S3?
     "ingesta": dict(puerto=8000, salud="/salud", cpu="256", memoria="512", minimo=1, maximo=2, env={}),
-    "modelos": dict(puerto=8100, salud="/salud", cpu="512", memoria="1024", minimo=1, maximo=4, env={"FUENTE": "postgres"}),
+    # CACHE_PRONOSTICO=0 al desplegar apaga la caché para la prueba de carga (así se ve escalar).
+    "modelos": dict(puerto=8100, salud="/salud", cpu="512", memoria="1024", minimo=1, maximo=4,
+                    env={"FUENTE": "postgres", "CACHE_PRONOSTICO": os.getenv("CACHE_PRONOSTICO", "1")}),
     "tablero": dict(puerto=8501, salud="/_stcore/health", cpu="512", memoria="1024", minimo=1, maximo=2,
                     env={"FUENTE": "postgres", "HOME": "/tmp"}),
 }
@@ -93,8 +96,11 @@ def main():
     tf = salidas_terraform()
     cuenta = boto3.client("sts").get_caller_identity()["Account"]
     existentes = {}
-    for s in ecs.list_services(cluster="default").get("serviceArns", []):
-        existentes[s.rsplit("/", 1)[-1]] = s
+    try:
+        for s in ecs.list_services(cluster="default").get("serviceArns", []):
+            existentes[s.rsplit("/", 1)[-1]] = s
+    except ecs.exceptions.ClusterNotFoundException:
+        pass  # cuenta nueva: Express crea el clúster default con el primer servicio
     url_modelos = None
     for nombre in ("ingesta", "modelos", "tablero"):  # tablero al final: necesita la URL de modelos
         p = parametros(nombre, SERVICIOS[nombre], tf, a.version, cuenta, url_modelos)
@@ -107,6 +113,9 @@ def main():
             print("creado", nombre)
         conf = r["service"].get("activeConfigurations") or [{}]
         rutas = conf[0].get("ingressPaths", [])
+        if not rutas:  # la respuesta de update no trae la URL; sin ella el tablero perdía MODELOS_URL
+            d = ecs.describe_express_gateway_service(serviceArn=r["service"]["serviceArn"])["service"]
+            rutas = (d.get("activeConfigurations") or [{}])[0].get("ingressPaths", [])
         if rutas:
             print("  URL:", rutas[0]["endpoint"])
             if nombre == "modelos":

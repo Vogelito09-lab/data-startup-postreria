@@ -6,9 +6,12 @@ Proyecto integrador DATA STARTUP · Cómputo en la Nube (IAD-2408) × Analítica
 |---|---|
 | Integrantes | Jarom Cortes Pérez (Cloud Lead) · Carlos Antonio Vogel Romero (Data Lead) |
 | Repositorio | https://github.com/Vogelito09-lab/data-startup-postreria · etiqueta `e3` |
-| Tablero v3 | `https://salome-tablero.<id>.ecs.us-east-2.on.aws` |
-| API de modelos | `https://salome-modelos.<id>.ecs.us-east-2.on.aws/docs` |
-| Fecha | 12 de noviembre de 2026 |
+| Tablero v3 | `https://sa-e7534c88ee9e4a2abb60db3aa642242d.ecs.us-east-2.on.aws` |
+| API de modelos | `https://sa-4a340ffb9b624e52980333ab674441b5.ecs.us-east-2.on.aws/docs` |
+| API de ingesta | `https://sa-0df9f449806a48c7a39cbc08ef01363c.ecs.us-east-2.on.aws/docs` (pide `X-Api-Key`) |
+| Fecha | 19 de noviembre de 2026 |
+
+Las URLs estuvieron activas durante la prueba del 19 de noviembre. Entre revisiones los servicios de ECS se borran para no gastar (FinOps) y se recrean con `python infra/aws/desplegar_ecs.py --version 3`; al recrearlos ECS Express les asigna una dirección nueva.
 
 En E2 los datos ya viajaban solos, pero todo corría en una sola máquina virtual y el pronóstico no existía. En E3 cada servicio es un contenedor, la ingesta, los modelos y el tablero corren en un servicio administrado con autoescalado, el worker se volvió una función que se dispara con cada mensaje, y la infraestructura base se crea y se destruye con Terraform. Del lado de analítica, un SARIMA pronostica la venta de los próximos 7 a 30 días con su banda de confianza y un clasificador avisa con dos días de anticipación si viene un día fuerte. El tablero consume los dos desde la API.
 
@@ -69,7 +72,9 @@ Secretos: cada servicio recibe `DATABASE_URL` desde Parameter Store (`/salome/<s
 
 Red: Terraform crea el grupo de seguridad `salome-ecs-tareas` y le abre el 5432 de la RDS. La base sigue sin IP pública.
 
-![Evidencia: Consola de ECS con los tres servicios activos y sus URLs](img/evidencia/e3_ecs.png)
+Despliegue del 19 de noviembre: los tres servicios quedaron `ACTIVE` con HTTPS y revisión de salud en verde unos dos minutos después de crearlos. La ingesta responde 401 a una carga sin `X-Api-Key` y 202 con ella. El tablero, desde su URL pública, muestra la sección "Lo que viene" con el pronóstico que calcula la API de modelos en ECS.
+
+![Evidencia: los tres servicios de ECS Express activos con sus URLs y el tablero v3 en su URL pública con el pronóstico de la API](img/evidencia/e3_ecs.png)
 
 ## 4. Orquestación con Kubernetes
 
@@ -84,6 +89,8 @@ Manifiestos en `k8s/`, probados contra el esquema oficial de Kubernetes 1.30 con
 
 Cómo encajan: un pod es la unidad mínima, uno o más contenedores que comparten red. El Deployment declara cuántas réplicas del pod deben existir y las reemplaza si una muere o falla su `livenessProbe`; la `readinessProbe` evita mandarle tráfico a una réplica que todavía está cargando los modelos. El Service da un nombre fijo (`modelos:8100`) y reparte el tráfico entre las réplicas listas, así el tablero no necesita saber cuántas hay. El HPA mide el CPU de cada pod contra lo que pidió (`requests.cpu: 250m`) y agrega réplicas cuando el promedio pasa de 60%; para quitarlas espera 120 segundos de calma, para no subir y bajar a cada rato. Los pods corren sin root, sin escalar privilegios y con el sistema de archivos de solo lectura (con `/tmp` aparte).
 
+Prueba en kind con 50 usuarios y la caché apagada: el CPU llegó a 400% de lo pedido y el HPA pasó de 1 a 5 réplicas en un minuto; con cinco réplicas el promedio bajó a 82%. En el primer intento el pod se reiniciaba por falta de memoria (`OOMKilled` con 768 MiB) y por fallar la revisión de vida mientras estaba ocupado; subimos el límite a 1.5 GiB y el tiempo de espera de las sondas, y con eso el escalado fue limpio.
+
 ![Evidencia: kubectl -n salome get hpa modelos --watch durante la prueba de carga](img/evidencia/e3_hpa.png)
 
 ## 5. Serverless: el worker como Lambda
@@ -96,7 +103,9 @@ Prueba `tests/test_lambda.py` (con S3 emulado y PostgreSQL real): un lote con un
 
 Lo que se gana y se pierde: se paga por ejecución (unas cuantas cargas al día cuestan prácticamente cero) y no hay que vigilar un proceso; a cambio hay arranque en frío de unos segundos, límite de 15 minutos por invocación y una conexión a base por contenedor, que con muchas cargas simultáneas pediría RDS Proxy.
 
-![Evidencia: CloudWatch Logs de la Lambda procesando la semana del 25 al 31 de octubre](img/evidencia/e3_lambda_logs.png)
+En la nube: la semana del 25 al 31 de octubre subida a la ingesta de ECS quedó `procesada` 40 segundos después, sin que nadie tocara nada. Casi todo ese tiempo fue el arranque en frío: la fase de inicio (importar pandas y abrir la conexión) pasó del límite de 10 segundos y Lambda la repitió dentro de la misma invocación; la limpieza y la escritura tardaron 1.35 s y la función usó 175 MB de 1,024. Las siguientes invocaciones del mismo contenedor ya no pagan ese arranque.
+
+![Evidencia: CloudWatch Logs de la Lambda (aws logs tail) procesando la semana del 25 al 31 de octubre](img/evidencia/e3_lambda_logs.png)
 
 ## 6. Autoescalado y prueba de carga
 
@@ -116,12 +125,20 @@ Análisis: con una sola copia el servicio no se cae (cero errores), pero las pet
 Configuración en la nube: modelos escala de 1 a 4 tareas en ECS (de 1 a 5 réplicas en Kubernetes) cuando el CPU promedio pasa de 60%. Para la prueba en la nube se corre lo mismo contra la URL pública:
 
 ```
-locust -f tests/locustfile.py --host https://salome-modelos.<id>.ecs.us-east-2.on.aws --headless -u 50 -r 5 -t 3m --csv docs/carga/ecs
+locust -f tests/locustfile.py --host https://sa-4a340ffb9b624e52980333ab674441b5.ecs.us-east-2.on.aws --headless -u 50 -r 5 -t 8m --csv docs/carga/ecs
 ```
 
-Para ver escalar a ECS se pone `CACHE_PRONOSTICO=0` en el servicio durante la prueba.
+Para forzar trabajo se apagó la caché (`CACHE_PRONOSTICO=0`) durante la prueba. Resultado del 19 de noviembre (`docs/carga/ecs_stats.csv`):
 
-![Evidencia: Locust contra ECS y tareas levantadas por el autoescalado](img/evidencia/e3_locust_ecs.png)
+| Configuración | Peticiones | Errores | Mediana | p95 | p99 | Peticiones/s | Tareas |
+|---|---|---|---|---|---|---|---|
+| ECS, 1 tarea de 0.5 vCPU, sin caché, 8 min | 1,328 | 250 (19%) | 14,000 ms | 35,000 ms | 47,000 ms | 2.8 | 1 (nunca escaló) |
+
+Análisis honesto: el autoescalado **no** se disparó. CloudWatch muestra el CPU de la tarea con máximos de 100% cada minuto, pero el promedio por minuto se quedó en 50%, por debajo del objetivo de 60%, así que la política de seguimiento nunca pidió otra tarea. La causa es que cada petición ocupa un solo núcleo (Python con su candado global) y la tarea pasa ratos esperando a la base, de modo que el promedio no refleja la saturación que sí sienten los usuarios: la p95 llegó a 35 segundos. Los 250 errores fueron 502 del balanceador: la tarea saturada no contestó a tiempo su revisión de salud, ECS la reemplazó y mientras arrancaba la nueva no había a quién mandar el tráfico. Comparado con la prueba local, una tarea de 0.5 vCPU en Fargate rinde mucho menos que un núcleo completo de la computadora.
+
+Qué cambiamos a partir de esto: (1) en producción la caché queda encendida, que es lo que resuelve el problema de fondo (10 ms con una sola copia en la prueba local); (2) para E4 el objetivo de CPU de modelos baja de 60% a 40% y el mínimo sube a 2 tareas en horario de pedidos, para que una tarea saturada no deje el servicio sin respaldo mientras se reemplaza; (3) la revisión de salud de modelos debe responder sin pasar por el modelo. En Kubernetes, donde el HPA mide contra lo pedido (250m) y no contra el total de la tarea, el escalado sí se vio (sección 4).
+
+![Evidencia: resumen de Locust contra ECS (50 usuarios, 8 min) y tareas del servicio de modelos durante la prueba](img/evidencia/e3_locust_ecs.png)
 
 ## 7. Infraestructura como código
 
@@ -145,6 +162,8 @@ terraform -chdir=infra/terraform apply -var-file=prueba.tfvars      # crea
 terraform -chdir=infra/terraform destroy -var-file=prueba.tfvars    # destruye todo
 terraform -chdir=infra/terraform apply -var-file=prueba.tfvars      # lo recrea idéntico
 ```
+
+Resultado del 19 de noviembre en el entorno `prueba`: `destroy` borró 44 recursos y el `apply` siguiente los recreó idénticos (44 agregados, 0 cambiados). Después se destruyó otra vez para no dejar la copia. En `prod`, `importar_prod.sh` trajo a Terraform los 15 recursos que E1 y E2 crearon a mano y el plan no borró nada (31 agregados, 10 actualizados en su lugar, 0 destruidos).
 
 ![Evidencia: terraform destroy y el apply siguiente con el número de recursos](img/evidencia/e3_terraform.png)
 
