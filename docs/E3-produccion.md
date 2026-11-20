@@ -74,7 +74,7 @@ Red: Terraform crea el grupo de seguridad `salome-ecs-tareas` y le abre el 5432 
 
 Despliegue del 19 de noviembre: los tres servicios quedaron `ACTIVE` con HTTPS y revisión de salud en verde unos dos minutos después de crearlos. La ingesta responde 401 a una carga sin `X-Api-Key` y 202 con ella. El tablero, desde su URL pública, muestra la sección "Lo que viene" con el pronóstico que calcula la API de modelos en ECS.
 
-![Evidencia: los tres servicios de ECS Express activos con sus URLs y el tablero v3 en su URL pública con el pronóstico de la API](img/evidencia/e3_ecs.png)
+![Evidencia: Los tres servicios de ECS Express activos con sus URLs y el tablero v3 en su URL pública con el pronóstico de la API](img/evidencia/e3_ecs.png)
 
 ## 4. Orquestación con Kubernetes
 
@@ -138,7 +138,7 @@ Análisis honesto: el autoescalado **no** se disparó. CloudWatch muestra el CPU
 
 Qué cambiamos a partir de esto: (1) en producción la caché queda encendida, que es lo que resuelve el problema de fondo (10 ms con una sola copia en la prueba local); (2) para E4 el objetivo de CPU de modelos baja de 60% a 40% y el mínimo sube a 2 tareas en horario de pedidos, para que una tarea saturada no deje el servicio sin respaldo mientras se reemplaza; (3) la revisión de salud de modelos debe responder sin pasar por el modelo. En Kubernetes, donde el HPA mide contra lo pedido (250m) y no contra el total de la tarea, el escalado sí se vio (sección 4).
 
-![Evidencia: resumen de Locust contra ECS (50 usuarios, 8 min) y tareas del servicio de modelos durante la prueba](img/evidencia/e3_locust_ecs.png)
+![Evidencia: Resumen de Locust contra ECS (50 usuarios, 8 min) y tareas del servicio de modelos durante la prueba](img/evidencia/e3_locust_ecs.png)
 
 ## 7. Infraestructura como código
 

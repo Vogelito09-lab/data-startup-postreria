@@ -18,6 +18,7 @@ from playwright.async_api import async_playwright
 RAIZ = Path(__file__).resolve().parents[1]
 DOCS = RAIZ / "docs"
 FECHA = "12 de noviembre de 2026"
+FECHAS = {"E2-cimientos": "13 de noviembre de 2026", "E3-produccion": "19 de noviembre de 2026"}  # fecha de la versión entregada
 DOCUMENTOS = [
     ("E0-propuesta", "E0 · Propuesta", "DulceDato Analytics para Salomé"),
     ("E1-dashboard", "E1 · Dashboard empresarial", "Salomé, postrería por pedido"),
@@ -73,7 +74,7 @@ async def main(filtro: str | None):
 <div class="materias">Cómputo en la Nube (IAD-2408) · Analítica de Datos (IAD-2403)<br>Proyecto integrador DATA STARTUP</div>
 <div class="titulo">{titulo}</div><div class="sub">{sub}</div>
 <div class="equipo">Carlos Antonio Vogel Romero<br>Jarom Cortes Pérez</div>
-<div class="fecha">Villa de Álvarez, Colima · {FECHA}</div></div>"""
+<div class="fecha">Villa de Álvarez, Colima · {FECHAS.get(nombre, FECHA)}</div></div>"""
             pagina = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><base href="{DOCS.as_uri()}/">
 <link rel="stylesheet" href="estilo_pdf.css"><title>{titulo}</title></head><body>{portada}{cuerpo}</body></html>"""
             temporal = DOCS / f".{nombre}.html"
