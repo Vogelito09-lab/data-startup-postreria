@@ -272,4 +272,4 @@ Con los créditos del Plan gratuito: ECS Express cobra Fargate por tarea encendi
 
 ## 14. Uso de IA generativa
 
-Claude (Anthropic) ayudó con los Dockerfiles, el compose, los manifiestos, Terraform, el script de ECS, la Lambda, la API de modelos, el entrenamiento, las pruebas y el borrador de este documento. Las decisiones (BIC sobre AIC, F2 como criterio, dos días de anticipación, caché por versión de datos, ECS Express en lugar de App Runner) las tomamos y las podemos defender los dos.
+Usamos Claude (Anthropic) para toda la parte de programación: los Dockerfiles, el compose, los manifiestos de Kubernetes, Terraform, el script de ECS, la Lambda, la API de modelos, el código de entrenamiento y las pruebas. El resto lo hicimos nosotros: el diseño de la arquitectura, la elección de los servicios, el análisis de los datos, las decisiones (BIC sobre AIC, F2 como criterio, dos días de anticipación, caché por versión de datos, ECS Express en lugar de App Runner), la interpretación de los resultados de la prueba de carga y la revisión final de este documento. Revisamos y ejecutamos todo el código, y cualquiera de los dos puede explicarlo y defenderlo.
