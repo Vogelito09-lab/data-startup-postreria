@@ -23,15 +23,18 @@ spec:
           envFrom: [{configMapRef: {name: salome-config}}]
           resources:
             requests: {cpu: 250m, memory: 256Mi}   # el HPA calcula el % sobre este valor
-            limits: {cpu: "1", memory: 768Mi}
+            limits: {cpu: "1", memory: 1536Mi}   # con 768Mi y sin caché, 50 usuarios lo mataban por memoria (OOMKilled)
           readinessProbe:
             httpGet: {path: /salud, port: 8100}
             initialDelaySeconds: 5
             periodSeconds: 5
+            timeoutSeconds: 3
           livenessProbe:
             httpGet: {path: /salud, port: 8100}
             initialDelaySeconds: 20
             periodSeconds: 15
+            timeoutSeconds: 5
+            failureThreshold: 4   # bajo carga la respuesta tarda; no reiniciar un pod que solo está ocupado
           volumeMounts:
             - {name: datos, mountPath: /datos, readOnly: true}
             - {name: tmp, mountPath: /tmp}

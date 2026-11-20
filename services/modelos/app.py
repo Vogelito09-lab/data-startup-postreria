@@ -27,7 +27,8 @@ import analitica as an
 import fuente
 import nucleo as nu
 
-MODELOS_DIR = Path(os.getenv("MODELOS_DIR", Path(__file__).resolve().parents[2] / "models"))
+# El valor por defecto se calcula solo fuera del contenedor: en /app/app.py no existe parents[2].
+MODELOS_DIR = Path(os.environ["MODELOS_DIR"]) if "MODELOS_DIR" in os.environ else Path(__file__).resolve().parents[2] / "models"
 CACHE_SEGUNDOS = int(os.getenv("CACHE_SEGUNDOS", "60"))
 # El pronóstico solo cambia cuando cambian los datos: se guarda por versión de datos.
 # CACHE_PRONOSTICO=0 lo apaga (así se midió la prueba de carga sin caché).
@@ -36,7 +37,7 @@ CACHE_PRONOSTICO = os.getenv("CACHE_PRONOSTICO", "1") == "1"
 app = FastAPI(title="Salomé · API de modelos", version="3.0.0",
               description="Pronóstico SARIMA de la venta diaria y clasificador de días fuertes, servidos desde la nube.")
 
-_registro = json.loads((MODELOS_DIR / "registro.json").read_text())
+_registro = json.loads((MODELOS_DIR / "registro.json").read_text(encoding="utf-8"))
 _art = {k: pickle.loads((MODELOS_DIR / v["archivo"]).read_bytes()) for k, v in _registro["artefactos"].items()}
 _lock = threading.Lock()
 _cache: dict = {"t": 0.0, "df": None}

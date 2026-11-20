@@ -9,8 +9,9 @@ resource "aws_ecr_repository" "imagenes" {
 }
 
 resource "aws_ecr_lifecycle_policy" "imagenes" {
-  for_each   = aws_ecr_repository.imagenes
-  repository = each.value.name
+  # Llaves estáticas: con el recurso como for_each, terraform import falla porque aún no conoce las llaves.
+  for_each   = toset(["ingesta", "modelos", "tablero", "worker-lambda"])
+  repository = aws_ecr_repository.imagenes[each.key].name
   policy = jsonencode({
     rules = [{
       rulePriority = 1
